@@ -8,6 +8,7 @@ var Planet = function(object){
   this.composition = object.composition;
   this.gravity = object.gravity;
   this.radius = object.radius;
+  this.distance = object.distance;
 };
 
 module.exports = Planet;

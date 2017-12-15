@@ -7,11 +7,11 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(express.static('client/build'));
 
-MongoClient.connect('mongodb://localhost:27017/solar-system', function(err, client){
+MongoClient.connect('mongodb://localhost:27017/space_oddity', function(err, client){
   if(err){
     return console.log(err);
   }
-  db = client.db('solar-system');
+  db = client.db('space_oddity');
   console.log('Connected to DB');
 
   app.listen(3000, function() {

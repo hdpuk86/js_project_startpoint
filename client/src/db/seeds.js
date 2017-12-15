@@ -2,11 +2,11 @@ use space_oddity;
 db.dropDatabase();
 
 db.planets.insertMany([
-  new Planet({
+  {
     name: 'Sun',
     radius: 401, // In pixels, 1 px = 3474.2 km.
     numMoons: 0,
-    image:,
+    image: '\/images\/mercury.png',
     dayLength: 0, // In hours.
     yearLength: 0, // In Earth days.
     composition: {
@@ -22,9 +22,9 @@ db.planets.insertMany([
       Sulfur: 0.04,
     },
     distance: 0, // In pixels from the sun.
-    gravity: 27.94, // In g, Earth gravities.
-  }),
-  new Planet({
+    gravity: 27.94 // In g, Earth gravities.
+  },
+  {
     name: 'Mercury',
     radius: 1.5,
     numMoons: 0,
@@ -41,8 +41,8 @@ db.planets.insertMany([
     },
     distance: 16713,
     gravity: 0.38,
-  }),
-  new Planet({
+  },
+  {
     name: 'Venus',
     radius: 3.5,
     numMoons: 0,
@@ -55,8 +55,8 @@ db.planets.insertMany([
     },
     distance: 31230,
     gravity: 0.904,
-  }),
-  new Planet({
+  },
+  {
     name: 'Earth',
     radius: 3.5,
     numMoons: 1,
@@ -71,8 +71,8 @@ db.planets.insertMany([
     },
     distance: 43060,
     gravity: 1,
-  }),
-  new Planet({
+  },
+  {
     name: 'Moon',
     radius: 1,
     numMoons: 0,
@@ -83,8 +83,8 @@ db.planets.insertMany([
     },
     distance: 43171, // When furthest from sun around Earth.
     gravity: 0.165,
-  }),
-  new Planet({
+  },
+  {
     name: 'Mars',
     radius: 2,
     numMoons: 2,
@@ -100,8 +100,8 @@ db.planets.insertMany([
     },
     distance: 65786,
     gravity: 0.376,
-  }),
-  new Planet({
+  },
+  {
     name: 'Jupiter',
     radius: 40,
     numMoons: 53,
@@ -114,8 +114,8 @@ db.planets.insertMany([
     },
     distance: 224101,
     gravity: 2.528,
-  }),
-  new Planet({
+  },
+  {
     name: 'Saturn',
     radius: 33.5,
     numMoons: 53,
@@ -129,8 +129,8 @@ db.planets.insertMany([
     },
     distance: 412620,
     gravity: 1.065,
-  }),
-  new Planet({
+  },
+  {
     name: 'Uranus',
     radius: 14.5,
     numMoons: 27,
@@ -144,8 +144,8 @@ db.planets.insertMany([
     },
     distance: 829831,
     gravity: 0.89,
-  }),
-  new Planet({
+  },
+  {
     name: 'Neptune',
     radius: 14,
     numMoons: 13,
@@ -159,8 +159,8 @@ db.planets.insertMany([
     },
     distance: 1300443,
     gravity: 1.14,
-  }),
-  new Planet({
+  },
+  {
     name: 'Pluto',
     radius: 0.5,
     numMoons: 5,
@@ -173,5 +173,5 @@ db.planets.insertMany([
     },
     distance: 1704630,
     gravity: 0.063,
-  }),
+  }
 ]);
