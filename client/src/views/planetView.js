@@ -6,6 +6,7 @@ function createPlanetDiv(planet){
   var circleDiv = createCircle(planet.homepageRadius +'px', planet.colour);
 
   div.appendChild(circleDiv);
+  return div;
 };
 
 
