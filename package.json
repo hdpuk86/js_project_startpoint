@@ -4,7 +4,10 @@
   "description": "",
   "main": "server.js",
   "scripts": {
-    "test": "mocha ./client/src/models/specs",
+    "webdriver-update": "webdriver-manager update",
+    "webdriver": "webdriver-manager start",
+    "protractor": "protractor conf.js",
+    "test": "mocha ./client/src/models/tests/unit/",
     "start": "nodemon server.js",
     "seeds": "mongo < client/src/db/seeds.js",
     "webpack": "cd client && webpack -w"
@@ -15,11 +18,15 @@
   "dependencies": {
     "body-parser": "^1.18.2",
     "express": "^4.16.2",
-    "mongodb": "^3.0.0-rc0",
-    "selenium": "^2.20.0"
+    "mongodb": "^3.0.0-rc0"
   },
   "devDependencies": {
+    "chai": "^4.1.2",
+    "chai-as-promised": "^7.1.1",
     "mocha": "^4.0.1",
+    "protractor": "^5.2.2",
+    "selenium": "^2.20.0",
+    "webdriver-manager": "^12.0.6",
     "webpack": "^3.10.0"
   }
 }
