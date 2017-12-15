@@ -9,7 +9,7 @@ function createCircle(pixelSize, colour){
 
 
 var PlanetView = function(planet) {
-  return createCircle(planet.homepageRadius, planet.colour);
+  return createCircle(planet.homepageRadius +'px', planet.colour);
 };
 
 module.exports = PlanetView;
