@@ -22,7 +22,9 @@ db.planets.insertMany([
       Sulfur: 0.04,
     },
     distance: 0, // In pixels from the sun.
-    gravity: 27.94 // In g, Earth gravities.
+    gravity: 27.94,// In g, Earth gravities.
+    colour: '#fde301',
+    homepageRadius: 150
   },
   {
     name: 'Mercury',
@@ -41,6 +43,8 @@ db.planets.insertMany([
     },
     distance: 16713,
     gravity: 0.38,
+    colour: '#ffcc00',
+    homepageRadius: 15
   },
   {
     name: 'Venus',
@@ -55,6 +59,8 @@ db.planets.insertMany([
     },
     distance: 31230,
     gravity: 0.904,
+    colour: '#86ffca',
+    homepageRadius: 35
   },
   {
     name: 'Earth',
@@ -71,6 +77,8 @@ db.planets.insertMany([
     },
     distance: 43060,
     gravity: 1,
+    colour: '#01fdfa',
+    homepageRadius: 35
   },
   {
     name: 'Moon',
@@ -83,6 +91,8 @@ db.planets.insertMany([
     },
     distance: 43171, // When furthest from sun around Earth.
     gravity: 0.165,
+    colour: 'grey',
+    homepageRadius: 10
   },
   {
     name: 'Mars',
@@ -100,6 +110,8 @@ db.planets.insertMany([
     },
     distance: 65786,
     gravity: 0.376,
+    colour: '#ff7443',
+    homepageRadius: 20
   },
   {
     name: 'Jupiter',
@@ -114,6 +126,8 @@ db.planets.insertMany([
     },
     distance: 224101,
     gravity: 2.528,
+    colour: '#ffa043' ,
+    homepageRadius: 80,
   },
   {
     name: 'Saturn',
@@ -129,6 +143,8 @@ db.planets.insertMany([
     },
     distance: 412620,
     gravity: 1.065,
+    colour: '#f9d293',
+    homepageRadius: 67
   },
   {
     name: 'Uranus',
@@ -144,6 +160,8 @@ db.planets.insertMany([
     },
     distance: 829831,
     gravity: 0.89,
+    colour: '#18E6FF',
+    homepageRadius: 29
   },
   {
     name: 'Neptune',
@@ -159,6 +177,8 @@ db.planets.insertMany([
     },
     distance: 1300443,
     gravity: 1.14,
+    colour: '#45B9FF',
+    homepageRadius: 28
   },
   {
     name: 'Pluto',
@@ -173,5 +193,8 @@ db.planets.insertMany([
     },
     distance: 1704630,
     gravity: 0.063,
+    colour: '#D9F5FF',
+    homepageRadius: 5
   }
+
 ]);
