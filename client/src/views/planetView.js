@@ -1,7 +1,7 @@
 function createPlanetDiv(planet){
   var div = document.createElement('div');
   div.id = `home_${planet.name}_div`;
-  div.class = 'home_planets_div';
+  div.className = 'home_planets_div';
 
   var circleDiv = createCircle(planet.homepageRadius +'px', planet.colour);
 
