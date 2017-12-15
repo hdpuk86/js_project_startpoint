@@ -1,5 +1,5 @@
 var assert = require('assert');
-var Planet = require('../planet');
+var Planet = require('../../planet');
 
 describe('Planet', function() {
   describe('Instance Variables', function() {
