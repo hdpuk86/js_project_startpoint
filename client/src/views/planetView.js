@@ -1,3 +1,15 @@
+function createPlanetDiv(planet){
+  var div = document.createElement('div');
+  div.id = `home_${planet.name}_div`;
+  div.class = 'home_planets_div';
+
+  var circleDiv = createCircle(planet.homepageRadius +'px', planet.colour);
+
+  div.appendChild(circleDiv);
+};
+
+
+
 function createCircle(pixelSize, colour){
   var div = document.createElement('div');
   div.style.borderRadius = '50%';
@@ -9,7 +21,7 @@ function createCircle(pixelSize, colour){
 
 
 var PlanetView = function(planet) {
-  return createCircle(planet.homepageRadius +'px', planet.colour);
+  return createPlanetDiv(planet);
 };
 
 module.exports = PlanetView;
