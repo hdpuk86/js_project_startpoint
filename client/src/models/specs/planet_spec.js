@@ -1,44 +1,58 @@
 var assert = require('assert');
+var Planet = require('../planet');
 
 describe('Planet', function() {
   describe('Instance Variables', function() {
     var jupiter;
 
     beforeEach(function() {
-      jupiter = new Planet('Jupiter', 40);
+      var jupiterSpecs = {
+        name: 'Jupiter',
+        radius: 40,
+        numMoons: 69,
+        image: '\/images\/jupiter.png',
+        dayLength: 10,
+        yearLength: 4333,
+        composition: {
+          hydrogen: 92,
+          helium: 8,
+        },
+        gravity: 2.528,
+      }
+      jupiter = new Planet(jupiterSpecs);
     });
 
     it('should have a radius', function() {
       assert.strictEqual(jupiter.radius, 40);
     });
 
-    xit('should have a name', function(){
+    it('should have a name', function(){
       assert.strictEqual(jupiter.name, "Jupiter");
     });
 
-    xit('should have an image url', function(){
+    it('should have an image url', function(){
       assert.strictEqual(jupiter.image, "\/images\/jupiter.png");
     });
 
-    xit('should have a day length', function(){
+    it('should have a day length', function(){
       assert.strictEqual(jupiter.dayLength, 10);
     });
 
-    xit('should have a year length', function() {
+    it('should have a year length', function() {
       assert.strictEqual(jupiter.yearLength, 4333);
     });
 
-    xit('should have a composition which have names and a percent', function(){
-      assert.strictEqual(jupiter.composition.length, 2);
-      assert.strictEqual(jupiter.composition[0].name, "Hydrogen");
-      assert.strictEqual(jupiter.composition[0].percent, 92);
+    it('should have a composition which have names and a percent', function(){
+      assert.strictEqual(Object.keys(jupiter.composition).length, 2);
+      assert.strictEqual(jupiter.composition.hydrogen, 92);
+      assert.strictEqual(jupiter.composition.helium, 8);
     });
 
-    xit('should have a number of moons', function(){
+    it('should have a number of moons', function(){
       assert.strictEqual(jupiter.numMoons, 69);
     });
 
-    xit('should have a gravity', function() {
+    it('should have a gravity', function() {
       assert.strictEqual(jupiter.gravity, 2.528);
     });
   });
