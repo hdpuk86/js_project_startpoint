@@ -6,6 +6,7 @@ var MongoClient = require('mongodb').MongoClient;
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(express.static('client/build'));
+app.use(require('./client/controllers/index'));
 
 MongoClient.connect('mongodb://localhost:27017/space_oddity', function(err, client){
   if(err){

@@ -6,7 +6,7 @@
   "scripts": {
     "test": "mocha ./client/src/models/specs",
     "start": "nodemon server.js",
-    "webpack": "cd client && webpack -w"
+    "webpack": "mongo < client/src/db/seeds.js; cd client && webpack -w"
   },
   "keywords": [],
   "author": "",
