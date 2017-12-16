@@ -22,12 +22,31 @@ describe('space oddity functionality', function() {
     expect(stats.getCssValue('visibility')).to.eventually.equal('visible');
   });
 
-
-
   it('should have click event on planet', function(){
     var popup = element(by.css('.popup'));
     var planet = element(by.css('#circle_Earth'));
     planet.click();
     expect(popup.getCssValue('display')).to.eventually.equal('block');
   });
+
+  it('should set display to none for planet popup on out of popup window click event', function(){
+    var popup = element(by.css('.popup'));
+    var planet = element(by.css('#circle_Earth'));
+    var pluto = element(by.css('#circle_Pluto'));
+    planet.click();
+    browser.actions().mouseMove({x: 400, y: 400}).doubleClick().perform();
+    // pluto.click();
+    expect(popup.getCssValue('display')).to.eventually.equal('none');
+  });
+
+  it('should set display to none for planet popup on close click event', function(){
+    var popup = element(by.css('.popup'));
+    var planet = element(by.css('#circle_Earth'));
+    planet.click();
+    var span = element(by.css('.close-popup'));
+    span.click();
+    expect(popup.getCssValue('display')).to.eventually.equal('none');
+  });
+
+
 });
