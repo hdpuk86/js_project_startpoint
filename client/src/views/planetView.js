@@ -15,6 +15,8 @@ function createPlanetDiv(planet){
 
   var hoverDiv = new HoverView(planet);
   div.appendChild(hoverDiv);
+
+  div.style.width = `${planet.homepageRadius + 30}px`;  
   return div;
 };
 
