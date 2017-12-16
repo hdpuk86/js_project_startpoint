@@ -67,3 +67,8 @@ ul {
   display: flex;
   flex-direction: row;
 }
+
+#adventure-button {
+  width: 50px;
+  float: right
+}
