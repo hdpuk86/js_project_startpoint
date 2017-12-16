@@ -9,11 +9,11 @@ describe('space oddity functionality', function() {
     browser.get('http://localhost:3000');
   });
 
-  // write integration tests here in the form of "it should do something..."
   it('should have hover event over planet', function(){
-    // running_total = element(by.css('#running_total'))
-    // element(by.css('#number2')).click();
-    // expect(running_total.getAttribute('value')).to.eventually.equal('2')
+    var planet = element(by.css('#circle_Earth'));
+    var stats = element(by.css('#hover_Earth_div'));
+    browser.actions().mouseMove(planet).perform();
+    expect(stats.getCssValue('visibility')).to.eventually.equal('visible');
   });
   
   it('should have click event on planet', function(){
