@@ -36,7 +36,6 @@ var HomeView = function(planets) {
     var planetDiv = new PlanetView(planet);
     div.appendChild(planetDiv);
     addListeners(planet);
-
   });
   addBtnListener();
 };
