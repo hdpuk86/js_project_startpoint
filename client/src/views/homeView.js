@@ -26,6 +26,7 @@ function addBtnListener(){
   var startAdventureBtn = document.getElementById('adventure-button');
   startAdventureBtn.addEventListener('click', function(){
     console.log("You Clicked me");
+    window.scrollTo(2400, 0);
   });
 }
 
