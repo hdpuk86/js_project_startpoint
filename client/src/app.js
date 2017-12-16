@@ -5,7 +5,6 @@ var PlanetView = require('./views/planetView');
 
 var onLoad = function() {
   new Request('/planets', HomeView);
-  popup = new Popup();
 };
 
 window.addEventListener('load', onLoad);
