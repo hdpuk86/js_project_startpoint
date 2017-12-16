@@ -22,14 +22,22 @@ function addListeners(planet){
   });
 };
 
+function addBtnListener(){
+  var startAdventureBtn = document.getElementById('adventure-button');
+  startAdventureBtn.addEventListener('click', function(){
+    console.log("You Clicked me");
+  });
+}
+
 var HomeView = function(planets) {
   var div = document.getElementById('planets-div');
   planets.forEach((planet) => {
     var planetDiv = new PlanetView(planet);
     div.appendChild(planetDiv);
     addListeners(planet);
+
   });
+  addBtnListener();
 };
 
 module.exports = HomeView;
-
