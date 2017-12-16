@@ -108,19 +108,21 @@ ul {
 }
 
 #space-nav {
+  display: flex;
+  justify-content: center;
   left: 0;
-  padding-left: 500px;
   height: 50px;
   width: 100%;
   position: fixed;
 }
 
 a {
-  text-decoration: none
+  text-decoration: none;
 }
 
 .nav_icon {
   width: 25px;
+  margin-left: 3px;
 }
 
 #space-footer {
