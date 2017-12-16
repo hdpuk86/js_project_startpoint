@@ -12,13 +12,6 @@ ul {
   list-style: none;
 }
 
-.hover_planets_div {
-  width: 300px;
-  font-size: 16px;
-  margin-top: 40px;
-  text-align: center;
-}
-
 .popup {
   display: none;
   position: fixed;
@@ -58,11 +51,43 @@ ul {
   cursor: pointer;
 }
 
-.home_planets_div{
+#homepage {
+  display: flex;
+  width: 100vw;
+  height: 100vh;
+  align-items: center;
+}
+
+.home_planets_div {
+  height: 100vh;
+  width: 60px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+}
+
+#planets-div {
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+.hover_planets_div {
+  height: 104px;
+  width: 300px;
+  font-size: 16px;
+  margin-top: 40px;
+  text-align: center;
+  z-index: 1;
+}
+
+.hover_name_div {
+  margin-top: 14px;
+  height: 50px;
+  margin-bottom: 40px;
 }
 
 .circle:hover {
@@ -70,15 +95,8 @@ ul {
   box-shadow: 0px 0px 3px 3px white;
 }
 
-#planets-div {
-  height: 100vh;
-  display: flex;
-  flex-direction: row;
-}
-
 #adventure-button {
   width: 50px;
-  float: right;
 }
 
 #space {
