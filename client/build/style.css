@@ -70,3 +70,15 @@ ul {
   display: flex;
   flex-direction: row;
 }
+
+#adventure-button {
+  width: 50px;
+  float: right;
+}
+
+#space{
+  position: absolute;
+  left: 2400px;
+  width: 50000px;
+  height: 100%;
+}
