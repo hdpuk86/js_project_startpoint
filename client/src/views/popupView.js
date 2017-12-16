@@ -10,9 +10,15 @@ var Popup = function() {
   var display = function() {
     popup.style.display = 'block';
 
-    span.onclick = () => popup.style.display = 'none';
+    span.onclick = () => {
+      popup.style.display = 'none';
+      setContent('');
+    }
     window.onclick = (event) => {
-      if (event.target == popup) popup.style.display = 'none';
+      if (event.target == popup) {
+        popup.style.display = 'none';
+        setContent('');
+      }        
     }
   };
 
