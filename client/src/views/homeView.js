@@ -1,7 +1,8 @@
 var PlanetView = require('./planetView');
 var HoverView = require('./hoverView');
+var Popup = require('./popupView');
 
-function addHoverListener(planet){
+function addListeners(planet){
   var circle = document.getElementById(`circle_${planet.name}`);
   var hoverDiv = document.getElementById(`hover_${planet.name}_div`);
   circle.addEventListener('mouseover', function(){
@@ -9,6 +10,11 @@ function addHoverListener(planet){
   });
   circle.addEventListener('mouseleave', function(){
     hoverDiv.style.visibility = 'hidden';
+  });
+  circle.addEventListener('click', () => {
+    var popup = new Popup();    
+    popup.setContent(planet.description);
+    popup.display();
   });
 };
 
@@ -19,8 +25,9 @@ var HomeView = function(planets) {
     var hoverDiv = new HoverView(planet);
     planetDiv.appendChild(hoverDiv);
     div.appendChild(planetDiv);
-    addHoverListener(planet);
+    addListeners(planet);
   });
 };
 
 module.exports = HomeView;
+

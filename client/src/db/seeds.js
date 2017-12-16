@@ -26,7 +26,8 @@ db.planets.insertMany([
     colour: '#fde301',
     homepageRadius: 150,
     volume: 1304000,
-    mass: 333000
+    mass: 333000,
+    description: 'Sun<br><br>It\'s pretty warm.',
   },
   {
     name: 'Mercury',
@@ -48,7 +49,8 @@ db.planets.insertMany([
     colour: '#ffcc00',
     homepageRadius: 15,
     volume: 0.06,
-    mass: 0.06
+    mass: 0.06,
+    description: 'Mercury<br><br>Good for pizza.',
   },
   {
     name: 'Venus',
@@ -66,7 +68,8 @@ db.planets.insertMany([
     colour: '#86ffca',
     homepageRadius: 35,
     volume: 0.87,
-    mass: 0.82
+    mass: 0.82,
+    description: 'Venus<br><br>Too warm, that\'s methane for you',
   },
   {
     name: 'Earth',
@@ -86,7 +89,8 @@ db.planets.insertMany([
     colour: '#01fdfa',
     homepageRadius: 35,
     volume: 1,
-    mass: 1
+    mass: 1,
+    description: 'Earth<br><br>Temperate, bit mainstream',
   },
   {
     name: 'Moon',
@@ -102,7 +106,8 @@ db.planets.insertMany([
     colour: 'grey',
     homepageRadius: 10,
     volume: 0.02,
-    mass: 0.01
+    mass: 0.01,
+    description: 'Moon<br><br>Made of cheese, fallen out of style.',
   },
   {
     name: 'Mars',
@@ -123,7 +128,8 @@ db.planets.insertMany([
     colour: '#ff7443',
     homepageRadius: 20,
     volume: 0.15,
-    mass: 0.11
+    mass: 0.11,
+    description: 'Mars<br><br>Famously named after a chocolate bar even though they\'re not the same shape',
   },
   {
     name: 'Jupiter',
@@ -141,7 +147,8 @@ db.planets.insertMany([
     colour: '#ffa043' ,
     homepageRadius: 80,
     volume: 1321,
-    mass: 318
+    mass: 318,
+    description: 'Jupiter<br><br>Still struggling with zits.',
   },
   {
     name: 'Saturn',
@@ -160,7 +167,8 @@ db.planets.insertMany([
     colour: '#f9d293',
     homepageRadius: 67,
     volume: 764,
-    mass: 96
+    mass: 96,
+    description: 'Saturn<br><br>Someone liked it, so they put a ring on it.',
   },
   {
     name: 'Uranus',
@@ -179,7 +187,8 @@ db.planets.insertMany([
     colour: '#18E6FF',
     homepageRadius: 29,
     volume: 63,
-    mass: 15
+    mass: 15,
+    description: 'Uranus<br><br>Still struggles with having a silly name. The new pronounciation never really took off.',
   },
   {
     name: 'Neptune',
@@ -198,7 +207,8 @@ db.planets.insertMany([
     colour: '#45B9FF',
     homepageRadius: 28,
     volume: 58,
-    mass: 17
+    mass: 17,
+    description: 'Neptune<br><br>Full of sea, must be, right?',
   },
   {
     name: 'Pluto',
@@ -216,7 +226,8 @@ db.planets.insertMany([
     colour: '#D9F5FF',
     homepageRadius: 5,
     volume: 0.01,
-    mass: 0.002
+    mass: 0.002,
+    description: 'Pluto<br><br>Unloved, "Not a planet", I still like it.',
   }
 
 ]);
