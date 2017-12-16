@@ -4,6 +4,7 @@ function createPlanetDiv(planet){
   div.className = 'home_planets_div';
 
   var circleDiv = createCircle(planet.homepageRadius +'px', planet.colour);
+  circleDiv.id = `circle_${planet.name}`;
 
   div.appendChild(circleDiv);
   return div;
