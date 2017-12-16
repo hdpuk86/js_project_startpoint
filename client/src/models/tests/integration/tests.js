@@ -17,6 +17,9 @@ describe('space oddity functionality', function() {
   });
   
   it('should have click event on planet', function(){
-
+    var popup = element(by.css('.popup'));
+    var planet = element(by.css('#circle_Earth'));
+    planet.click();
+    expect(popup.getCssValue('display')).to.eventually.equal('block');
   });
 });
