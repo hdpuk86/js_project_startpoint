@@ -82,6 +82,16 @@ ul {
 }
 
 #space {
+  position: absolute;
+  left:5000px;
   width: 50000px;
   height: 100%;
+}
+
+#space-footer {
+  position:absolute;
+  bottom:0;
+  width:100%;
+  height:70px;
+  background-image: url('../images/ruler.png');
 }
