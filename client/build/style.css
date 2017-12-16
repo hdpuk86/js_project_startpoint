@@ -11,16 +11,21 @@ body {
   top: 0;
   width: 100%;
   height: 100%;
-  overflow: auto;
   background-color: rgba(0,0,0,0.4);
 }
 
 .popup-body {
   background-color: #000;
-  margin: 50% auto;
+  margin: 10% auto;
   padding: 20px;
   border: 1px solid #FFF;
   width: 80%;
+}
+
+.video {
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
 }
 
 .close-popup {

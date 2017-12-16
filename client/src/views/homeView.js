@@ -12,8 +12,9 @@ function addListeners(planet){
     hoverDiv.style.visibility = 'hidden';
   });
   circle.addEventListener('click', () => {
-    var popup = new Popup();    
-    popup.setContent(planet.description);
+    var popup = new Popup();
+    var newContent = planet.youtubeEmbed + planet.description;
+    popup.setContent(newContent);
     popup.display();
   });
 };

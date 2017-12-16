@@ -7,6 +7,7 @@ db.planets.insertMany([
     radius: 401, // In pixels, 1 px = 3474.2 km.
     numMoons: 0,
     image: '\/images\/sun.png',
+    youtubeEmbed: '<div class="video"><iframe width="560" height="315" src="https://www.youtube.com/embed/6tmbeLTHC_0?rel=0&amp;controls=0&amp;showinfo=0" frameborder="0" gesture="media" allow="encrypted-media" allowfullscreen></iframe></div>',
     dayLength: 0, // In hours.
     yearLength: 0, // In Earth days.
     composition: {
@@ -27,13 +28,14 @@ db.planets.insertMany([
     homepageRadius: 150,
     volume: 1304000,
     mass: 333000,
-    description: 'The Sun is the star at the centre of the Solar System. It is a nearly perfect sphere of hot plasma, with internal convective motion that generates a magnetic field via a dynamo process. It is by far the most important source of energy for life on Earth. Its diameter is about 1.39 million kilometers, i.e. 109 times that of Earth, and its mass is about 330,000 times that of Earth, accounting for about 99.86% of the total mass of the Solar System. About three quarters of the Sun\'s mass consists of hydrogen (~73%); the rest is mostly helium (~25%), with much smaller quantities of heavier elements, including oxygen, carbon, neon, and iron.',
+    description: '<p>The Sun is the star at the centre of the Solar System. It is a nearly perfect sphere of hot plasma, with internal convective motion that generates a magnetic field via a dynamo process. It is by far the most important source of energy for life on Earth. Its diameter is about 1.39 million kilometers, i.e. 109 times that of Earth, and its mass is about 330,000 times that of Earth, accounting for about 99.86% of the total mass of the Solar System. About three quarters of the Sun\'s mass consists of hydrogen (~73%); the rest is mostly helium (~25%), with much smaller quantities of heavier elements, including oxygen, carbon, neon, and iron.</p>',
   },
   {
     name: 'Mercury',
     radius: 1.5,
     numMoons: 0,
     image: '\/images\/mercury.png',
+    youtubeEmbed: '<div class="video"><iframe width="560" height="315" src="https://www.youtube.com/embed/m3ZUhpisWeQ?rel=0&amp;controls=0&amp;showinfo=0" frameborder="0" gesture="media" allow="encrypted-media" allowfullscreen></iframe></div>',
     dayLength: 1408,
     yearLength: 88,
     composition: {
@@ -57,6 +59,7 @@ db.planets.insertMany([
     radius: 3.5,
     numMoons: 0,
     image: '\/images\/venus.png',
+    youtubeEmbed: '<div class="video"><iframe width="560" height="315" src="https://www.youtube.com/embed/yzqbN6z8ncc?rel=0&amp;controls=0&amp;showinfo=0" frameborder="0" gesture="media" allow="encrypted-media" allowfullscreen></iframe></div>',
     dayLength: 5832,
     yearLength: 225,
     composition: {
@@ -76,6 +79,7 @@ db.planets.insertMany([
     radius: 3.5,
     numMoons: 1,
     image: '\/images\/earth.png',
+    youtubeEmbed: '<div class="video"><iframe width="560" height="315" src="https://www.youtube.com/embed/JrGuomu9NGY?rel=0&amp;controls=0&amp;showinfo=0" frameborder="0" gesture="media" allow="encrypted-media" allowfullscreen></iframe></div>',
     dayLength: 24,
     yearLength: 365,
     composition: {
@@ -97,6 +101,7 @@ db.planets.insertMany([
     radius: 1,
     numMoons: 0,
     image: '\/images\/moon.png',
+    youtubeEmbed: '<div class="video"><iframe width="560" height="315" src="https://www.youtube.com/embed/2iSZMv64wuU?rel=0&amp;controls=0&amp;showinfo=0" frameborder="0" gesture="media" allow="encrypted-media" allowfullscreen></iframe></div>',
     dayLength: 648,
     yearLength: 27,
     composition: {
@@ -114,6 +119,7 @@ db.planets.insertMany([
     radius: 2,
     numMoons: 2,
     image: '\/images\/mars.png',
+    youtubeEmbed: '<div class="video"><iframe width="560" height="315" src="https://www.youtube.com/embed/NXbCNAIIAxw?rel=0&amp;controls=0&amp;showinfo=0" frameborder="0" gesture="media" allow="encrypted-media" allowfullscreen></iframe></div>',
     dayLength: 25,
     yearLength: 687,
     composition: {
@@ -136,6 +142,7 @@ db.planets.insertMany([
     radius: 40,
     numMoons: 53,
     image: '\/images\/jupiter.png',
+    youtubeEmbed: '<div class="video"><iframe width="560" height="315" src="https://www.youtube.com/embed/aFnNCwTkYo8?rel=0&amp;controls=0&amp;showinfo=0" frameborder="0" gesture="media" allow="encrypted-media" allowfullscreen></iframe></div>',
     dayLength: 10,
     yearLength: 4333,
     composition: {
@@ -155,6 +162,7 @@ db.planets.insertMany([
     radius: 33.5,
     numMoons: 53,
     image: '\/images\/saturn.png',
+    youtubeEmbed: '<div class="video"><iframe width="560" height="315" src="https://www.youtube.com/embed/AyFMPdHU1n0?rel=0&amp;controls=0&amp;showinfo=0" frameborder="0" gesture="media" allow="encrypted-media" allowfullscreen></iframe></div>',
     dayLength: 11,
     yearLength: 10756,
     composition: {
@@ -175,6 +183,7 @@ db.planets.insertMany([
     radius: 14.5,
     numMoons: 27,
     image: '\/images\/uranus.png',
+    youtubeEmbed: '<div class="video"><iframe width="560" height="315" src="https://www.youtube.com/embed/_aRAoM1i0D4?rel=0&amp;controls=0&amp;showinfo=0" frameborder="0" gesture="media" allow="encrypted-media" allowfullscreen></iframe></div>',
     dayLength: 17,
     yearLength: 30687,
     composition: {
@@ -195,6 +204,7 @@ db.planets.insertMany([
     radius: 14,
     numMoons: 13,
     image: '\/images\/neptune.png',
+    youtubeEmbed: '<div class="video"><iframe width="560" height="315" src="https://www.youtube.com/embed/faKnto4Pb6c?rel=0&amp;controls=0&amp;showinfo=0" frameborder="0" gesture="media" allow="encrypted-media" allowfullscreen></iframe></div>',
     dayLength: 16,
     yearLength: 60190,
     composition: {
@@ -215,6 +225,7 @@ db.planets.insertMany([
     radius: 0.5,
     numMoons: 5,
     image: '\/images\/pluto.png',
+    youtubeEmbed: '<div class="video"><iframe width="560" height="315" src="https://www.youtube.com/embed/-iZio70bd-M?rel=0&amp;controls=0&amp;showinfo=0" frameborder="0" gesture="media" allow="encrypted-media" allowfullscreen></iframe></div>',
     dayLength: 154,
     yearLength: 90520,
     composition: {
