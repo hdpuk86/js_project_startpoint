@@ -32,7 +32,6 @@ describe('space oddity functionality', function() {
   it('should set display to none for planet popup on out of popup window click event', function(){
     var popup = element(by.css('.popup'));
     var planet = element(by.css('#circle_Earth'));
-    var pluto = element(by.css('#circle_Pluto'));
     planet.click();
     browser.actions().mouseMove({x: 400, y: 400}).doubleClick().perform();
     // pluto.click();
