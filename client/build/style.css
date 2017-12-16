@@ -1,6 +1,17 @@
 body {
   background-color: #000;
   color: #FFF;
+  font-family: sans-serif;
+}
+
+ul {
+  list-style: none;
+}
+
+.hover_planets_div {
+  width: 300px;
+  font-size: 16px;
+  margin-top: 40px;
 }
 
 .popup {
