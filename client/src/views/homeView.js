@@ -22,14 +22,6 @@ function addListeners(planet){
   });
 };
 
-function addBtnListener(){
-  var startAdventureBtn = document.getElementById('adventure-button');
-  startAdventureBtn.addEventListener('click', function(){
-    console.log("You Clicked me");
-    window.scrollTo(2400, 0);
-  });
-}
-
 var HomeView = function(planets) {
   var div = document.getElementById('planets-div');
   planets.forEach((planet) => {
@@ -37,7 +29,6 @@ var HomeView = function(planets) {
     div.appendChild(planetDiv);
     addListeners(planet);
   });
-  addBtnListener();
 };
 
 module.exports = HomeView;
