@@ -34,7 +34,6 @@ describe('space oddity functionality', function() {
     var planet = element(by.css('#circle_Earth'));
     planet.click();
     browser.actions().mouseMove({x: 400, y: 400}).doubleClick().perform();
-    // pluto.click();
     expect(popup.getCssValue('display')).to.eventually.equal('none');
   });
 
