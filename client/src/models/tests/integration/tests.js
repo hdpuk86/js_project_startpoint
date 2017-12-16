@@ -15,8 +15,8 @@ describe('space oddity functionality', function() {
     // element(by.css('#number2')).click();
     // expect(running_total.getAttribute('value')).to.eventually.equal('2')
   });
+  
   it('should have click event on planet', function(){
 
   });
-
 });
