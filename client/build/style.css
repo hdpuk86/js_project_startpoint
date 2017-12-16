@@ -41,3 +41,13 @@ body {
   width: 100px;
   height: 150px;
 }
+
+.circle:hover {
+  background-color: white;
+  box-shadow: 0px 0px 3px 3px white;
+}
+
+#planets-div {
+  display: flex;
+  flex-direction: row;
+}

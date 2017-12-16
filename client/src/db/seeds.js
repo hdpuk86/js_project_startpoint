@@ -24,7 +24,9 @@ db.planets.insertMany([
     distance: 0, // In pixels from the sun.
     gravity: 27.94,// In g, Earth gravities.
     colour: '#fde301',
-    homepageRadius: 150
+    homepageRadius: 150,
+    volume: 1304000,
+    mass: 333000
   },
   {
     name: 'Mercury',
@@ -44,7 +46,9 @@ db.planets.insertMany([
     distance: 16713,
     gravity: 0.38,
     colour: '#ffcc00',
-    homepageRadius: 15
+    homepageRadius: 15,
+    volume: 0.06,
+    mass: 0.06
   },
   {
     name: 'Venus',
@@ -60,7 +64,9 @@ db.planets.insertMany([
     distance: 31230,
     gravity: 0.904,
     colour: '#86ffca',
-    homepageRadius: 35
+    homepageRadius: 35,
+    volume: 0.87,
+    mass: 0.82
   },
   {
     name: 'Earth',
@@ -78,7 +84,9 @@ db.planets.insertMany([
     distance: 43060,
     gravity: 1,
     colour: '#01fdfa',
-    homepageRadius: 35
+    homepageRadius: 35,
+    volume: 1,
+    mass: 1
   },
   {
     name: 'Moon',
@@ -92,7 +100,9 @@ db.planets.insertMany([
     distance: 43171, // When furthest from sun around Earth.
     gravity: 0.165,
     colour: 'grey',
-    homepageRadius: 10
+    homepageRadius: 10,
+    volume: 0.02,
+    mass: 0.01
   },
   {
     name: 'Mars',
@@ -111,7 +121,9 @@ db.planets.insertMany([
     distance: 65786,
     gravity: 0.376,
     colour: '#ff7443',
-    homepageRadius: 20
+    homepageRadius: 20,
+    volume: 0.15,
+    mass: 0.11
   },
   {
     name: 'Jupiter',
@@ -128,6 +140,8 @@ db.planets.insertMany([
     gravity: 2.528,
     colour: '#ffa043' ,
     homepageRadius: 80,
+    volume: 1321,
+    mass: 318
   },
   {
     name: 'Saturn',
@@ -144,7 +158,9 @@ db.planets.insertMany([
     distance: 412620,
     gravity: 1.065,
     colour: '#f9d293',
-    homepageRadius: 67
+    homepageRadius: 67,
+    volume: 764,
+    mass: 96
   },
   {
     name: 'Uranus',
@@ -161,7 +177,9 @@ db.planets.insertMany([
     distance: 829831,
     gravity: 0.89,
     colour: '#18E6FF',
-    homepageRadius: 29
+    homepageRadius: 29,
+    volume: 63,
+    mass: 15
   },
   {
     name: 'Neptune',
@@ -178,7 +196,9 @@ db.planets.insertMany([
     distance: 1300443,
     gravity: 1.14,
     colour: '#45B9FF',
-    homepageRadius: 28
+    homepageRadius: 28,
+    volume: 58,
+    mass: 17
   },
   {
     name: 'Pluto',
@@ -194,7 +214,9 @@ db.planets.insertMany([
     distance: 1704630,
     gravity: 0.063,
     colour: '#D9F5FF',
-    homepageRadius: 5
+    homepageRadius: 5,
+    volume: 0.01,
+    mass: 0.002
   }
 
 ]);

@@ -4,22 +4,21 @@ function createPlanetDiv(planet){
   div.className = 'home_planets_div';
 
   var circleDiv = createCircle(planet.homepageRadius +'px', planet.colour);
+  circleDiv.id = `circle_${planet.name}`;
 
   div.appendChild(circleDiv);
   return div;
 };
 
-
-
 function createCircle(pixelSize, colour){
   var div = document.createElement('div');
+  div.className = "circle";
   div.style.borderRadius = '50%';
   div.style.width = pixelSize;
   div.style.height = pixelSize;
   div.style.backgroundColor = colour;
   return div;
 };
-
 
 var PlanetView = function(planet) {
   return createPlanetDiv(planet);
