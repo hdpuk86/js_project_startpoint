@@ -1,3 +1,4 @@
+//creates the info div and appends all planet stats
 function createHoverDiv(planet){
   var div = document.createElement('div');
   div.style.visibility = "hidden";
@@ -8,6 +9,7 @@ function createHoverDiv(planet){
   return div;
 };
 
+//appends the planet stats to a ul
 function createPlanetStats(planet){
   var ul = document.createElement('ul');
   var day = document.createElement('li');
