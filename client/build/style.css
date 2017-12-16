@@ -84,4 +84,22 @@ ul {
 #space {
   width: 50000px;
   height: 100%;
+  position: absolute;
+  left:5000px;
+}
+
+#space-nav {
+  left: 0;
+  padding-left: 500px;
+  height: 50px;
+  width: 100%;
+  position: fixed;
+}
+
+a {
+  text-decoration: none
+}
+
+.nav_icon {
+  width: 25px;
 }
