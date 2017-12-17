@@ -5,10 +5,10 @@ var AdventureView = require('./views/adventureView');
 var PlanetView = require('./views/planetView');
 var distanceMeter;
 var navbar;
+var rulerStart;
 
 var onScroll = function() {
   var scrolled = window.scrollX;
-  var rulerStart = 5000 - window.innerWidth/2;
   if (scrolled >= rulerStart) {
     var km = (scrolled - rulerStart) * 3474.2;
     var lightMinutes = km / 17987547.5;
@@ -24,7 +24,8 @@ var onScroll = function() {
 
 var onLoad = function() {
   navbar = document.getElementById('space-nav');
-  distanceMeter = document.getElementById('distance-meter');  
+  distanceMeter = document.getElementById('distance-meter');
+  rulerStart = document.getElementById('planet_container').getBoundingClientRect().left - window.innerWidth/2;
   new Request('/planets', HomeView);
   new Request('/planets', AdventureView);
 };
