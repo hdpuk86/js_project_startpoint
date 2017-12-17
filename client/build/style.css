@@ -58,7 +58,8 @@ ul {
   align-items: center;
 }
 
-.home_planets_div {
+.home_planets_div,
+.adventure_planets_div {
   height: 100vh;
   width: 60px;
   display: flex;
@@ -75,7 +76,8 @@ ul {
   justify-content: space-around;
 }
 
-.hover_planets_div {
+.hover_planets_div,
+.hover_planets_adventure {
   height: 104px;
   width: 300px;
   font-size: 16px;
@@ -84,7 +86,8 @@ ul {
   z-index: 1;
 }
 
-.hover_name_div {
+.hover_name_div,
+.hover_name_adventure {
   margin-top: 14px;
   height: 50px;
   margin-bottom: 40px;
