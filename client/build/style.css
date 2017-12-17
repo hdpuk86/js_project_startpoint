@@ -98,6 +98,14 @@ ul {
   width: 50px;
 }
 
+#scale {
+  position: absolute;
+  left:4200px;
+  width: 600px;
+  height: 100%;
+  position: absolute;
+}
+
 #space {
   position: absolute;
   left:5000px;
@@ -110,6 +118,17 @@ ul {
   justify-content: center;
   left: 0;
   height: 50px;
+  width: 100%;
+  position: fixed;
+}
+
+#distance-div {
+  display: flex;
+  justify-content: center;
+  left: 0;
+  bottom: 0;
+  height: 50px;
+  margin-bottom: 50px;
   width: 100%;
   position: fixed;
 }
@@ -129,6 +148,7 @@ a {
   width:100%;
   height:70px;
   background-image: url('../images/ruler.png');
+
 }
 
 #planet_container {
