@@ -1,5 +1,5 @@
 var NameView = require('./nameView');
-var Hover = require('./hoverView');
+var HoverView = require('./hoverView');
 
 function createPlanetDiv(planet){
   var div = document.createElement('div');
@@ -15,7 +15,7 @@ function createPlanetDiv(planet){
   circleDiv.id = `circle_${planet.name}`;
   div.appendChild(circleDiv);
 
-  var hoverDiv = new Hover(planet);
+  var hoverDiv = new HoverView(planet);
   div.appendChild(hoverDiv);
   hoverDiv.id = `hover_${planet.name}_div`;
   hoverDiv.className = 'hover_planets_div';
