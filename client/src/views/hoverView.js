@@ -27,8 +27,8 @@ function createPlanetStats(planet){
   return ul;
 };
 
-var HoverView = function(planet){
+var Hover = function(planet){
   return createHoverDiv(planet);
 };
 
-module.exports = HoverView;
+module.exports = Hover;
