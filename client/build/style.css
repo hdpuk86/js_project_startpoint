@@ -111,8 +111,6 @@ ul {
   left:5000px;
   width: 50000px;
   height: 100%;
-  position: absolute;
-  left:5000px;
 }
 
 #space-nav {
@@ -133,6 +131,10 @@ ul {
   margin-bottom: 50px;
   width: 100%;
   position: fixed;
+}
+
+#distance-meter {
+  visibility: hidden;
 }
 
 a {
