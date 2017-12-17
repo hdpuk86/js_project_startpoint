@@ -8,7 +8,7 @@ function createPlanetDiv(planet){
 
   var nameDiv = new NameView(planet);
   nameDiv.id = `${planet.name}_name_adventure`;
-  nameDiv.className = 'hover_name_adventure';
+  nameDiv.className = 'name_adventure';
   div.appendChild(nameDiv);
 
   var circleDiv = createCircle(planet.radius +'px', planet.colour);
