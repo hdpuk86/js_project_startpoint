@@ -7,11 +7,9 @@ function addListeners(planet){
   var nameDiv = document.getElementById(`${planet.name}_name_adventure`);
   circle.addEventListener('mouseover', function(){
     hoverDiv.style.visibility = "visible";
-    nameDiv.style.visibility = "visible";
   });
   circle.addEventListener('mouseleave', function(){
     hoverDiv.style.visibility = 'hidden';
-    nameDiv.style.visibility = 'hidden';
   });
   circle.addEventListener('click', () => {
     var popup = new Popup();

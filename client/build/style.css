@@ -86,8 +86,11 @@ ul {
   z-index: 1;
 }
 
-.hover_name_div,
-.hover_name_adventure {
+.hover_planets_adventure {
+  text-align: right;
+}
+
+.hover_name_div {
   margin-top: 14px;
   height: 50px;
   margin-bottom: 40px;
@@ -172,9 +175,16 @@ a {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: flex-end;
 }
 
-.hover_name_adventure {
-  visibility: visible;
+#adventure_Sun_div {
+  margin-left: -200.5px;
+}
+
+.name_adventure {
+  font-size: 30px;
+  margin-bottom: 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
