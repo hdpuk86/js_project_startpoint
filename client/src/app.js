@@ -26,7 +26,13 @@ function addSmoothScrollToButtons(){
   var buttons = document.getElementsByClassName('nav_icon');
   debugger;
   for (var i = 0; i < buttons.length; i++){
-    console.log(buttons[i].src);
+    var button = buttons[i];
+    button.addEventListener('click',function(){
+      console.log("I've been clicked");
+    })
+    // var rect = button.getBoundingClientRect();
+    // console.log(rect.top, rect.right, rect.bottom, rect.left);
+    // console.log(buttons[i].src);
   }
 
 
