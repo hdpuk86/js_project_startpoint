@@ -121,6 +121,7 @@ ul {
   height: 50px;
   width: 100%;
   position: fixed;
+  visibility: hidden;
 }
 
 #distance-div {
