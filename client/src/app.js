@@ -22,12 +22,30 @@ var onScroll = function() {
   }
 };
 
+function addSmoothScrollToButtons(){
+  var buttons = document.getElementsByClassName('nav_icon');
+  debugger;
+  for (var i = 0; i < buttons.length; i++){
+    console.log(buttons[i].src);
+  }
+
+
+  // var adventureBtn = document.getElementById('adventure-button');
+  // adventureBtn.addEventListener('click', function(){
+  //   window.scroll({
+  //     top: 0,
+  //     left: 5000,
+  //     behavior: 'smooth'
+  //   });
+}
+
 var onLoad = function() {
   navbar = document.getElementById('space-nav');
   distanceMeter = document.getElementById('distance-meter');
   rulerStart = document.getElementById('planet_container').getBoundingClientRect().left - window.innerWidth/2;
   new Request('/planets', HomeView);
   new Request('/planets', AdventureView);
+  addSmoothScrollToButtons();
 };
 
 window.addEventListener('scroll', onScroll);
