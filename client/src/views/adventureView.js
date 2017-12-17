@@ -6,7 +6,6 @@ function addListeners(planet){
   var hoverDiv = document.getElementById(`hover_${planet.name}_adventure`);
   var nameDiv = document.getElementById(`${planet.name}_name_adventure`);
   var planetBtn = document.getElementById(`${planet.name}_button`);
-  console.log(planetBtn);
   circle.addEventListener('mouseover', function(){
     hoverDiv.style.visibility = "visible";
   });
