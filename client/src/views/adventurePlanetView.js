@@ -6,9 +6,14 @@ function createPlanetDiv(planet){
   div.id = `adventure_${planet.name}_div`;
   div.className = 'adventure_planets_div';
 
+  var img = document.createElement('img');
+  img.src = '../images/arrow.png';
+  img.id = 'arrow';
+
   var nameDiv = new NameView(planet);
   nameDiv.id = `${planet.name}_name_adventure`;
   nameDiv.className = 'name_adventure';
+  nameDiv.appendChild(img);
   div.appendChild(nameDiv);
 
   var circleDiv = createCircle(planet.radius +'px', planet.colour);

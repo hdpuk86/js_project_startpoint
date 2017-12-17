@@ -175,7 +175,7 @@ a {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: flex-end;
+  /* align-items: flex-end; */
 }
 
 #adventure_Sun_div {
@@ -186,4 +186,8 @@ a {
   font-size: 30px;
   margin-bottom: 40px;
   visibility: visible;
+  display: flex;
+  flex-direction: column;
+  /* align-items: flex-end; */
+  align-items: center;
 }
