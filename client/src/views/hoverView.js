@@ -2,8 +2,6 @@
 function createHoverDiv(planet){
   var div = document.createElement('div');
   div.style.visibility = "hidden";
-  div.id = `hover_${planet.name}_div`;
-  div.className = 'hover_planets_div';
   var ul = createPlanetStats(planet);
   div.appendChild(ul);
   return div;

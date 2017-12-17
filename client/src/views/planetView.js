@@ -7,6 +7,8 @@ function createPlanetDiv(planet){
   div.className = 'home_planets_div';
 
   var nameDiv = new NameView(planet);
+  nameDiv.id = `${planet.name}_name_div`;
+  nameDiv.className = 'hover_name_div';
   div.appendChild(nameDiv);
 
   var circleDiv = createCircle(planet.homepageRadius +'px', planet.colour);
@@ -15,6 +17,8 @@ function createPlanetDiv(planet){
 
   var hoverDiv = new Hover(planet);
   div.appendChild(hoverDiv);
+  hoverDiv.id = `hover_${planet.name}_div`;
+  hoverDiv.className = 'hover_planets_div';
 
   div.style.width = `${planet.homepageRadius + 30}px`;
   return div;
