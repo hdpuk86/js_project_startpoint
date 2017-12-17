@@ -7,7 +7,17 @@ var PlanetView = require('./views/planetView');
 var distanceMeter;
 
 var onScroll = function() {
-  distanceMeter.innerText = Math.round(((window.scrollX * 3474.2) / 17987547.5)*100) / 100 + ' light minutes';
+  var scrolled = window.scrollX;
+  var rulerStart = 5000 - window.innerWidth/2;
+  if (scrolled >= rulerStart) {
+    var km = (scrolled - rulerStart) * 3474.2;
+    var lightMinutes = km / 17987547.5;
+    var rounded = Math.round(lightMinutes * 100) / 100; // to 2 d.p.
+    distanceMeter.innerText = rounded + ' light minutes';
+    distanceMeter.style.visibility = 'visible';
+  } else {
+    distanceMeter.style.visibility = 'hidden';
+  }
 };
 
 var onLoad = function() {

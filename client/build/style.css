@@ -134,6 +134,10 @@ ul {
   position: fixed;
 }
 
+#distance-meter {
+  visibility: hidden;
+}
+
 a {
   text-decoration: none;
 }
