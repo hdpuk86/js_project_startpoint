@@ -91,6 +91,7 @@ ul {
 }
 
 .circle:hover {
+  cursor: pointer;
   box-shadow: 0px 0px 3px 3px white;
 }
 
@@ -153,4 +154,9 @@ a {
   height:70px;
   background-image: url('../images/ruler.png');
 
+}
+
+#planet_container {
+  display: flex;
+  flex-direction: row;
 }

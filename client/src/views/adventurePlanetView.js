@@ -3,24 +3,23 @@ var HoverView = require('./hoverView');
 
 function createPlanetDiv(planet){
   var div = document.createElement('div');
-  div.id = `home_${planet.name}_div`;
-  div.className = 'home_planets_div';
+  div.id = `adventure_${planet.name}_div`;
+  div.className = 'adventure_planets_div';
 
   var nameDiv = new NameView(planet);
-  nameDiv.id = `${planet.name}_name_div`;
-  nameDiv.className = 'hover_name_div';
+  nameDiv.id = `${planet.name}_name_adventure`;
+  nameDiv.className = 'hover_name_adventure';
   div.appendChild(nameDiv);
 
-  var circleDiv = createCircle(planet.homepageRadius +'px', planet.colour);
-  circleDiv.id = `circle_${planet.name}`;
+  var circleDiv = createCircle(planet.radius +'px', planet.colour);
+  circleDiv.id = `adventure_${planet.name}_circle`;
   div.appendChild(circleDiv);
 
   var hoverDiv = new HoverView(planet);
+  hoverDiv.id = `hover_${planet.name}_adventure`;
+  hoverDiv.className = 'hover_planets_adventure';
   div.appendChild(hoverDiv);
-  hoverDiv.id = `hover_${planet.name}_div`;
-  hoverDiv.className = 'hover_planets_div';
 
-  div.style.width = `${planet.homepageRadius + 30}px`;
   return div;
 };
 
@@ -34,8 +33,8 @@ function createCircle(pixelSize, colour){
   return div;
 };
 
-var PlanetView = function(planet) {
+var AdventurePlanet = function(planet) {
   return createPlanetDiv(planet);
 };
 
-module.exports = PlanetView;
+module.exports = AdventurePlanet;
