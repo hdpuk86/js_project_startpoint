@@ -7,6 +7,8 @@
   <link rel="stylesheet" href="style.css">
   <link rel="shortcut icon"href="./icon.png">
   <script src="bundle.js"></script>
+  <script src="dist/js/smooth-scroll.js"></script>
+
   <title>Space Oddity</title>
 </head>
 <body>
@@ -64,10 +66,13 @@
         <img src="../images/pluto_icon.svg" alt="" class="nav_icon">
       </a>
     </div>
-    
+
     <div id="planet_container"></div>
     <div id="distance-div"><p id="distance-meter">0 light minutes</p></div>
     <div id="space-footer"></div>
   </div>
+  <script>
+    var scroll = new SmoothScroll('a[href*="#"]');
+</script> 
 </body>
 </html>

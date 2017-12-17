@@ -9,7 +9,7 @@ function createNameDiv(planet){
 //renders planet name
 function createName(planet){
   var p = document.createElement('p');
-  p.innerText = planet.name;
+  p.innerText = planet.name.toUpperCase();
   return p;
 }
 
