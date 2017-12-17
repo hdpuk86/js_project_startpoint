@@ -1,5 +1,4 @@
 var PlanetView = require('./planetView');
-var HoverView = require('./hoverView');
 var Popup = require('./popupView');
 
 function addListeners(planet){
