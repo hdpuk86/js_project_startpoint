@@ -5,6 +5,8 @@ function addListeners(planet){
   var circle = document.getElementById(`adventure_${planet.name}_circle`);
   var hoverDiv = document.getElementById(`hover_${planet.name}_adventure`);
   var nameDiv = document.getElementById(`${planet.name}_name_adventure`);
+  var planetBtn = document.getElementById(`${planet.name}_button`);
+  console.log(planetBtn);
   circle.addEventListener('mouseover', function(){
     hoverDiv.style.visibility = "visible";
   });
@@ -17,7 +19,18 @@ function addListeners(planet){
     popup.setContent(newContent);
     popup.display();
   });
+  planetBtn.addEventListener('click', function(){
+    smoothScroll(planet.distance+2000);
+  })
 };
+
+function smoothScroll(scrollToPx){
+  window.scroll({
+    top: 0,
+    left: scrollToPx,
+    behavior: 'smooth'
+  });
+}
 
 var AdventureView = function(planets) {
   var div = document.getElementById('planet_container');
