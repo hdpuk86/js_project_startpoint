@@ -1,7 +1,6 @@
 //creates the name div and appends text
 function createNameDiv(planet){
   var div = document.createElement('div');
-  div.style.visibility = "hidden";
   var p = createName(planet);
   div.appendChild(p);
   return div;

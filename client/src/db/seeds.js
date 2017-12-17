@@ -22,7 +22,8 @@ db.planets.insertMany([
       Magnesium: 0.05,
       Sulfur: 0.04,
     },
-    distance: 0, // In pixels from the sun.
+    distance: 0, // In pixels from the Sun.
+    distanceFromLast: -200.5, // In pixels from last object.
     gravity: 27.94,// In g, Earth gravities.
     colour: '#fde301',
     homepageRadius: 150,
@@ -47,6 +48,7 @@ db.planets.insertMany([
       Others: 0.5
     },
     distance: 16713,
+    distanceFromLast: 16713,
     gravity: 0.38,
     colour: '#ffcc00',
     homepageRadius: 15,
@@ -67,6 +69,7 @@ db.planets.insertMany([
       Nitrogen: 3.5
     },
     distance: 31230,
+    distanceFromLast: 14517,
     gravity: 0.904,
     colour: '#86ffca',
     homepageRadius: 35,
@@ -89,6 +92,7 @@ db.planets.insertMany([
       Carbon_Dioxide: 0.04
     },
     distance: 43060,
+    distanceFromLast: 11830,
     gravity: 1,
     colour: '#01fdfa',
     homepageRadius: 35,
@@ -107,6 +111,7 @@ db.planets.insertMany([
     composition: {
     },
     distance: 43171, // When furthest from sun around Earth.
+    distanceFromLast: 111,
     gravity: 0.165,
     colour: 'grey',
     homepageRadius: 10,
@@ -130,6 +135,7 @@ db.planets.insertMany([
       Carbon_Monoxide: 0.06
     },
     distance: 65786,
+    distanceFromLast: 22615,
     gravity: 0.376,
     colour: '#ff7443',
     homepageRadius: 20,
@@ -150,6 +156,7 @@ db.planets.insertMany([
       helium: 8,
     },
     distance: 224101,
+    distanceFromLast: 158315,
     gravity: 2.528,
     colour: '#ffa043' ,
     homepageRadius: 80,
@@ -171,6 +178,7 @@ db.planets.insertMany([
       methane: 0.45,
     },
     distance: 412620,
+    distanceFromLast: 188519,
     gravity: 1.065,
     colour: '#f9d293',
     homepageRadius: 67,
@@ -192,6 +200,7 @@ db.planets.insertMany([
       methane: 2,
     },
     distance: 829831,
+    distanceFromLast: 417211,
     gravity: 0.89,
     colour: '#18E6FF',
     homepageRadius: 29,
@@ -213,6 +222,7 @@ db.planets.insertMany([
       Methane: 1
     },
     distance: 1300443,
+    distanceFromLast: 470612,
     gravity: 1.14,
     colour: '#45B9FF',
     homepageRadius: 28,
@@ -233,6 +243,7 @@ db.planets.insertMany([
       Methane: 10,
     },
     distance: 1704630,
+    distanceFromLast: 404187,
     gravity: 0.063,
     colour: '#D9F5FF',
     homepageRadius: 5,
