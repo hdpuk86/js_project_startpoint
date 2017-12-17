@@ -10,6 +10,7 @@ function createNameDiv(planet){
 function createName(planet){
   var p = document.createElement('p');
   p.innerText = planet.name.toUpperCase();
+  p.style.color = planet.colour;
   return p;
 }
 
