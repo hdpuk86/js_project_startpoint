@@ -124,6 +124,17 @@ ul {
   position: fixed;
 }
 
+#distance-div {
+  display: flex;
+  justify-content: center;
+  left: 0;
+  bottom: 0;
+  height: 50px;
+  margin-bottom: 50px;
+  width: 100%;
+  position: fixed;
+}
+
 a {
   text-decoration: none;
 }
