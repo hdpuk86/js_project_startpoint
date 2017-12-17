@@ -1,6 +1,8 @@
 var HomeView = require('./views/homeView');
 var Request = require('./request');
 var Popup = require('./views/popupView');
+var AdventureView = require('./views/adventureView');
+
 var PlanetView = require('./views/planetView');
 var distanceMeter;
 
@@ -11,6 +13,7 @@ var onScroll = function() {
 var onLoad = function() {
   distanceMeter = document.getElementById('distance-meter');  
   new Request('/planets', HomeView);
+  new Request('/planets', AdventureView);
 };
 
 window.addEventListener('scroll', onScroll);

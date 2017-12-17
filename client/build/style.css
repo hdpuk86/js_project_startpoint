@@ -111,8 +111,6 @@ ul {
   left:5000px;
   width: 50000px;
   height: 100%;
-  position: absolute;
-  left:5000px;
 }
 
 #space-nav {
@@ -151,4 +149,9 @@ a {
   height:70px;
   background-image: url('../images/ruler.png');
 
+}
+
+#planet_container {
+  display: flex;
+  flex-direction: row;
 }
