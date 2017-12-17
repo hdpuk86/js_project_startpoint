@@ -20,12 +20,13 @@ function createPlanetDiv(planet){
   hoverDiv.className = 'hover_planets_adventure';
   div.appendChild(hoverDiv);
 
+  div.style.marginLeft = `${planet.distanceFromLast}px`;
   return div;
 };
 
 function createCircle(pixelSize, colour){
   var div = document.createElement('div');
-  div.className = "circle";
+  div.className = 'circle adventure_planet';
   div.style.borderRadius = '50%';
   div.style.width = pixelSize;
   div.style.height = pixelSize;
