@@ -10,12 +10,18 @@ function addListeners(planet){
   var nameDiv = document.getElementById(`${planet.name}_name_div`);
   var imgButton = createButton();
   var pieChart = new PieCompView(planet);
+  hoverDiv.style.opacity = 0;
+  hoverDiv.style.transition = 'opacity 1.0s linear';
   circle.addEventListener('mouseover', function(){
+    hoverDiv.style.opacity = 1;
     hoverDiv.style.visibility = "visible";
     nameDiv.style.visibility = "visible";
+
+
   });
   circle.addEventListener('mouseleave', function(){
     hoverDiv.style.visibility = 'hidden';
+    hoverDiv.style.opacity = 0;
     nameDiv.style.visibility = 'hidden';
   });
   circle.addEventListener('click', () => {
