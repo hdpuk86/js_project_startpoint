@@ -259,29 +259,24 @@ db.planets.insertMany([
     description: 'Mars is the fourth planet from the Sun and the second-smallest planet in the Solar System after Mercury. In English, Mars carries a name of the Roman god of war, and is often referred to as the "Red Planet" because the reddish iron oxide prevalent on its surface gives it a reddish appearance that is distinctive among the astronomical bodies visible to the naked eye. Mars is a terrestrial planet with a thin atmosphere, having surface features reminiscent both of the impact craters of the Moon and the valleys, deserts, and polar ice caps of Earth.',
     quiz: {
       questions:[{
-      question:"How is the magnetic field generated?",
-      correctAnswer: "Internal convective motion",
-      allAnswers: ["Radio frequency transmission", "Electrical conduction", "External convective motion", "Internal convective motion"]
+      question:"What colour is Mars?",
+      correctAnswer: "Red",
+      allAnswers: ["Yellow", "Green", "Blue", "Red"]
       },
       {
-      question:"How many Earths fit in the diameter?",
-      correctAnswer: 109,
-      allAnswers: [1, 23, 406, 109]
+      question:"Mars is named after the Roman god of?",
+      correctAnswer: "War",
+      allAnswers: ["Dogs", "Love", "Peace", "War"]
     },
      {
-     question:"Which gas makes up most of the Sun?",
-     correctAnswer: "Hydrogen",
-     allAnswers: ["Methane", "Oxygen", "Helium", "Hydrogen"]
+     question:"What is formed at the polar extremes of Mars?",
+     correctAnswer: "Ice",
+     allAnswers: ["Methane", "Pyramids", "Grass", "Ice"]
     },
      {
-    question:"How many Earths make up the Sun's mass?",
-    correctAnswer: 333000,
-    allAnswers: [555000, 222000, 444000, 333000]
-    },
-     {
-    question:"How many Earths fit inside the Sun?",
-    correctAnswer: 1304000,
-    allAnswers: [5, 14030000, 1500000, 1304000]
+    question:"What compound gives Mars it\'s colour?",
+    correctAnswer: "Iron oxide",
+    allAnswers: ["Rainbow", "Paint", "Carbon dioxide", "Iron oxide"]
     }]
   }
   },
