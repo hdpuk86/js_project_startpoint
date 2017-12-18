@@ -7,7 +7,6 @@ var PieChart = function(container, title, series){
       type: "pie",
       renderTo: container,
       margin: [20, 20, 40, 20]
-      // spacing: [20, 20, 40, 20]
     },
     title: {
       text: title,
