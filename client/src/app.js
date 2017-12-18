@@ -4,6 +4,7 @@ var Popup = require('./views/popupView');
 var AdventureView = require('./views/adventureView');
 var PlanetView = require('./views/planetView');
 var flatEarth = require('./views/flatEarth');
+var distanceUnitSelector;
 var distanceMeter;
 var navbar;
 var rulerStart;
@@ -19,21 +20,25 @@ var onScroll = function() {
   rulerStart = document.getElementById('planet_container').getBoundingClientRect().left - window.innerWidth / 2;
   if (rulerStart <= 0) {
     shakeRocketMan();
-    var km = (-rulerStart) * 3474.2;
-    var lightMinutes = km / 17987547.5;
-    var rounded = Math.round(lightMinutes * 100) / 100; // to 2 d.p.
-    distanceMeter.innerText = rounded + ' light minutes';
+    var pixels = -rulerStart;
+    var distance = pixels * parseFloat(distanceUnitSelector.value);
+    var rounded = Math.round(distance * 100) / 100; // to 2 d.p.
+    distanceMeter.innerText = rounded + ' ';
     navbar.style.visibility = 'visible';
     distanceMeter.style.visibility = 'visible';
     rocketMan.style.visibility = 'visible';
+    distanceUnitSelector.style.visibility = 'visible';
   } else {
     navbar.style.visibility = 'hidden';
     distanceMeter.style.visibility = 'hidden';
     rocketMan.style.visibility = 'hidden';
+    distanceUnitSelector.style.visibility = 'hidden';
   }
 };
 
 var onLoad = function() {
+  distanceUnitSelector = document.getElementById('distance-unit');
+  distanceUnitSelector.addEventListener('change', onScroll);
   navbar = document.getElementById('space-nav');
   distanceMeter = document.getElementById('distance-meter');
   rocketMan = document.getElementById('rocket_man');
