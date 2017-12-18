@@ -7,7 +7,7 @@ var pResult = document.createElement('p');
 var checkRadioAnswer = function(element, correctAnswer){
   disableRadioBtns();
   colourLabels(correctAnswer);
-  if(element.value === correctAnswer){
+  if(element.value == correctAnswer){
     pResult.innerText = 'Correct'
     pResult.style.color = 'green';
   }else {
@@ -31,7 +31,7 @@ function colourLabels(correctAnswer){
   console.log(correctAnswer);
   // Loop over radio buttons and disable them
   for( var i = 0; i < labels.length; i++){
-    if(labels[i].innerText === correctAnswer){
+    if(labels[i].innerText == correctAnswer){
       labels[i].style.color = 'green';
     }else{
       labels[i].style.color = 'grey';
@@ -40,13 +40,12 @@ function colourLabels(correctAnswer){
   };
 }
 
-var Quiz = function(planet, popup, num){
+var Quiz = function(planet, popup, questionNumber, quizScore){
   // Creates a div based on the passed in question number 0 = 1
   // Get the questions for the planet
   var questions = planet.quiz.questions;
   // Get the number of question that was passed in
-  var question = questions[num];
-
+  var question = questions[questionNumber];
   // Create quiz div
   var quizDiv = document.createElement('div');
   // Add Quiz name paragraph
@@ -95,9 +94,9 @@ var Quiz = function(planet, popup, num){
   imgButton.width = 25;
   imgButton.addEventListener('click', function(){
     // increases the number in the question array
-    num++
+    questionNumber++
     // Creates a new div based on the question
-    var div = new Quiz(planet, popup, num);
+    var div = new Quiz(planet, popup, questionNumber);
     // repopulates the popuo with the new question
     popup.setContent(div);
   })
