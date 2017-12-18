@@ -51,11 +51,8 @@ function saveQuizScoreToStorage(planet, newQuizScore){
   localStorage.setItem(`${planet.name}QuizResult`, jsonString);
 }
 
-var Quiz = function(planet, popup, questionNumber){
-  // Creates a div based on the passed in question number 0 = 1
-  // Get the questions for the planet
+function buildQuestionPage(planet, popup, questionNumber){
   var questions = planet.quiz.questions;
-  // Get the number of question that was passed in
   var question = questions[questionNumber];
   // Create quiz div
   var quizDiv = document.createElement('div');
@@ -86,8 +83,8 @@ var Quiz = function(planet, popup, questionNumber){
     questionInput.class = 'radioAnswers';
     questionInput.addEventListener('click', function(){
       var quizScore = getQuizScoreFromStorage(planet);
-      console.log(quizScore);
-      var newQuizScore = checkRadioAnswer(questionInput, question.correctAnswer, quizScore);
+      var newQuizScore =
+      checkRadioAnswer(questionInput, question.correctAnswer, quizScore);
       saveQuizScoreToStorage(planet, newQuizScore);
     })
 
@@ -122,6 +119,20 @@ var Quiz = function(planet, popup, questionNumber){
   quizDiv.appendChild(pQCounter);
 
   return quizDiv;
+}
+
+var Quiz = function(planet, popup, questionNumber){
+  // Creates a div based on the passed in question number 0 = 1
+  // Get the questions for the planet
+  var questions = planet.quiz.questions;
+  // Check if its the last question
+  if (questionNumber < questions.length){
+    var div = buildQuestionPage(planet, popup, questionNumber);
+    return div;
+  }else{
+    buildResultPage(planet, popup);
+  }
+
 }
 
 module.exports = Quiz;
