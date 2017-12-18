@@ -41,6 +41,9 @@ var Quiz = function(planet){
     var imgButton = document.createElement('img');
     imgButton.src = '../images/right_arrow.png';
     imgButton.width = 25;
+    imgButton.addEventListener('click', function(){
+      console.log('quiz button');
+    })
     quizDiv.appendChild(imgButton);
 
     questionDivs.push(quizDiv);

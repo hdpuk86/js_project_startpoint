@@ -49,8 +49,9 @@ function createButton(planet){
 };
 
 function loadQuiz(planet){
+  counter = 0;
   var divs = new Quiz(planet);
-  popup.setContent(divs[0]);
+  popup.setContent(divs[counter]);
 };
 
 var HomeView = function(planets) {
