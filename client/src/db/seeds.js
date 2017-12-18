@@ -346,7 +346,7 @@ db.planets.insertMany([
     description: 'Saturn is the sixth planet from the Sun and the second-largest in the Solar System, after Jupiter. It is a gas giant with an average radius about nine times that of Earth. It has only one-eighth the average density of Earth, but with its larger volume Saturn is over 95 times more massive. Saturn is named after the Roman god of agriculture; its astronomical symbol represents the god\'s sickle.',
     quiz: {
       questions:[{
-      question:"Which object does the astrnomical symbol of Saturn represent?",
+      question:"Which object does the astronomical symbol of Saturn represent?",
       correctAnswer: "Saturn\'s sickle",
       allAnswers: ["Saturn\'s inflatable whale", "Saturn\'s rake", "Saturn\'s hammer", "Saturn\'s sickle"]
       },
@@ -390,29 +390,24 @@ db.planets.insertMany([
     description: 'Uranus is the seventh planet from the Sun. It has the third-largest planetary radius and fourth-largest planetary mass in the Solar System. Uranus is similar in composition to Neptune, and both have different bulk chemical composition from that of the larger gas giants Jupiter and Saturn. For this reason, scientists often classify Uranus and Neptune as "ice giants" to distinguish them from the gas giants. Uranus\'s atmosphere is similar to Jupiter\'s and Saturn\'s in its primary composition of hydrogen and helium, but it contains more "ices" such as water, ammonia, and methane, along with traces of other hydrocarbons. It is the coldest planetary atmosphere in the Solar System, with a minimum temperature of 49 K (−224 °C; −371 °F), and has a complex, layered cloud structure with water thought to make up the lowest clouds and methane the uppermost layer of clouds.The interior of Uranus is mainly composed of ices and rock.',
     quiz: {
       questions:[{
-      question:"How is the magnetic field generated?",
-      correctAnswer: "Internal convective motion",
-      allAnswers: ["Radio frequency transmission", "Electrical conduction", "External convective motion", "Internal convective motion"]
+      question:"What makes Uranus unique?",
+      correctAnswer: "It has the coldest atmosphere",
+      allAnswers: ["It has no atmosphere", "It has the thinnest atmosphere", "It has the hottest atmosphere", "It has the coldest atmosphere"]
       },
       {
-      question:"How many Earths fit in the diameter?",
-      correctAnswer: 109,
-      allAnswers: [1, 23, 406, 109]
+      question:"What is Uranus popularly known as?",
+      correctAnswer: "An ice giant",
+      allAnswers: ["A dwarf planet", "A jolly green giant", "A gas giant", "An ice giant"]
     },
      {
-     question:"Which gas makes up most of the Sun?",
+     question:"Which gas makes up most of Uranus?",
      correctAnswer: "Hydrogen",
      allAnswers: ["Methane", "Oxygen", "Helium", "Hydrogen"]
     },
      {
-    question:"How many Earths make up the Sun's mass?",
-    correctAnswer: 333000,
-    allAnswers: [555000, 222000, 444000, 333000]
-    },
-     {
-    question:"How many Earths fit inside the Sun?",
-    correctAnswer: 1304000,
-    allAnswers: [5, 14030000, 1500000, 1304000]
+    question:"How many moons does Uranus have?",
+    correctAnswer: 27,
+    allAnswers: [2, 120, 30, 27]
     }]
   }
   },
