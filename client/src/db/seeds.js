@@ -94,7 +94,7 @@ db.planets.insertMany([
       allAnswers: [66, 77, 99, 88]
     },
      {
-     question:"Which is the best time to see Mercury?",
+     question:"When is the best time to see Mercury?",
      correctAnswer: "During a Solar Eclipse",
      allAnswers: ["At night", "Winter time", "Anytime", "During a Solar Eclipse"]
     },
@@ -302,29 +302,24 @@ db.planets.insertMany([
     description: 'Jupiter is the fifth planet from the Sun and the largest in the Solar System. It is a giant planet with a mass one-thousandth that of the Sun, but two-and-a-half times that of all the other planets in the Solar System combined. Jupiter and Saturn are gas giants; the other two giant planets, Uranus and Neptune are ice giants. Jupiter has been known to astronomers since antiquity. The Romans named it after their god Jupiter. When viewed from Earth, Jupiter can reach an apparent magnitude of −2.94, bright enough for its reflected light to cast shadows, and making it on average the third-brightest object in the night sky after the Moon and Venus.',
     quiz: {
       questions:[{
-      question:"How is the magnetic field generated?",
-      correctAnswer: "Internal convective motion",
-      allAnswers: ["Radio frequency transmission", "Electrical conduction", "External convective motion", "Internal convective motion"]
+      question:"What makes Jupiter unique?",
+      correctAnswer: "It\'s the largest planet in the solar system",
+      allAnswers: ["It\'s made of chocolate", "It\'s the only planet in the solar system", "It\'s the lightest planet in the solar system", "It\'s the largest planet in the solar system"]
       },
       {
-      question:"How many Earths fit in the diameter?",
-      correctAnswer: 109,
-      allAnswers: [1, 23, 406, 109]
+      question:"Jupiter is know as....?",
+      correctAnswer: "A gas giant",
+      allAnswers: ["An asteroid", "An ice giant", "A dwarf planet", "A gas giant"]
     },
      {
-     question:"Which gas makes up most of the Sun?",
-     correctAnswer: "Hydrogen",
-     allAnswers: ["Methane", "Oxygen", "Helium", "Hydrogen"]
+     question:"Who named Jupiter after one of their Gods?",
+     correctAnswer: "The Romans",
+     allAnswers: ["The Americans", "The Egyptians", "The Mayans", "The Romans"]
     },
      {
-    question:"How many Earths make up the Sun's mass?",
-    correctAnswer: 333000,
-    allAnswers: [555000, 222000, 444000, 333000]
-    },
-     {
-    question:"How many Earths fit inside the Sun?",
-    correctAnswer: 1304000,
-    allAnswers: [5, 14030000, 1500000, 1304000]
+    question:"How long is a day on Jupiter in Earth hours?",
+    correctAnswer: 10,
+    allAnswers: [110, 24, 365, 10]
     }]
   }
   },
@@ -351,29 +346,24 @@ db.planets.insertMany([
     description: 'Saturn is the sixth planet from the Sun and the second-largest in the Solar System, after Jupiter. It is a gas giant with an average radius about nine times that of Earth. It has only one-eighth the average density of Earth, but with its larger volume Saturn is over 95 times more massive. Saturn is named after the Roman god of agriculture; its astronomical symbol represents the god\'s sickle.',
     quiz: {
       questions:[{
-      question:"How is the magnetic field generated?",
-      correctAnswer: "Internal convective motion",
-      allAnswers: ["Radio frequency transmission", "Electrical conduction", "External convective motion", "Internal convective motion"]
+      question:"Which object does the astronomical symbol of Saturn represent?",
+      correctAnswer: "Saturn\'s sickle",
+      allAnswers: ["Saturn\'s inflatable whale", "Saturn\'s rake", "Saturn\'s hammer", "Saturn\'s sickle"]
       },
       {
-      question:"How many Earths fit in the diameter?",
-      correctAnswer: 109,
-      allAnswers: [1, 23, 406, 109]
+      question:"What number from the sun is Saturn?",
+      correctAnswer: "6th",
+      allAnswers: ["9th", "4th", "5th", "6th"]
     },
      {
-     question:"Which gas makes up most of the Sun?",
+     question:"Which gas is Saturn mostly made of?",
      correctAnswer: "Hydrogen",
      allAnswers: ["Methane", "Oxygen", "Helium", "Hydrogen"]
     },
      {
-    question:"How many Earths make up the Sun's mass?",
-    correctAnswer: 333000,
-    allAnswers: [555000, 222000, 444000, 333000]
-    },
-     {
-    question:"How many Earths fit inside the Sun?",
-    correctAnswer: 1304000,
-    allAnswers: [5, 14030000, 1500000, 1304000]
+    question:"Which planet is bigger than Saturn?",
+    correctAnswer: "Jupiter",
+    allAnswers: ["Pluto", "Mars", "Earth", "Jupiter"]
     }]
   }
   },
@@ -400,29 +390,24 @@ db.planets.insertMany([
     description: 'Uranus is the seventh planet from the Sun. It has the third-largest planetary radius and fourth-largest planetary mass in the Solar System. Uranus is similar in composition to Neptune, and both have different bulk chemical composition from that of the larger gas giants Jupiter and Saturn. For this reason, scientists often classify Uranus and Neptune as "ice giants" to distinguish them from the gas giants. Uranus\'s atmosphere is similar to Jupiter\'s and Saturn\'s in its primary composition of hydrogen and helium, but it contains more "ices" such as water, ammonia, and methane, along with traces of other hydrocarbons. It is the coldest planetary atmosphere in the Solar System, with a minimum temperature of 49 K (−224 °C; −371 °F), and has a complex, layered cloud structure with water thought to make up the lowest clouds and methane the uppermost layer of clouds.The interior of Uranus is mainly composed of ices and rock.',
     quiz: {
       questions:[{
-      question:"How is the magnetic field generated?",
-      correctAnswer: "Internal convective motion",
-      allAnswers: ["Radio frequency transmission", "Electrical conduction", "External convective motion", "Internal convective motion"]
+      question:"What makes Uranus unique?",
+      correctAnswer: "It has the coldest atmosphere",
+      allAnswers: ["It has no atmosphere", "It has the thinnest atmosphere", "It has the hottest atmosphere", "It has the coldest atmosphere"]
       },
       {
-      question:"How many Earths fit in the diameter?",
-      correctAnswer: 109,
-      allAnswers: [1, 23, 406, 109]
+      question:"What is Uranus popularly known as?",
+      correctAnswer: "An ice giant",
+      allAnswers: ["A dwarf planet", "A jolly green giant", "A gas giant", "An ice giant"]
     },
      {
-     question:"Which gas makes up most of the Sun?",
+     question:"Which gas makes up most of Uranus?",
      correctAnswer: "Hydrogen",
      allAnswers: ["Methane", "Oxygen", "Helium", "Hydrogen"]
     },
      {
-    question:"How many Earths make up the Sun's mass?",
-    correctAnswer: 333000,
-    allAnswers: [555000, 222000, 444000, 333000]
-    },
-     {
-    question:"How many Earths fit inside the Sun?",
-    correctAnswer: 1304000,
-    allAnswers: [5, 14030000, 1500000, 1304000]
+    question:"How many moons does Uranus have?",
+    correctAnswer: 27,
+    allAnswers: [2, 120, 30, 27]
     }]
   }
   },
@@ -449,29 +434,24 @@ db.planets.insertMany([
     description: 'Neptune is the eighth and farthest known planet from the Sun in the Solar System. In the Solar System, it is the fourth-largest planet by diameter, the third-most-massive planet, and the densest giant planet. Neptune is 17 times the mass of Earth and is slightly more massive than its near-twin Uranus, which is 15 times the mass of Earth and slightly larger than Neptune. Neptune orbits the Sun once every 164.8 years at an average distance of 30.1 astronomical units (4.50 billion km). It is named after the Roman god of the sea and its astronomical symbol represents a stylised version of the god Neptune\'s trident.',
     quiz: {
       questions:[{
-      question:"How is the magnetic field generated?",
-      correctAnswer: "Internal convective motion",
-      allAnswers: ["Radio frequency transmission", "Electrical conduction", "External convective motion", "Internal convective motion"]
+      question:"What makes Neptune unique?",
+      correctAnswer: "It is the densest giant planet",
+      allAnswers: ["It is the warmest giant planet", "It is the greenest giant planet", "It is the largest giant planet", "It is the densest giant planet"]
       },
       {
-      question:"How many Earths fit in the diameter?",
-      correctAnswer: 109,
-      allAnswers: [1, 23, 406, 109]
+      question:"How far is Neptune from the sun?",
+      correctAnswer: "4.50 Billion km",
+      allAnswers: ["100 Million km", "3.6 Million km", "5.40 Billion km", "4.50 Billion km"]
     },
      {
-     question:"Which gas makes up most of the Sun?",
-     correctAnswer: "Hydrogen",
-     allAnswers: ["Methane", "Oxygen", "Helium", "Hydrogen"]
+     question:"How long is a day on Neptune in Earth hours?",
+     correctAnswer: 16,
+     allAnswers: [4, 300, 24, 16]
     },
      {
-    question:"How many Earths make up the Sun's mass?",
-    correctAnswer: 333000,
-    allAnswers: [555000, 222000, 444000, 333000]
-    },
-     {
-    question:"How many Earths fit inside the Sun?",
-    correctAnswer: 1304000,
-    allAnswers: [5, 14030000, 1500000, 1304000]
+    question:"What is Neptune\'s symbol?",
+    correctAnswer: "Trident",
+    allAnswers: ["Fishing rod", "Hammer", "Sickle", "Trident"]
     }]
   }
   },
@@ -497,29 +477,24 @@ db.planets.insertMany([
     description: 'Pluto (minor-planet designation: 134340 Pluto) is a dwarf planet in the Kuiper belt, a ring of bodies beyond Neptune. It was the first Kuiper belt object to be discovered. Pluto was discovered by Clyde Tombaugh in 1930 and was originally considered to be the ninth planet from the Sun. After 1992, its status as a planet was questioned following the discovery of several objects of similar size in the Kuiper belt. In 2005, Eris, a dwarf planet in the scattered disc which is 27% more massive than Pluto, was discovered. This led the International Astronomical Union (IAU) to define the term "planet" formally in 2006, during their 26th General Assembly. That definition excluded Pluto and reclassified it as a dwarf planet.',
     quiz: {
       questions:[{
-      question:"How is the magnetic field generated?",
-      correctAnswer: "Internal convective motion",
-      allAnswers: ["Radio frequency transmission", "Electrical conduction", "External convective motion", "Internal convective motion"]
+      question:"What is Pluto known as?",
+      correctAnswer: "A dwarf planet",
+      allAnswers: ["An asteroid", "An ice giant", "A gas giant", "A dwarf planet"]
       },
       {
-      question:"How many Earths fit in the diameter?",
-      correctAnswer: 109,
-      allAnswers: [1, 23, 406, 109]
+      question:"What is the name of the body Pluto is a part of?",
+      correctAnswer: "The Kuiper Belt",
+      allAnswers: ["The Interstellar Belt", "The Van Alan Belt", "The Asteroid Belt", "The Kuiper Belt"]
     },
      {
-     question:"Which gas makes up most of the Sun?",
-     correctAnswer: "Hydrogen",
-     allAnswers: ["Methane", "Oxygen", "Helium", "Hydrogen"]
+     question:"Who discovered Pluto?",
+     correctAnswer: "Clyde Tombaugh",
+     allAnswers: ["Simon Cowell", "Walt Disney", "Arthur C Clarke", "Clyde Tombaugh"]
     },
      {
-    question:"How many Earths make up the Sun's mass?",
-    correctAnswer: 333000,
-    allAnswers: [555000, 222000, 444000, 333000]
-    },
-     {
-    question:"How many Earths fit inside the Sun?",
-    correctAnswer: 1304000,
-    allAnswers: [5, 14030000, 1500000, 1304000]
+    question:"When did Pluto cease to be known as a planet?",
+    correctAnswer: 2006,
+    allAnswers: [1986, 1935, 2017, 2006]
     }]
   }
   }
