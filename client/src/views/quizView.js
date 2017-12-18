@@ -6,10 +6,14 @@ var Quiz = function(planet){
   var pQuizName = document.createElement('p');
   pQuizName.innerText = planet.name;
 
+  quizDiv.appendChild(pQuizName);
+
   // Add question
 
   var pQuestion = document.createElement('p');
   pQuestion.innerText = planet.quiz.question;
+  quizDiv.appendChild(pQuestion);
+
 
   // Create form element
   var quizForm = document.createElement('form');
@@ -25,6 +29,10 @@ var Quiz = function(planet){
 
     quizForm.appendChild(questionInput);
   })
+
+  quizDiv.appendChild(quizForm);
+
+  return quizDiv;
 
   // Add next button
 
