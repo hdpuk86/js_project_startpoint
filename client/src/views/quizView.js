@@ -1,6 +1,15 @@
 var Popup = require('./popupView');
 var Quiz = require('./quizView');
 
+var checkRadioAnswer = function(element, correctAnswer){
+  console.log(correctAnswer);
+  if(element.value === correctAnswer){
+    console.log("Correct");
+  }else {
+    console.log("Incorrect");
+  }
+}
+
 var Quiz = function(planet, popup, num){
   // Creates a div based on the passed in question number 0 = 1
   // Get the questions for the planet
@@ -34,6 +43,9 @@ var Quiz = function(planet, popup, num){
     questionInput.setAttribute('type', 'radio');
     questionInput.setAttribute('name', planet.name);
     questionInput.setAttribute('value', answer);
+    questionInput.addEventListener('click', function(){
+      checkRadioAnswer(questionInput, question.correctAnswer);
+    })
 
     label.appendChild(questionInput);
     li.appendChild(label);
