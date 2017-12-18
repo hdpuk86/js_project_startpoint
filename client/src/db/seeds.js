@@ -55,15 +55,6 @@ db.planets.insertMany([
     volume: 0.06,
     mass: 0.06,
     description: 'Mercury is the smallest planet in the Solar System. It is the closest planet to the sun. It makes one trip around the Sun once every 87.969 days. Mercury is bright when it is visible from Earth, ranging from −2.0 to 5.5 in apparent magnitude. It cannot be easily seen as it is usually too close to the Sun. Because Mercury is normally lost in the glare of the Sun (except during a solar eclipse), Mercury can only be seen in the morning or evening twilight.',
-    quiz: {
-      questions: [
-        {
-        question: "This is test",
-        correctAnswer: 12,
-        allAnswers: [1,2,3,12]
-      }
-    ]
-    }
   },
   {
     name: 'Venus',
