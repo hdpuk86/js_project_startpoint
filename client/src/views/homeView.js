@@ -1,10 +1,12 @@
 var PlanetView = require('./planetView');
 var Popup = require('./popupView');
+var PieCompView = require('./pieCompView');
 
 function addListeners(planet){
   var circle = document.getElementById(`circle_${planet.name}`);
   var hoverDiv = document.getElementById(`hover_${planet.name}_div`);
   var nameDiv = document.getElementById(`${planet.name}_name_div`);
+  var pieChart = new PieCompView(planet);
   circle.addEventListener('mouseover', function(){
     hoverDiv.style.visibility = "visible";
     nameDiv.style.visibility = "visible";
@@ -15,7 +17,7 @@ function addListeners(planet){
   });
   circle.addEventListener('click', () => {
     var popup = new Popup();
-    var newContent = planet.youtubeEmbed + planet.description;
+    var newContent = planet.youtubeEmbed + planet.description + pieChart.innerHTML;
     popup.setContent(newContent);
     popup.display();
   });
