@@ -7,11 +7,12 @@ var pResult = document.createElement('p');
 var checkRadioAnswer = function(element, correctAnswer){
   console.log(correctAnswer);
   if(element.value === correctAnswer){
-    console.log("Correct");
     pResult.innerText = 'Correct'
+    pResult.style.color = 'green';
   }else {
-    console.log("Incorrect");
     pResult.innerText = 'Incorrect'
+    pResult.style.color = 'red';
+
   }
 }
 
