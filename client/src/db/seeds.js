@@ -302,29 +302,24 @@ db.planets.insertMany([
     description: 'Jupiter is the fifth planet from the Sun and the largest in the Solar System. It is a giant planet with a mass one-thousandth that of the Sun, but two-and-a-half times that of all the other planets in the Solar System combined. Jupiter and Saturn are gas giants; the other two giant planets, Uranus and Neptune are ice giants. Jupiter has been known to astronomers since antiquity. The Romans named it after their god Jupiter. When viewed from Earth, Jupiter can reach an apparent magnitude of −2.94, bright enough for its reflected light to cast shadows, and making it on average the third-brightest object in the night sky after the Moon and Venus.',
     quiz: {
       questions:[{
-      question:"How is the magnetic field generated?",
-      correctAnswer: "Internal convective motion",
-      allAnswers: ["Radio frequency transmission", "Electrical conduction", "External convective motion", "Internal convective motion"]
+      question:"What makes Jupiter unique?",
+      correctAnswer: "It\'s the largest planet in the solar system",
+      allAnswers: ["It\'s made of chocolate", "It\'s the only planet in the solar system", "It\'s the lightest planet in the solar system", "It\'s the largest planet in the solar system"]
       },
       {
-      question:"How many Earths fit in the diameter?",
-      correctAnswer: 109,
-      allAnswers: [1, 23, 406, 109]
+      question:"Jupiter is know as....?",
+      correctAnswer: "A gas giant",
+      allAnswers: ["An asteroid", "An ice giant", "A dwarf planet", "A gas giant"]
     },
      {
-     question:"Which gas makes up most of the Sun?",
-     correctAnswer: "Hydrogen",
-     allAnswers: ["Methane", "Oxygen", "Helium", "Hydrogen"]
+     question:"Who named Jupiter after one of their Gods?",
+     correctAnswer: "The Romans",
+     allAnswers: ["The Americans", "The Egyptians", "The Mayans", "The Romans"]
     },
      {
-    question:"How many Earths make up the Sun's mass?",
-    correctAnswer: 333000,
-    allAnswers: [555000, 222000, 444000, 333000]
-    },
-     {
-    question:"How many Earths fit inside the Sun?",
-    correctAnswer: 1304000,
-    allAnswers: [5, 14030000, 1500000, 1304000]
+    question:"How long is a day on Jupiter in Earth hours?",
+    correctAnswer: 10,
+    allAnswers: [110, 24, 365, 10]
     }]
   }
   },
