@@ -20,7 +20,7 @@ db.planets.insertMany([
       {name: "Nitrogen", y: 0.09},
       {name: "Silicon", y: 0.07},
       {name: "Magnesium", y: 0.05},
-      {name: "Sulfur", y: 0.04},
+      {name: "Sulfur", y: 0.04}
     ],
     distance: 0, // In pixels from the Sun.
     distanceFromLast: 140.5, // In pixels from last object.
@@ -86,10 +86,10 @@ db.planets.insertMany([
     dayLength: 24,
     yearLength: 365,
     composition: [
-      {name: "Nitrogen", 78.1},
-      {name: "Oxygen", 20.9},
-      {name: "Argon", 0.93},
-      {name: "Carbon Dioxide", 0.04}
+      {name: "Nitrogen", y: 78.1},
+      {name: "Oxygen", y: 20.9},
+      {name: "Argon", y: 0.93},
+      {name: "Carbon Dioxide", y: 0.04}
     ],
     distance: 43060,
     distanceFromLast: 11830,
@@ -108,8 +108,7 @@ db.planets.insertMany([
     youtubeEmbed: '<div class="video"><iframe width="560" height="315" src="https://www.youtube.com/embed/2iSZMv64wuU?rel=0&amp;controls=0&amp;showinfo=0" frameborder="0" gesture="media" allow="encrypted-media" allowfullscreen></iframe></div>',
     dayLength: 648,
     yearLength: 27,
-    composition: {
-    },
+    composition: null,
     distance: 43171, // When furthest from sun around Earth.
     distanceFromLast: 111,
     gravity: 0.165,
@@ -153,7 +152,7 @@ db.planets.insertMany([
     yearLength: 4333,
     composition: [
       {name: "Hydrogen", y: 92},
-      {name: "Helium", y: 8},
+      {name: "Helium", y: 8}
     ],
     distance: 224101,
     distanceFromLast: 158315,
@@ -173,9 +172,9 @@ db.planets.insertMany([
     dayLength: 11,
     yearLength: 10756,
     composition: [
-      {name: "Hydrogen": y: 96.3},
-      {name: "Helium": y: 3.25},
-      {name: "Methane": y: 0.45}
+      {name: "Hydrogen", y: 96.3},
+      {name: "Helium", y: 3.25},
+      {name: "Methane", y: 0.45}
     ],
     distance: 412620,
     distanceFromLast: 188519,

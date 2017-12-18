@@ -4,7 +4,6 @@ var Popup = function() {
   var content = document.getElementById('popup-content');
 
   var setContent = function(newContent) {
-    console.log(newContent);
     content.innerHTML = newContent;
   };
 
