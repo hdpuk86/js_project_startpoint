@@ -6,6 +6,7 @@ function addListeners(planet){
   var circle = document.getElementById(`circle_${planet.name}`);
   var hoverDiv = document.getElementById(`hover_${planet.name}_div`);
   var nameDiv = document.getElementById(`${planet.name}_name_div`);
+  var imgButton = createButton();
   circle.addEventListener('mouseover', function(){
     hoverDiv.style.visibility = "visible";
     nameDiv.style.visibility = "visible";
@@ -16,12 +17,21 @@ function addListeners(planet){
   });
   circle.addEventListener('click', () => {
     var popup = new Popup();
-    // var newContent = planet.youtubeEmbed + planet.description;
-    var divQuiz = new Quiz(planet);
-    var newContent = divQuiz[0].outerHTML;
+    var newContent = planet.youtubeEmbed + planet.description +imgButton.outerHTML;
     popup.setContent(newContent);
     popup.display();
   });
+
+};
+
+function createButton(){
+  var imgButton = document.createElement('img');
+  imgButton.src = '../images/right_arrow.png';
+  imgButton.width = 25;
+  imgButton.addEventListener('click', function(){
+    console.log('click');
+  })
+  return imgButton;
 };
 
 var HomeView = function(planets) {

@@ -1,3 +1,5 @@
+var Quiz = require('./quizView');
+
 var Popup = function() {
   var popup = document.getElementById('testPopup');
   var span = document.getElementsByClassName("close-popup")[0];

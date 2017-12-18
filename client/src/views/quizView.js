@@ -10,15 +10,12 @@ var Quiz = function(planet){
     var pQuizName = document.createElement('p');
     pQuizName.innerText = `${planet.name} Quiz`;
     quizDiv.appendChild(pQuizName);
-
     // Add question text
     var pQuestion = document.createElement('p');
     pQuestion.innerText = question.question;
     quizDiv.appendChild(pQuestion);
-
     // Create fieldset to hold ul of radio buttons
     var quizFieldSet = document.createElement('fieldset');
-
     // create UL
     var ul = document.createElement('ul');
     // Get all answers
@@ -40,16 +37,18 @@ var Quiz = function(planet){
       quizFieldSet.appendChild(ul);
     })
     quizDiv.appendChild(quizFieldSet);
+
+    var imgButton = document.createElement('img');
+    imgButton.src = '../images/right_arrow.png';
+    imgButton.width = 25;
+    quizDiv.appendChild(imgButton);
+
     questionDivs.push(quizDiv);
   })
 
 
 
-
   return questionDivs;
-
-
-
 }
 
 module.exports = Quiz;
