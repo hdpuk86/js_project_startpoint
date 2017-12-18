@@ -2,13 +2,14 @@ var PlanetView = require('./planetView');
 var Popup = require('./popupView');
 var Quiz = require('./quizView');
 var PieCompView = require('./pieCompView');
+var counter = 0;
 
 
 function addListeners(planet){
   var circle = document.getElementById(`circle_${planet.name}`);
   var hoverDiv = document.getElementById(`hover_${planet.name}_div`);
   var nameDiv = document.getElementById(`${planet.name}_name_div`);
-  var imgButton = createButton();
+  var imgButton = createButton(planet);
   var pieChart = new PieCompView(planet);
   circle.addEventListener('mouseover', function(){
     hoverDiv.style.visibility = "visible";
@@ -37,14 +38,19 @@ function addListeners(planet){
   });
 };
 
-function createButton(){
+function createButton(planet){
   var imgButton = document.createElement('img');
   imgButton.src = '../images/right_arrow.png';
   imgButton.width = 25;
   imgButton.addEventListener('click', function() {
-    popup.setContent('');
+    loadQuiz(planet);
   })
   return imgButton;
+};
+
+function loadQuiz(planet){
+  var divs = new Quiz(planet);
+  popup.setContent(divs[0]);
 };
 
 var HomeView = function(planets) {
