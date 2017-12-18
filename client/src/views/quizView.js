@@ -11,11 +11,11 @@ var checkRadioAnswer = function(element, correctAnswer, quizScore){
     pResult.innerText = 'Correct'
     pResult.style.color = 'green';
     quizScore ++;
-    console.log(quizScore);
   }else {
     pResult.innerText = 'Incorrect'
     pResult.style.color = 'red';
   }
+  return quizScore;
 }
 
 function disableRadioBtns(){
@@ -44,6 +44,11 @@ function colourLabels(correctAnswer){
 function getQuizScoreFromStorage(planet){
   var jsonString = localStorage.getItem(`${planet.name}QuizResult`) || 0;
   return JSON.parse(jsonString);
+};
+
+function saveQuizScoreToStorage(planet, newQuizScore){
+  var jsonString = JSON.stringify(newQuizScore);
+  localStorage.setItem(`${planet.name}QuizResult`, jsonString);
 }
 
 var Quiz = function(planet, popup, questionNumber){
@@ -81,7 +86,9 @@ var Quiz = function(planet, popup, questionNumber){
     questionInput.class = 'radioAnswers';
     questionInput.addEventListener('click', function(){
       var quizScore = getQuizScoreFromStorage(planet);
-      checkRadioAnswer(questionInput, question.correctAnswer, quizScore);
+      console.log(quizScore);
+      var newQuizScore = checkRadioAnswer(questionInput, question.correctAnswer, quizScore);
+      saveQuizScoreToStorage(planet, newQuizScore);
     })
 
     label.appendChild(questionInput);
