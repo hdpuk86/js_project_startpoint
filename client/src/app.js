@@ -3,6 +3,7 @@ var Request = require('./request');
 var Popup = require('./views/popupView');
 var AdventureView = require('./views/adventureView');
 var PlanetView = require('./views/planetView');
+var flatEarth = require('./views/flatEarth');
 var distanceMeter;
 var navbar;
 var rulerStart;
@@ -41,5 +42,6 @@ var onLoad = function() {
   new Request('/planets', AdventureView);
 };
 
+window.addEventListener('keypress', flatEarth)
 window.addEventListener('scroll', onScroll);
 window.addEventListener('load', onLoad);

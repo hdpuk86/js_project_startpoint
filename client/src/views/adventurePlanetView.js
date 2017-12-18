@@ -32,7 +32,6 @@ function createPlanetDiv(planet){
 function createCircle(pixelSize, colour){
   var div = document.createElement('div');
   div.className = 'circle adventure_planet';
-  div.style.borderRadius = '50%';
   div.style.width = pixelSize;
   div.style.height = pixelSize;
   div.style.backgroundColor = colour;
