@@ -2,6 +2,7 @@
 function createNameDiv(planet){
   var div = document.createElement('div');
   var p = createName(planet);
+  p.className = "planetName";
   div.appendChild(p);
   return div;
 };
