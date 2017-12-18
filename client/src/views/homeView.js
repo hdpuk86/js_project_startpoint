@@ -1,5 +1,6 @@
 var PlanetView = require('./planetView');
 var Popup = require('./popupView');
+var Quiz = require('./quizView');
 
 function addListeners(planet){
   var circle = document.getElementById(`circle_${planet.name}`);
@@ -15,7 +16,9 @@ function addListeners(planet){
   });
   circle.addEventListener('click', () => {
     var popup = new Popup();
-    var newContent = planet.youtubeEmbed + planet.description;
+    // var newContent = planet.youtubeEmbed + planet.description;
+    var divQuiz = new Quiz(planet);
+    var newContent = divQuiz[0].outerHTML;
     popup.setContent(newContent);
     popup.display();
   });
