@@ -19,7 +19,7 @@ function addListeners(planet){
     popup.display();
   });
   planetBtn.addEventListener('click', function(){
-    smoothScroll(planet.distance+2000);
+    smoothScroll(planet.distance+2500);
   })
 };
 
