@@ -100,8 +100,14 @@ var Quiz = function(planet, popup, questionNumber, quizScore){
     // repopulates the popuo with the new question
     popup.setContent(div);
   })
-
   quizDiv.appendChild(imgButton);
+
+
+  // Add question counter
+  var pQCounter = document.createElement('p');
+  pQCounter.innerText = ` ${questionNumber+1} of ${questions.length}`;
+  quizDiv.appendChild(pQCounter);
+
   return quizDiv;
 }
 
