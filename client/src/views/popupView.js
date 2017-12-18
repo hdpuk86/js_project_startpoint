@@ -18,7 +18,7 @@ var Popup = function() {
       if (event.target == popup) {
         popup.style.display = 'none';
         setContent('');
-      }        
+      }
     }
   };
 
