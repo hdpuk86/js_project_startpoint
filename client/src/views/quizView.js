@@ -46,8 +46,6 @@ var Quiz = function(planet){
     questionDivs.push(quizDiv);
   })
 
-
-
   return questionDivs;
 }
 

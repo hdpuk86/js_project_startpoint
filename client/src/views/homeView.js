@@ -19,20 +19,30 @@ function addListeners(planet){
     nameDiv.style.visibility = 'hidden';
   });
   circle.addEventListener('click', () => {
-    var popup = new Popup();
-    var newContent = planet.youtubeEmbed + planet.description + pieChart.innerHTML +imgButton.outerHTML;
-    popup.setContent(newContent);
+    popup = new Popup();
+    var div = document.createElement('div');
+    var videoDiv = document.createElement('div');
+    var textDiv = document.createElement('div');
+    videoDiv.innerHTML = planet.youtubeEmbed;
+    // div.appendChild(planet.youtubeEmbed.innerHTML);
+    // div.appendChild(planet.description.innerHTML);
+    div.appendChild(videoDiv);
+
+    div.appendChild(pieChart);
+    div.appendChild(imgButton);
+    // var newContent = div
+    // var newContent = new Quiz(planet)[0].outerHTML;
+    popup.setContent(div);
     popup.display();
   });
-
 };
 
 function createButton(){
   var imgButton = document.createElement('img');
   imgButton.src = '../images/right_arrow.png';
   imgButton.width = 25;
-  imgButton.addEventListener('click', function(){
-    console.log('click');
+  imgButton.addEventListener('click', function() {
+    popup.setContent('');
   })
   return imgButton;
 };
