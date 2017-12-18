@@ -6,6 +6,7 @@ var pResult = document.createElement('p');
 
 var checkRadioAnswer = function(element, correctAnswer){
   disableRadioBtns();
+  colourLabels(correctAnswer);
   if(element.value === correctAnswer){
     pResult.innerText = 'Correct'
     pResult.style.color = 'green';
@@ -23,6 +24,21 @@ function disableRadioBtns(){
     radioBtns[i].disabled = true;
   };
 };
+
+function colourLabels(correctAnswer){
+  // Get all labels
+  var labels = document.getElementsByTagName('label');
+  console.log(correctAnswer);
+  // Loop over radio buttons and disable them
+  for( var i = 0; i < labels.length; i++){
+    if(labels[i].innerText === correctAnswer){
+      labels[i].style.color = 'green';
+    }else{
+      labels[i].style.color = 'grey';
+
+    }
+  };
+}
 
 var Quiz = function(planet, popup, num){
   // Creates a div based on the passed in question number 0 = 1
