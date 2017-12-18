@@ -10,6 +10,8 @@ var checkRadioAnswer = function(element, correctAnswer){
   if(element.value == correctAnswer){
     pResult.innerText = 'Correct'
     pResult.style.color = 'green';
+    quizScore ++;
+    console.log(quizScore);
   }else {
     pResult.innerText = 'Incorrect'
     pResult.style.color = 'red';
@@ -40,7 +42,7 @@ function colourLabels(correctAnswer){
   };
 }
 
-var Quiz = function(planet, popup, questionNumber, quizScore){
+var Quiz = function(planet, popup, questionNumber){
   // Creates a div based on the passed in question number 0 = 1
   // Get the questions for the planet
   var questions = planet.quiz.questions;
@@ -101,7 +103,6 @@ var Quiz = function(planet, popup, questionNumber, quizScore){
     popup.setContent(div);
   })
   quizDiv.appendChild(imgButton);
-
 
   // Add question counter
   var pQCounter = document.createElement('p');

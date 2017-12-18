@@ -3,8 +3,6 @@ var Popup = require('./popupView');
 var Quiz = require('./quizView');
 var PieCompView = require('./pieCompView');
 var questionNumber;
-var quizScore;
-
 
 function addListeners(planet){
   var circle = document.getElementById(`circle_${planet.name}`);
@@ -51,8 +49,7 @@ function createButton(planet){
 
 function loadQuiz(planet){
   questionNumber = 0;
-  quizScore = 0;
-  var div = new Quiz(planet, popup, questionNumber, quizScore);
+  var div = new Quiz(planet, popup, questionNumber);
   popup.setContent(div);
 };
 
