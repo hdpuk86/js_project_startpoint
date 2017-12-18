@@ -145,12 +145,24 @@ function buildResultPage(planet, popup){
 
   pQuizScore.innerText = `${quizScore} out of ${planet.quiz.questions.length}`;
   quizDiv.appendChild(pQuizScore);
+
+  var button = document.createElement('button');
+  button.innerText = "Retake Quiz"
+  button.addEventListener('click', function(){
+    questionNumber = 0;
+    // Creates a new div based on the question
+    var div = new Quiz(planet, popup, questionNumber);
+    // repopulates the popup with the new question
+    popup.setContent(div);
+  })
+  quizDiv.appendChild(button);
+
   return quizDiv;
 }
 
 var Quiz = function(planet, popup, questionNumber){
   if (questionNumber === 0){
-    resetLocalStorageIfTakenBefore(planet);  
+    resetLocalStorageIfTakenBefore(planet);
   }
   // Get the questions for the planet
   var questions = planet.quiz.questions;
