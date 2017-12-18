@@ -434,29 +434,24 @@ db.planets.insertMany([
     description: 'Neptune is the eighth and farthest known planet from the Sun in the Solar System. In the Solar System, it is the fourth-largest planet by diameter, the third-most-massive planet, and the densest giant planet. Neptune is 17 times the mass of Earth and is slightly more massive than its near-twin Uranus, which is 15 times the mass of Earth and slightly larger than Neptune. Neptune orbits the Sun once every 164.8 years at an average distance of 30.1 astronomical units (4.50 billion km). It is named after the Roman god of the sea and its astronomical symbol represents a stylised version of the god Neptune\'s trident.',
     quiz: {
       questions:[{
-      question:"How is the magnetic field generated?",
-      correctAnswer: "Internal convective motion",
-      allAnswers: ["Radio frequency transmission", "Electrical conduction", "External convective motion", "Internal convective motion"]
+      question:"What makes Neptune unique?",
+      correctAnswer: "It is the densest planet",
+      allAnswers: ["It is the warmest planet", "It is the greenest planet", "It is the largest planet", "It is the densest giant planet"]
       },
       {
-      question:"How many Earths fit in the diameter?",
-      correctAnswer: 109,
-      allAnswers: [1, 23, 406, 109]
+      question:"How far is Neptune from the sun?",
+      correctAnswer: "4.50 Billion km",
+      allAnswers: ["100 Million km", "3.6 Million km", "5.40 Billion km", "4.50 Billion km"]
     },
      {
-     question:"Which gas makes up most of the Sun?",
-     correctAnswer: "Hydrogen",
-     allAnswers: ["Methane", "Oxygen", "Helium", "Hydrogen"]
+     question:"How long is a day on Neptune in Earth hours?",
+     correctAnswer: 16,
+     allAnswers: [4, 300, 24, 16]
     },
      {
-    question:"How many Earths make up the Sun's mass?",
-    correctAnswer: 333000,
-    allAnswers: [555000, 222000, 444000, 333000]
-    },
-     {
-    question:"How many Earths fit inside the Sun?",
-    correctAnswer: 1304000,
-    allAnswers: [5, 14030000, 1500000, 1304000]
+    question:"What is Neptune\'s symbol?",
+    correctAnswer: "Trident",
+    allAnswers: ["Fishing rod", "Hammer", "Sickle", "Trident"]
     }]
   }
   },
