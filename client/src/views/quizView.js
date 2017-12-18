@@ -4,7 +4,7 @@ var Quiz = require('./quizView');
 // This is the paragraph where the result of the chosen answer is held
 var pResult = document.createElement('p');
 
-var checkRadioAnswer = function(element, correctAnswer){
+var checkRadioAnswer = function(element, correctAnswer, quizScore){
   disableRadioBtns();
   colourLabels(correctAnswer);
   if(element.value == correctAnswer){
@@ -80,8 +80,8 @@ var Quiz = function(planet, popup, questionNumber){
     questionInput.setAttribute('value', answer);
     questionInput.class = 'radioAnswers';
     questionInput.addEventListener('click', function(){
-      console.log(getQuizScoreFromStorage(planet));
-      checkRadioAnswer(questionInput, question.correctAnswer);
+      var quizScore = getQuizScoreFromStorage(planet);
+      checkRadioAnswer(questionInput, question.correctAnswer, quizScore);
     })
 
     label.appendChild(questionInput);
