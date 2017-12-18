@@ -3,7 +3,7 @@ var PieChart = require('../models/pieChart.js');
 function createPie(planet){
   var div = document.createElement('div');
   div.className = "gas-comp-pie";
-  var title = planet.name + " Gas Compostion";
+  var title = planet.name + " Atmosphere Compostion";
   var data = planet.composition;
   var series = [{
     name: "Gases",

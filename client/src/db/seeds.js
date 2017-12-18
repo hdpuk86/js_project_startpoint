@@ -201,7 +201,7 @@ db.planets.insertMany([
     youtubeEmbed: '<div class="video"><iframe width="560" height="315" src="https://www.youtube.com/embed/2iSZMv64wuU?rel=0&amp;controls=0&amp;showinfo=0" frameborder="0" gesture="media" allow="encrypted-media" allowfullscreen></iframe></div>',
     dayLength: 648,
     yearLength: 27,
-    composition: null,
+    composition: [{name: "Cheese", y: 100, color: "yellow"}],
     distance: 43171, // When furthest from sun around Earth.
     distanceFromLast: 111,
     gravity: 0.165,
