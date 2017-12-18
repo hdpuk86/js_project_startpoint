@@ -24,14 +24,11 @@ function addListeners(planet){
     var videoDiv = document.createElement('div');
     var textDiv = document.createElement('div');
     videoDiv.innerHTML = planet.youtubeEmbed;
-    // div.appendChild(planet.youtubeEmbed.innerHTML);
-    // div.appendChild(planet.description.innerHTML);
+    textDiv.innerHTML = planet.description;
     div.appendChild(videoDiv);
-
+    div.appendChild(textDiv);
     div.appendChild(pieChart);
     div.appendChild(imgButton);
-    // var newContent = div
-    // var newContent = new Quiz(planet)[0].outerHTML;
     popup.setContent(div);
     popup.display();
   });
