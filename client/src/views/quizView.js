@@ -37,9 +37,13 @@ function colourLabels(correctAnswer){
       labels[i].style.color = 'green';
     }else{
       labels[i].style.color = 'grey';
-
     }
   };
+}
+
+function getQuizScoreFromStorage(planet){
+  var jsonString = localStorage.getItem(`${planet.name}QuizResult`) || 0;
+  return JSON.parse(jsonString);
 }
 
 var Quiz = function(planet, popup, questionNumber){
@@ -76,6 +80,7 @@ var Quiz = function(planet, popup, questionNumber){
     questionInput.setAttribute('value', answer);
     questionInput.class = 'radioAnswers';
     questionInput.addEventListener('click', function(){
+      console.log(getQuizScoreFromStorage(planet));
       checkRadioAnswer(questionInput, question.correctAnswer);
     })
 
