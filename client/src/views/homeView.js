@@ -50,8 +50,8 @@ function createButton(planet){
 
 function loadQuiz(planet){
   counter = 0;
-  var divs = new Quiz(planet, popup);
-  popup.setContent(divs[counter]);
+  var div = new Quiz(planet, popup, counter);
+  popup.setContent(div);
 };
 
 var HomeView = function(planets) {
