@@ -1,12 +1,17 @@
 var Popup = require('./popupView');
 var Quiz = require('./quizView');
 
+// This is the paragraph where the result of the chosen answer is held
+var pResult = document.createElement('p');
+
 var checkRadioAnswer = function(element, correctAnswer){
   console.log(correctAnswer);
   if(element.value === correctAnswer){
     console.log("Correct");
+    pResult.innerText = 'Correct'
   }else {
     console.log("Incorrect");
+    pResult.innerText = 'Incorrect'
   }
 }
 
@@ -54,7 +59,11 @@ var Quiz = function(planet, popup, num){
   })
   quizDiv.appendChild(quizFieldSet);
 
-// Adds the next question button and the event listener
+  //Appends the paragraph to display if answer is correct or not
+  pResult.innerText = '';
+  quizDiv.appendChild(pResult);
+
+  // Adds the next question button and the event listener
   var imgButton = document.createElement('img');
   imgButton.src = '../images/right_arrow.png';
   imgButton.width = 25;
