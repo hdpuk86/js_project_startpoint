@@ -5,16 +5,24 @@ var Quiz = require('./quizView');
 var pResult = document.createElement('p');
 
 var checkRadioAnswer = function(element, correctAnswer){
-  console.log(correctAnswer);
+  disableRadioBtns();
   if(element.value === correctAnswer){
     pResult.innerText = 'Correct'
     pResult.style.color = 'green';
   }else {
     pResult.innerText = 'Incorrect'
     pResult.style.color = 'red';
-
   }
 }
+
+function disableRadioBtns(){
+  // Get all radio buttons
+  var radioBtns = document.getElementsByTagName('input');
+  // Loop over radio buttons and disable them
+  for( var i = 0; i < radioBtns.length; i++){
+    radioBtns[i].disabled = true;
+  };
+};
 
 var Quiz = function(planet, popup, num){
   // Creates a div based on the passed in question number 0 = 1
@@ -49,6 +57,7 @@ var Quiz = function(planet, popup, num){
     questionInput.setAttribute('type', 'radio');
     questionInput.setAttribute('name', planet.name);
     questionInput.setAttribute('value', answer);
+    questionInput.class = 'radioAnswers';
     questionInput.addEventListener('click', function(){
       checkRadioAnswer(questionInput, question.correctAnswer);
     })
