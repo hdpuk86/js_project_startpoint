@@ -43,6 +43,7 @@ var onLoad = function() {
     var newContent = youtube;
     popup.setContent(newContent);
     popup.display();
+  })
   rulerStart = document.getElementById('planet_container').getBoundingClientRect().left - window.innerWidth/2;
   new Request('/planets', HomeView);
   new Request('/planets', AdventureView);
