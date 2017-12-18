@@ -4,6 +4,7 @@ var Popup = function() {
   var content = document.getElementById('popup-content');
 
   var setContent = function(newContent) {
+    console.log(newContent);
     content.innerHTML = newContent;
   };
 
@@ -18,7 +19,7 @@ var Popup = function() {
       if (event.target == popup) {
         popup.style.display = 'none';
         setContent('');
-      }        
+      }
     }
   };
 

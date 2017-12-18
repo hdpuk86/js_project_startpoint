@@ -1,5 +1,6 @@
 var PlanetView = require('./planetView');
 var Popup = require('./popupView');
+var PieCompView = require('./pieCompView');
 
 function addListeners(planet){
   var circle = document.getElementById(`circle_${planet.name}`);
@@ -15,7 +16,11 @@ function addListeners(planet){
   });
   circle.addEventListener('click', () => {
     var popup = new Popup();
-    var newContent = planet.youtubeEmbed + planet.description;
+
+    var pieChart = new PieCompView(planet);
+    console.log(pieChart);
+
+    var newContent = planet.youtubeEmbed + planet.description + pieChart.innerHTML;
     popup.setContent(newContent);
     popup.display();
   });

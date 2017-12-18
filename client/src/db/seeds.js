@@ -10,18 +10,18 @@ db.planets.insertMany([
     youtubeEmbed: '<div class="video"><iframe width="560" height="315" src="https://www.youtube.com/embed/6tmbeLTHC_0?rel=0&amp;controls=0&amp;showinfo=0" frameborder="0" gesture="media" allow="encrypted-media" allowfullscreen></iframe></div>',
     dayLength: 0, // In hours.
     yearLength: 0, // In Earth days.
-    composition: {
-      Hydrogen: 73.46, // Percentages.
-      Helium: 24.85,
-      Oxygen: 0.77,
-      Carbon: 0.29,
-      Iron: 0.16,
-      Neon: 0.12,
-      Nitrogen: 0.09,
-      Silicon: 0.07,
-      Magnesium: 0.05,
-      Sulfur: 0.04,
-    },
+    composition: [
+      {name: "Hydrogen", y: 73.46}, // Percentages.
+      {name: "Helium", y: 24.85},
+      {name: "Oxygen", y: 0.77},
+      {name: "Carbon", y: 0.29},
+      {name: "Iron", y: 0.16},
+      {name: "Neon", y: 0.12},
+      {name: "Nitrogen", y: 0.09},
+      {name: "Silicon", y: 0.07},
+      {name: "Magnesium", y: 0.05},
+      {name: "Sulfur", y: 0.04},
+    ],
     distance: 0, // In pixels from the Sun.
     distanceFromLast: 140.5, // In pixels from last object.
     gravity: 27.94,// In g, Earth gravities.
@@ -39,14 +39,14 @@ db.planets.insertMany([
     youtubeEmbed: '<div class="video"><iframe width="560" height="315" src="https://www.youtube.com/embed/m3ZUhpisWeQ?rel=0&amp;controls=0&amp;showinfo=0" frameborder="0" gesture="media" allow="encrypted-media" allowfullscreen></iframe></div>',
     dayLength: 1408,
     yearLength: 88,
-    composition: {
-      Oxygen: 42,
-      Sodium: 29,
-      Hydrogen: 22,
-      Helium: 6,
-      Potassium: 0.5,
-      Others: 0.5
-    },
+    composition: [
+      {name: "Oxygen", y: 42},
+      {name: "Sodium", y: 29},
+      {name: "Hydrogen", y: 22},
+      {name: "Helium", y: 6},
+      {name: "Potassium", y: 0.5},
+      {name: "Others", y: 0.5}
+    ],
     distance: 16713,
     distanceFromLast: 16713,
     gravity: 0.38,
@@ -64,10 +64,10 @@ db.planets.insertMany([
     youtubeEmbed: '<div class="video"><iframe width="560" height="315" src="https://www.youtube.com/embed/yzqbN6z8ncc?rel=0&amp;controls=0&amp;showinfo=0" frameborder="0" gesture="media" allow="encrypted-media" allowfullscreen></iframe></div>',
     dayLength: 5832,
     yearLength: 225,
-    composition: {
-      Carbon_Dioxide: 96.5,
-      Nitrogen: 3.5
-    },
+    composition: [
+      {name: "Carbon Dioxide", y: 96.5},
+      {name: "Nitrogen", y: 3.5}
+    ],
     distance: 31230,
     distanceFromLast: 14517,
     gravity: 0.904,
@@ -85,12 +85,12 @@ db.planets.insertMany([
     youtubeEmbed: '<div class="video"><iframe width="560" height="315" src="https://www.youtube.com/embed/JrGuomu9NGY?rel=0&amp;controls=0&amp;showinfo=0" frameborder="0" gesture="media" allow="encrypted-media" allowfullscreen></iframe></div>',
     dayLength: 24,
     yearLength: 365,
-    composition: {
-      Nitrogen: 78.1,
-      Oxygen: 20.9,
-      Argon: 0.93,
-      Carbon_Dioxide: 0.04
-    },
+    composition: [
+      {name: "Nitrogen", 78.1},
+      {name: "Oxygen", 20.9},
+      {name: "Argon", 0.93},
+      {name: "Carbon Dioxide", 0.04}
+    ],
     distance: 43060,
     distanceFromLast: 11830,
     gravity: 1,
@@ -127,13 +127,13 @@ db.planets.insertMany([
     youtubeEmbed: '<div class="video"><iframe width="560" height="315" src="https://www.youtube.com/embed/NXbCNAIIAxw?rel=0&amp;controls=0&amp;showinfo=0" frameborder="0" gesture="media" allow="encrypted-media" allowfullscreen></iframe></div>',
     dayLength: 25,
     yearLength: 687,
-    composition: {
-      Carbon_Dioxide: 95.97,
-      Argon: 1.93,
-      Nitrogen: 1.89,
-      Oxygen: 0.15,
-      Carbon_Monoxide: 0.06
-    },
+    composition: [
+      {name: "Carbon Dioxide", y: 95.97},
+      {name: "Argon", y: 1.93},
+      {name: "Nitrogen", y: 1.89},
+      {name: "Oxygen", y: 0.15},
+      {name: "Carbon Monoxide", y: 0.06}
+    ],
     distance: 65786,
     distanceFromLast: 22615,
     gravity: 0.376,
@@ -151,10 +151,10 @@ db.planets.insertMany([
     youtubeEmbed: '<div class="video"><iframe width="560" height="315" src="https://www.youtube.com/embed/aFnNCwTkYo8?rel=0&amp;controls=0&amp;showinfo=0" frameborder="0" gesture="media" allow="encrypted-media" allowfullscreen></iframe></div>',
     dayLength: 10,
     yearLength: 4333,
-    composition: {
-      hydrogen: 92,
-      helium: 8,
-    },
+    composition: [
+      {name: "Hydrogen", y: 92},
+      {name: "Helium", y: 8},
+    ],
     distance: 224101,
     distanceFromLast: 158315,
     gravity: 2.528,
@@ -172,11 +172,11 @@ db.planets.insertMany([
     youtubeEmbed: '<div class="video"><iframe width="560" height="315" src="https://www.youtube.com/embed/AyFMPdHU1n0?rel=0&amp;controls=0&amp;showinfo=0" frameborder="0" gesture="media" allow="encrypted-media" allowfullscreen></iframe></div>',
     dayLength: 11,
     yearLength: 10756,
-    composition: {
-      hydrogen: 96.3,
-      helium: 3.25,
-      methane: 0.45,
-    },
+    composition: [
+      {name: "Hydrogen": y: 96.3},
+      {name: "Helium": y: 3.25},
+      {name: "Methane": y: 0.45}
+    ],
     distance: 412620,
     distanceFromLast: 188519,
     gravity: 1.065,
@@ -194,11 +194,11 @@ db.planets.insertMany([
     youtubeEmbed: '<div class="video"><iframe width="560" height="315" src="https://www.youtube.com/embed/_aRAoM1i0D4?rel=0&amp;controls=0&amp;showinfo=0" frameborder="0" gesture="media" allow="encrypted-media" allowfullscreen></iframe></div>',
     dayLength: 17,
     yearLength: 30687,
-    composition: {
-      hydrogen: 83,
-      helium: 15,
-      methane: 2,
-    },
+    composition: [
+      {name: "Hydrogen", y: 83},
+      {name: "Helium", y: 15},
+      {name: "Methane", y: 2}
+    ],
     distance: 829831,
     distanceFromLast: 417211,
     gravity: 0.89,
@@ -216,11 +216,11 @@ db.planets.insertMany([
     youtubeEmbed: '<div class="video"><iframe width="560" height="315" src="https://www.youtube.com/embed/faKnto4Pb6c?rel=0&amp;controls=0&amp;showinfo=0" frameborder="0" gesture="media" allow="encrypted-media" allowfullscreen></iframe></div>',
     dayLength: 16,
     yearLength: 60190,
-    composition: {
-      Hydrogen: 80,
-      Helium: 19,
-      Methane: 1
-    },
+    composition: [
+      {name: "Hydrogen", y: 80},
+      {name: "Helium", y: 19},
+      {name: "Methane", y: 1}
+    ],
     distance: 1300443,
     distanceFromLast: 470612,
     gravity: 1.14,
@@ -238,10 +238,10 @@ db.planets.insertMany([
     youtubeEmbed: '<div class="video"><iframe width="560" height="315" src="https://www.youtube.com/embed/-iZio70bd-M?rel=0&amp;controls=0&amp;showinfo=0" frameborder="0" gesture="media" allow="encrypted-media" allowfullscreen></iframe></div>',
     dayLength: 154,
     yearLength: 90520,
-    composition: {
-      Nitrogen: 90,
-      Methane: 10,
-    },
+    composition: [
+      {name: "Nitrogen", y: 90},
+      {name: "Methane", y: 10}
+    ],
     distance: 1704630,
     distanceFromLast: 404187,
     gravity: 0.063,
