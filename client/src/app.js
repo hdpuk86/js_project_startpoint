@@ -40,8 +40,9 @@ var onLoad = function() {
   rocketMan.addEventListener('click', function(){
     var popup = new Popup();
     var youtube = '<div class="video"><iframe width="560" height="315" src="https://www.youtube.com/embed/DtVBCG6ThDk" frameborder="0" gesture="media" allow="encrypted-media" allowfullscreen></iframe></div>'
-    var newContent = youtube;
-    popup.setContent(newContent);
+    var videoDiv = document.createElement('div');
+    videoDiv.innerHTML = youtube;
+    popup.setContent(videoDiv);
     popup.display();
   })
   rulerStart = document.getElementById('planet_container').getBoundingClientRect().left - window.innerWidth/2;
