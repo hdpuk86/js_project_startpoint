@@ -18,6 +18,10 @@ ul {
   list-style: none;
 }
 
+.planetName {
+  padding-bottom: 10px;
+}
+
 .popup {
   display: none;
   position: fixed;
