@@ -346,29 +346,24 @@ db.planets.insertMany([
     description: 'Saturn is the sixth planet from the Sun and the second-largest in the Solar System, after Jupiter. It is a gas giant with an average radius about nine times that of Earth. It has only one-eighth the average density of Earth, but with its larger volume Saturn is over 95 times more massive. Saturn is named after the Roman god of agriculture; its astronomical symbol represents the god\'s sickle.',
     quiz: {
       questions:[{
-      question:"How is the magnetic field generated?",
-      correctAnswer: "Internal convective motion",
-      allAnswers: ["Radio frequency transmission", "Electrical conduction", "External convective motion", "Internal convective motion"]
+      question:"Which object does the astrnomical symbol of Saturn represent?",
+      correctAnswer: "Saturn\'s sickle",
+      allAnswers: ["Saturn\'s inflatable whale", "Saturn\'s rake", "Saturn\'s hammer", "Saturn\'s sickle"]
       },
       {
-      question:"How many Earths fit in the diameter?",
-      correctAnswer: 109,
-      allAnswers: [1, 23, 406, 109]
+      question:"What number from the sun is Saturn?",
+      correctAnswer: "6th",
+      allAnswers: ["9th", "4th", "5th", "6th"]
     },
      {
-     question:"Which gas makes up most of the Sun?",
+     question:"Which gas is Saturn mostly made of?",
      correctAnswer: "Hydrogen",
      allAnswers: ["Methane", "Oxygen", "Helium", "Hydrogen"]
     },
      {
-    question:"How many Earths make up the Sun's mass?",
-    correctAnswer: 333000,
-    allAnswers: [555000, 222000, 444000, 333000]
-    },
-     {
-    question:"How many Earths fit inside the Sun?",
-    correctAnswer: 1304000,
-    allAnswers: [5, 14030000, 1500000, 1304000]
+    question:"Which planet is bigger than Saturn?",
+    correctAnswer: "Jupiter",
+    allAnswers: ["Pluto", "Mars", "Earth", "Jupiter"]
     }]
   }
   },
