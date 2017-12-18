@@ -127,29 +127,24 @@ db.planets.insertMany([
     description: 'Venus is the second planet from the Sun, orbiting it every 224.7 Earth days. It has the longest rotation period (243 days) of any planet in the Solar System and rotates in the opposite direction to most other planets. It has no natural satellites. It is named after the Roman goddess of love and beauty. It is the second-brightest natural object in the night sky after the Moon, reaching an apparent magnitude of −4.6 – bright enough to cast shadows at night and, rarely, visible to the naked eye in broad daylight. Orbiting within Earth\'s orbit, Venus is an inferior planet and never appears to venture far from the Sun; its maximum angular distance from the Sun (elongation) is 47.8°.',
     quiz: {
       questions:[{
-      question:"How is the magnetic field generated?",
-      correctAnswer: "Internal convective motion",
-      allAnswers: ["Radio frequency transmission", "Electrical conduction", "External convective motion", "Internal convective motion"]
+      question:"What makes Venus unique in the Solar System?",
+      correctAnswer: "It has the longest rotation period",
+      allAnswers: ["It is red", "It is the biggest planet", "It has the shortest day", "It has the longest rotation period"]
       },
       {
-      question:"How many Earths fit in the diameter?",
-      correctAnswer: 109,
-      allAnswers: [1, 23, 406, 109]
+      question:"Venus is named after the Roman Goddess of?",
+      correctAnswer: "Love and beauty",
+      allAnswers: ["Thunder and lightning", "Lost animals", "War", "Love and beauty"]
     },
      {
-     question:"Which gas makes up most of the Sun?",
-     correctAnswer: "Hydrogen",
-     allAnswers: ["Methane", "Oxygen", "Helium", "Hydrogen"]
+     question:"How long is a day on Venus in Earth hours?",
+     correctAnswer: "5832",
+     allAnswers: [365, 15005, 24, 5832]
     },
      {
-    question:"How many Earths make up the Sun's mass?",
-    correctAnswer: 333000,
-    allAnswers: [555000, 222000, 444000, 333000]
-    },
-     {
-    question:"How many Earths fit inside the Sun?",
-    correctAnswer: 1304000,
-    allAnswers: [5, 14030000, 1500000, 1304000]
+    question:"Which position is Venus from the sun?",
+    correctAnswer: "2nd",
+    allAnswers: ["4th", "3rd", "1st", "2nd"]
     }]
   }
   },
@@ -177,29 +172,24 @@ db.planets.insertMany([
     description: 'Earth is the third planet from the Sun and the only object in the Universe known to harbour life. According to radiometric dating and other sources of evidence, Earth formed over 4 billion years ago. Earth\'s gravity interacts with other objects in space, especially the Sun and the Moon, Earth\'s only natural satellite. Earth revolves around the Sun in 365.26 days, a period known as an Earth year. During this time, Earth rotates about its axis about 366.26 times.',
     quiz: {
       questions:[{
-      question:"How is the magnetic field generated?",
-      correctAnswer: "Internal convective motion",
-      allAnswers: ["Radio frequency transmission", "Electrical conduction", "External convective motion", "Internal convective motion"]
+      question:"How long ago was the Earth formed?",
+      correctAnswer: "4 Billion years",
+      allAnswers: ["500 BC", "It\'s always been there", "Yesterday", "4 Billion years"]
       },
       {
-      question:"How many Earths fit in the diameter?",
-      correctAnswer: 109,
-      allAnswers: [1, 23, 406, 109]
+      question:"What makes the Earth unique?",
+      correctAnswer: "It harbors life",
+      allAnswers: ["It\'s the biggest planet", "It has clouds", "It is blue", "It harbors life"]
     },
      {
-     question:"Which gas makes up most of the Sun?",
-     correctAnswer: "Hydrogen",
-     allAnswers: ["Methane", "Oxygen", "Helium", "Hydrogen"]
+     question:"Which gas makes up most of the atmsophere?",
+     correctAnswer: "Nitrogen",
+     allAnswers: ["Methane", "Oxygen", "Helium", "Nitrogen"]
     },
      {
-    question:"How many Earths make up the Sun's mass?",
-    correctAnswer: 333000,
-    allAnswers: [555000, 222000, 444000, 333000]
-    },
-     {
-    question:"How many Earths fit inside the Sun?",
-    correctAnswer: 1304000,
-    allAnswers: [5, 14030000, 1500000, 1304000]
+    question:"How many moons does the Earth have?",
+    correctAnswer: 1,
+    allAnswers: [11, 25, 4, 1]
     }]
   }
   },
@@ -223,29 +213,24 @@ db.planets.insertMany([
     description: 'The Moon is an astronomical body that orbits planet Earth, being Earth\'s only permanent natural satellite. It is the fifth-largest natural satellite in the Solar System, and the largest among planetary satellites relative to the size of the planet that it orbits (its primary). Following Jupiter\'s satellite Io, the Moon is second-densest satellite among those whose densities are known. The Moon is thought to have formed about 4.51 billion years ago, not long after Earth. The most widely accepted explanation is that the Moon formed from the debris left over after a giant impact between Earth and a Mars-sized body called Theia.',
     quiz: {
       questions:[{
-      question:"How is the magnetic field generated?",
-      correctAnswer: "Internal convective motion",
-      allAnswers: ["Radio frequency transmission", "Electrical conduction", "External convective motion", "Internal convective motion"]
+      question:"What is the moon\'s parent planet?",
+      correctAnswer: "Earth",
+      allAnswers: ["Saturn", "Venus", "Mars", "Earth"]
       },
       {
-      question:"How many Earths fit in the diameter?",
-      correctAnswer: 109,
-      allAnswers: [1, 23, 406, 109]
+      question:"How old is the moon?",
+      correctAnswer: "4.51 Billion years",
+      allAnswers: ["1000 years", "5.41 Billion years", "100 years", "4.51 Billion years"]
     },
      {
-     question:"Which gas makes up most of the Sun?",
-     correctAnswer: "Hydrogen",
-     allAnswers: ["Methane", "Oxygen", "Helium", "Hydrogen"]
+     question:"How was the moon formed",
+     correctAnswer: "Giant impact between a body and the Earth",
+     allAnswers: ["Black hole", "It\'s a rogue asteroid", "Cut from cheese", "Giant impact between a body and the Earth"]
     },
      {
-    question:"How many Earths make up the Sun's mass?",
-    correctAnswer: 333000,
-    allAnswers: [555000, 222000, 444000, 333000]
-    },
-     {
-    question:"How many Earths fit inside the Sun?",
-    correctAnswer: 1304000,
-    allAnswers: [5, 14030000, 1500000, 1304000]
+    question:"Which is the only satellite denser than the moon?",
+    correctAnswer: "Io",
+    allAnswers: ["Phobos", "Europa", "Titan", "Io"]
     }]
   }
   },
