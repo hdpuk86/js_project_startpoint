@@ -121,6 +121,25 @@ function buildQuestionPage(planet, popup, questionNumber){
   return quizDiv;
 }
 
+function buildResultPage(planet, popup){
+  var quizDiv = document.createElement('div');
+  var pQuizName = document.createElement('p');
+  pQuizName.innerText = `${planet.name} Quiz Result`;
+  quizDiv.appendChild(pQuizName);
+  // Add Result
+  var pYouScored = document.createElement('p');
+
+  pYouScored.innerText = "You Scored...";
+  quizDiv.appendChild(pYouScored);
+
+  var quizScore = getQuizScoreFromStorage(planet);
+  var pQuizScore = document.createElement('p');
+
+  pQuizScore.innerText = `${quizScore} out of ${planet.quiz.questions.length}`;
+  quizDiv.appendChild(pQuizScore);
+  return quizDiv;
+}
+
 var Quiz = function(planet, popup, questionNumber){
   // Creates a div based on the passed in question number 0 = 1
   // Get the questions for the planet
@@ -130,7 +149,8 @@ var Quiz = function(planet, popup, questionNumber){
     var div = buildQuestionPage(planet, popup, questionNumber);
     return div;
   }else{
-    buildResultPage(planet, popup);
+    var div = buildResultPage(planet, popup);
+    return div;
   }
 
 }
