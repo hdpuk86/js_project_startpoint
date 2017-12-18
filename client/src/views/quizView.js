@@ -51,6 +51,14 @@ function saveQuizScoreToStorage(planet, newQuizScore){
   localStorage.setItem(`${planet.name}QuizResult`, jsonString);
 }
 
+function resetLocalStorageIfTakenBefore(planet){
+  var score = getQuizScoreFromStorage(planet);
+  if(score !== 0){
+    score = 0;
+    saveQuizScoreToStorage(planet, score);
+  }
+}
+
 function buildQuestionPage(planet, popup, questionNumber){
   var questions = planet.quiz.questions;
   var question = questions[questionNumber];
@@ -141,7 +149,9 @@ function buildResultPage(planet, popup){
 }
 
 var Quiz = function(planet, popup, questionNumber){
-  // Creates a div based on the passed in question number 0 = 1
+  if (questionNumber === 0){
+    resetLocalStorageIfTakenBefore(planet);  
+  }
   // Get the questions for the planet
   var questions = planet.quiz.questions;
   // Check if its the last question
