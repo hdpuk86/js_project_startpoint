@@ -1,5 +1,9 @@
 var AdventurePlanet = require('./adventurePlanetView');
+var PlanetView = require('./planetView');
 var Popup = require('./popupView');
+var Quiz = require('./quizView');
+var PieCompView = require('./pieCompView');
+var questionNumber;
 
 function addAllListeners(planet){
   var circle = document.getElementById(`adventure_${planet.name}_circle`);
@@ -8,6 +12,8 @@ function addAllListeners(planet){
 
   addHoverListener(planet, circle);
   addHoverListener(planet, nameDiv);
+  addClickListener(planet, circle);
+  addClickListener(planet, nameDiv);
 
   planetBtn.addEventListener('click', function(){
     smoothScroll(planet.distance+2500);
@@ -25,12 +31,38 @@ function addHoverListener(planet, div){
 };
 
 function addClickListener(planet, div){
+  var imgButton = createButton(planet);
+  var pieChart = new PieCompView(planet);
   div.addEventListener('click', () => {
-    var popup = new Popup();
-    var newContent = planet.youtubeEmbed + planet.description;
-    popup.setContent(newContent);
+    popup = new Popup();
+    var div = document.createElement('div');
+    var videoDiv = document.createElement('div');
+    var textDiv = document.createElement('div');
+    videoDiv.innerHTML = planet.youtubeEmbed;
+    textDiv.innerHTML = planet.description;
+    div.appendChild(videoDiv);
+    div.appendChild(textDiv);
+    div.appendChild(pieChart);
+    div.appendChild(imgButton);
+    popup.setContent(div);
     popup.display();
   });
+};
+
+function createButton(planet){
+  var imgButton = document.createElement('img');
+  imgButton.src = '../images/right_arrow.png';
+  imgButton.width = 25;
+  imgButton.addEventListener('click', function() {
+    loadQuiz(planet, popup);
+  })
+  return imgButton;
+};
+
+function loadQuiz(planet){
+  questionNumber = 0;
+  var div = new Quiz(planet, popup, questionNumber);
+  popup.setContent(div);
 };
 
 function smoothScroll(scrollToPx){
