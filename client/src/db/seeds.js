@@ -482,29 +482,24 @@ db.planets.insertMany([
     description: 'Pluto (minor-planet designation: 134340 Pluto) is a dwarf planet in the Kuiper belt, a ring of bodies beyond Neptune. It was the first Kuiper belt object to be discovered. Pluto was discovered by Clyde Tombaugh in 1930 and was originally considered to be the ninth planet from the Sun. After 1992, its status as a planet was questioned following the discovery of several objects of similar size in the Kuiper belt. In 2005, Eris, a dwarf planet in the scattered disc which is 27% more massive than Pluto, was discovered. This led the International Astronomical Union (IAU) to define the term "planet" formally in 2006, during their 26th General Assembly. That definition excluded Pluto and reclassified it as a dwarf planet.',
     quiz: {
       questions:[{
-      question:"How is the magnetic field generated?",
-      correctAnswer: "Internal convective motion",
-      allAnswers: ["Radio frequency transmission", "Electrical conduction", "External convective motion", "Internal convective motion"]
+      question:"What is Pluto known as?",
+      correctAnswer: "A dwarf planet",
+      allAnswers: ["An asteroid", "An ice giant", "A gas giant", "A dwarf planet"]
       },
       {
-      question:"How many Earths fit in the diameter?",
-      correctAnswer: 109,
-      allAnswers: [1, 23, 406, 109]
+      question:"What is the name of the body Pluto is a part of?",
+      correctAnswer: "The Kuiper Belt",
+      allAnswers: ["The Interstellar Belt", "The Van Alan Belt", "The Asteroid Belt", "The Kuiper Belt"]
     },
      {
-     question:"Which gas makes up most of the Sun?",
-     correctAnswer: "Hydrogen",
-     allAnswers: ["Methane", "Oxygen", "Helium", "Hydrogen"]
+     question:"Who discovered Pluto?",
+     correctAnswer: "Clyde Tombaugh",
+     allAnswers: ["Simon Cowell", "Walt Disney", "Arthur C Clarke", "Clyde Tombaugh"]
     },
      {
-    question:"How many Earths make up the Sun's mass?",
-    correctAnswer: 333000,
-    allAnswers: [555000, 222000, 444000, 333000]
-    },
-     {
-    question:"How many Earths fit inside the Sun?",
-    correctAnswer: 1304000,
-    allAnswers: [5, 14030000, 1500000, 1304000]
+    question:"When did Pluto cease to be known as a planet?",
+    correctAnswer: 2006,
+    allAnswers: [1986, 1935, 2017, 2006]
     }]
   }
   }
