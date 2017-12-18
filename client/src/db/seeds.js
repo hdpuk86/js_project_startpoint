@@ -94,7 +94,7 @@ db.planets.insertMany([
       allAnswers: [66, 77, 99, 88]
     },
      {
-     question:"Which is the best time to see Mercury?",
+     question:"When is the best time to see Mercury?",
      correctAnswer: "During a Solar Eclipse",
      allAnswers: ["At night", "Winter time", "Anytime", "During a Solar Eclipse"]
     },
@@ -435,8 +435,8 @@ db.planets.insertMany([
     quiz: {
       questions:[{
       question:"What makes Neptune unique?",
-      correctAnswer: "It is the densest planet",
-      allAnswers: ["It is the warmest planet", "It is the greenest planet", "It is the largest planet", "It is the densest giant planet"]
+      correctAnswer: "It is the densest giant planet",
+      allAnswers: ["It is the warmest giant planet", "It is the greenest giant planet", "It is the largest giant planet", "It is the densest giant planet"]
       },
       {
       question:"How far is Neptune from the sun?",
