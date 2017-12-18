@@ -4,9 +4,11 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link href="https://fonts.googleapis.com/css?family=Wire+One" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
   <link rel="shortcut icon"href="./icon.png">
   <script src="bundle.js"></script>
+  <script src="http://code.highcharts.com/highcharts.js"></script>
 
   <title>Space Oddity</title>
 </head>
@@ -23,7 +25,7 @@
     <div id="planets-div"></div>
     <div class="home_planets_div">
       <div class="hover_name_div"></div>
-      <a href="#space">
+      <a href="#scale">
         <img src="../images/right_arrow.png" alt="" id="adventure-button">
       </a>
       <div class="hover_planets_div"></div>
@@ -33,37 +35,19 @@
     <img src="../images/scaleImage.svg" alt="">
   </div>
   <div id="space">
+    <img src="../images/rocket_man.png" id="rocket_man">
     <div id="space-nav">
-      <a href="#adventure_Sun_div">
-        <img src="../images/sun_icon.svg" alt="" class="nav_icon" id="first-nav-image">
-      </a>
-      <a href="#adventure_Mercury_div">
-        <img src="../images/mercury_icon.svg" alt="" class="nav_icon">
-      </a>
-      <a href="#adventure_Venus_div">
-        <img src="../images/venus_icon.svg" alt="" class="nav_icon">
-      </a>
-      <a href="#adventure_Earth_div">
-        <img src="../images/earth_icon.svg" alt="" class="nav_icon">
-      </a>
-      <a href="#adventure_Mars_div">
-        <img src="../images/mars_icon.svg" alt="" class="nav_icon">
-      </a>
-      <a href="#adventure_Jupiter_div">
-        <img src="../images/jupiter_icon.svg" alt="" class="nav_icon">
-      </a>
-      <a href="#adventure_Saturn_div">
-        <img src="../images/saturn_icon.svg" alt="" class="nav_icon">
-      </a>
-      <a href="#adventure_Neptune_div">
-        <img src="../images/neptune_icon.svg" alt="" class="nav_icon">
-      </a>
-      <a href="#adventure_Uranus_div">
-        <img src="../images/uranus_icon.svg" alt="" class="nav_icon">
-      </a>
-      <a href="#adventure_Pluto_div">
-        <img src="../images/pluto_icon.svg" alt="" class="nav_icon">
-      </a>
+      <img src="../images/sun_icon.svg" alt="" class="nav_icon" id="Sun_button">
+      <img src="../images/mercury_icon.svg" alt="" class="nav_icon" id="Mercury_button">
+      <img src="../images/venus_icon.svg" alt="" class="nav_icon" id="Venus_button">
+      <img src="../images/earth_icon.svg" alt="" class="nav_icon" id="Earth_button">
+      <img src="" alt="" class="nav_icon" id="Moon_button" style="display:none">
+      <img src="../images/mars_icon.svg" alt="" class="nav_icon" id="Mars_button">
+      <img src="../images/jupiter_icon.svg" alt="" class="nav_icon" id="Jupiter_button">
+      <img src="../images/saturn_icon.svg" alt="" class="nav_icon" id="Saturn_button">
+      <img src="../images/neptune_icon.svg" alt="" class="nav_icon" id="Neptune_button">
+      <img src="../images/uranus_icon.svg" alt="" class="nav_icon" id="Uranus_button">
+      <img src="../images/pluto_icon.svg" alt="" class="nav_icon" id="Pluto_button">
     </div>
 
     <div id="planet_container"></div>
