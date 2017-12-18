@@ -16,10 +16,10 @@ var shakeRocketMan = function() {
 };
 
 var onScroll = function() {
-  var scrolled = window.scrollX;
-  if (scrolled >= rulerStart) {
+  rulerStart = document.getElementById('planet_container').getBoundingClientRect().left - window.innerWidth / 2;
+  if (rulerStart <= 0) {
     shakeRocketMan();
-    var km = (scrolled - rulerStart) * 3474.2;
+    var km = (-rulerStart) * 3474.2;
     var lightMinutes = km / 17987547.5;
     var rounded = Math.round(lightMinutes * 100) / 100; // to 2 d.p.
     distanceMeter.innerText = rounded + ' light minutes';
