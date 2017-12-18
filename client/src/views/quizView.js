@@ -1,4 +1,7 @@
-var Quiz = function(planet){
+var Popup = require('./popupView');
+var Quiz = require('./quizView');
+
+var Quiz = function(planet, popup){
   // Creates an array of divs, one for each question in the quiz
   var questionDivs = [];
   // Get all questions in quiz
@@ -42,7 +45,7 @@ var Quiz = function(planet){
     imgButton.src = '../images/right_arrow.png';
     imgButton.width = 25;
     imgButton.addEventListener('click', function(){
-      console.log('quiz button');
+      popup.setContent('');
     })
     quizDiv.appendChild(imgButton);
 

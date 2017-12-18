@@ -43,14 +43,14 @@ function createButton(planet){
   imgButton.src = '../images/right_arrow.png';
   imgButton.width = 25;
   imgButton.addEventListener('click', function() {
-    loadQuiz(planet);
+    loadQuiz(planet, popup);
   })
   return imgButton;
 };
 
 function loadQuiz(planet){
   counter = 0;
-  var divs = new Quiz(planet);
+  var divs = new Quiz(planet, popup);
   popup.setContent(divs[counter]);
 };
 
