@@ -2,7 +2,6 @@ var Popup = require('./popupView');
 var Quiz = require('./quizView');
 var QuizResultChart = require('./quizResultChartView');
 
-
 // This is the paragraph where the result of the chosen answer is held
 var pResult = document.createElement('p');
 
@@ -30,17 +29,9 @@ function disableRadioBtns(){
 };
 
 function colourLabels(correctAnswer){
-  // Get all labels
-  var labels = document.getElementsByTagName('label');
-  console.log(correctAnswer);
-  // Loop over radio buttons and disable them
-  for( var i = 0; i < labels.length; i++){
-    if(labels[i].innerText == correctAnswer){
-      labels[i].style.color = 'green';
-    }else{
-      labels[i].style.color = 'grey';
-    }
-  };
+  [...document.getElementsByTagName('label')].forEach((label) => {
+    label.style.color = label.innerText == correctAnswer ? 'green':'grey';
+  });
 }
 
 function getQuizScoreFromStorage(planet){
