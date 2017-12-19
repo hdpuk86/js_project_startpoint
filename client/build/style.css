@@ -288,3 +288,36 @@ p {
   margin-top: 10px;
   margin-left: 50px;
 }
+
+.answer-labels {
+  display: flex;
+  flex-direction: row;
+}
+
+.answer-text {
+  margin-left: 20px;
+}
+
+.quiz-radio-btn {
+  margin-top: 10px;
+}
+
+.quiz-mid {
+  display: flex;
+  flex-direction: row;
+}
+
+.quiz-fieldset {
+  width: 90%;
+}
+
+.next-Q-img {
+  align-self: center;
+}
+
+.quiz-name {
+  display: flex;
+  justify-content: center;
+  font-size: 1.5em;
+  padding: 10px;
+}

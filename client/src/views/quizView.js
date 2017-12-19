@@ -35,7 +35,14 @@ function disableRadioBtns(){
 
 function colourLabels(correctAnswer){
   [...document.getElementsByTagName('label')].forEach((label) => {
-    label.style.color = label.innerText == correctAnswer ? 'green':'grey';
+    var p = null;
+    for (var i = 0; i < label.childNodes.length; i++) {
+      if (label.childNodes[i].className == "answer-text") {
+        p = label.childNodes[i];
+        break;
+      }
+    }
+    p.style.color = p.innerText == correctAnswer ? 'green':'grey';
   });
 }
 
@@ -99,12 +106,17 @@ var setRadioButton = function(input, answer, planet, question) {
 var populateUl = function(answer, ul, planet, question) {
   var li = document.createElement('li');
   var questionInput = document.createElement('input');
+  questionInput.className = "quiz-radio-btn";
   var label = document.createElement('label');
-  label.innerText = answer;
+  label.className = "answer-labels";
+  var p = document.createElement('p');
+  p.className = "answer-text";
+  p.innerText = answer;
 
   setRadioButton(questionInput, answer, planet, question);
 
   label.appendChild(questionInput);
+  label.appendChild(p);
   li.appendChild(label);
   ul.appendChild(li);
 };
@@ -112,49 +124,78 @@ var populateUl = function(answer, ul, planet, question) {
 var shuffle = function(array) {
   var i, j, x;
   for (i = array.length - 1; i > 0; i--) {
-      j = Math.floor(Math.random() * (i + 1));
-      x = array[i];
-      array[i] = array[j];
-      array[j] = x;
+    j = Math.floor(Math.random() * (i + 1));
+    x = array[i];
+    array[i] = array[j];
+    array[j] = x;
   }
   return array;
+}
+
+function questionPageTop(planet, question){
+  var quizName = document.createElement('div');
+  quizName.className = "quiz-name";
+  var pQuizName = document.createElement('p');
+  pQuizName.innerText = `${planet.name} Quiz`;
+  pQuizName.style.color = planet.colour;
+  quizName.appendChild(pQuizName);
+
+  var pQuestion = document.createElement('p');
+  pQuestion.innerText = question.question;
+
+  var topSection = document.createElement('section');
+  topSection.className = "quiz-top";
+  topSection.appendChild(quizName);
+  topSection.appendChild(pQuestion);
+  return topSection;
+}
+
+function questionPageMid(planet, question, questionNumber){
+  var ul = document.createElement('ul');
+  var answers = shuffle(question.allAnswers);
+  answers.forEach((answer) => populateUl(answer, ul, planet, question));
+  var quizFieldSet = document.createElement('fieldset').appendChild(ul);
+  quizFieldSet.className = "quiz-fieldset";
+
+  var nextQuestion = document.createElement('img');
+  nextQuestion.className = "next-Q-img";
+  nextQuestion.src = '../images/right_arrow.png';
+  nextQuestion.height = 25;
+  nextQuestion.addEventListener('click', function(){
+    questionNumber++;
+    popup.setContent(new Quiz(planet, popup, questionNumber));
+  });
+  var midSection = document.createElement('section');
+  midSection.className = "quiz-mid";
+  midSection.appendChild(quizFieldSet);
+  midSection.appendChild(nextQuestion);
+  return midSection;
+};
+
+function questionPageLow(planet, questions, questionNumber){
+  pResult.innerText = '';
+  var pQCounter = document.createElement('p');
+  pQCounter.innerText = ` ${questionNumber+1} of ${questions.length}`;
+  var lowSection = document.createElement('section');
+
+  lowSection.className = "quiz-low";
+  lowSection.appendChild(pResult);
+  lowSection.appendChild(pQCounter);
+  return lowSection;
 }
 
 function buildQuestionPage(planet, popup, questionNumber){
   var questions = planet.quiz.questions;
   var question = questions[questionNumber];
 
-  var pQuizName = document.createElement('p');
-  pQuizName.innerText = `${planet.name} Quiz`;
-
-  var pQuestion = document.createElement('p');
-  pQuestion.innerText = question.question;
-
-  var ul = document.createElement('ul');
-  var answers = shuffle(question.allAnswers);
-  answers.forEach((answer) => populateUl(answer, ul, planet, question));
-  var quizFieldSet = document.createElement('fieldset').appendChild(ul);  
-  
-  pResult.innerText = '';
-
-  var nextQuestion = document.createElement('img');
-  nextQuestion.src = '../images/right_arrow.png';
-  nextQuestion.width = 25;
-  nextQuestion.addEventListener('click', function(){
-    questionNumber++;
-    popup.setContent(new Quiz(planet, popup, questionNumber));
-  });
-
-  var pQCounter = document.createElement('p');
-  pQCounter.innerText = ` ${questionNumber+1} of ${questions.length}`;
+  var topSection = questionPageTop(planet, question);
+  var midSection = questionPageMid(planet, question, questionNumber);
+  var lowSection = questionPageLow(planet, questions, questionNumber);
 
   var quizDiv = document.createElement('div');
-  quizDiv.appendChild(pQuizName);
-  quizDiv.appendChild(pQuestion);
-  quizDiv.appendChild(quizFieldSet);
-  quizDiv.appendChild(pResult);
-  quizDiv.appendChild(nextQuestion);
-  quizDiv.appendChild(pQCounter);  
+  quizDiv.appendChild(topSection);
+  quizDiv.appendChild(midSection);
+  quizDiv.appendChild(lowSection);
 
   return quizDiv;
 }
@@ -172,12 +213,12 @@ function buildResultPage(planet, popup, results){
 
   var barChart = new QuizResultChart(results);
 
-  var quizDiv = document.createElement('div');   
+  var quizDiv = document.createElement('div');
   quizDiv.appendChild(pQuizName);
-  quizDiv.appendChild(pYouScored);  
+  quizDiv.appendChild(pYouScored);
   quizDiv.appendChild(pQuizScore);
   quizDiv.appendChild(barChart);
-  
+
   return quizDiv;
 }
 
