@@ -15,12 +15,10 @@ var Popup = function() {
 
     span.onclick = () => {
       popup.style.display = 'none';
-      setContent('');
     }
     window.onclick = (event) => {
       if (event.target == popup) {
         popup.style.display = 'none';
-        setContent('');
       }
     }
   };

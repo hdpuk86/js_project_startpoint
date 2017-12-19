@@ -23,7 +23,8 @@ var PieChart = function(container, title, series){
         size:'80%',
         dataLabels: {
           enabled: false
-        }
+        },
+        borderWidth: 0
       }
     },
     legend: {
