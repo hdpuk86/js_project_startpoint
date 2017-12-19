@@ -75,6 +75,7 @@ function setPopupNav(planet){
   var nav = document.getElementById('popup-nav');
   nav.innerHTML = '';
   var quizButton = createButton(planet, loadQuiz, "QUIZ");
+  quizButton.id = 'quiz-button';
   var homeButton = createButton(planet, loadHome, planet.name.toUpperCase());
   nav.appendChild(quizButton);
   nav.appendChild(homeButton);
@@ -100,6 +101,8 @@ function loadQuiz(planet){
   questionNumber = 0;
   var container = document.createElement('div');
   var div = new Quiz(planet, popup, questionNumber);
+  var btn = document.getElementById('quiz-button');
+  btn.innerText = "RE-TAKE QUIZ"
   container.appendChild(div);
   popup.setContent(container);
 };

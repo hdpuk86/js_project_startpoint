@@ -32,7 +32,6 @@ function disableRadioBtns(){
 function colourLabels(correctAnswer){
   // Get all labels
   var labels = document.getElementsByTagName('label');
-  console.log(correctAnswer);
   // Loop over radio buttons and disable them
   for( var i = 0; i < labels.length; i++){
     if(labels[i].innerText == correctAnswer){
@@ -176,17 +175,6 @@ function buildResultPage(planet, popup, results){
 
   var barChart = new QuizResultChart(results);
   quizDiv.appendChild(barChart);
-
-  var button = document.createElement('button');
-  button.innerText = "Retake Quiz"
-  button.addEventListener('click', function(){
-    questionNumber = 0;
-    // Creates a new div based on the question
-    var div = new Quiz(planet, popup, questionNumber);
-    // repopulates the popup with the new question
-    popup.setContent(div);
-  })
-  quizDiv.appendChild(button);
   return quizDiv;
 }
 
