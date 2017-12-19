@@ -142,6 +142,7 @@ function buildQuestionPage(planet, popup, questionNumber){
   quizName.className = "quiz-name";
   var pQuizName = document.createElement('p');
   pQuizName.innerText = `${planet.name} Quiz`;
+  pQuizName.style.color = planet.colour;
   quizName.appendChild(pQuizName);
 
   var pQuestion = document.createElement('p');
