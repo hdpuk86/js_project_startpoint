@@ -60,8 +60,8 @@ var onLoad = function() {
       this.src = "../images/deathstar.png"
       this.style.width = '10vw';
       audio.src = '../audio/starwars.mp3'
-    }else{
-      this.src = "../images/rocketman.png"
+    }else {
+      this.src = "../images/rocket_man.png"
       this.style.width = '4vw';
       audio.src = '../audio/rocket_man.mp3'
     }
