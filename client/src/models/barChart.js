@@ -13,7 +13,7 @@ var BarChart = function(container, title, categories, series){
         "fontFamily": "Wire One",
         "color": "#FFFFFF",
         "fontSize": "3em"
-      }
+      },
       text: title
     },
     xAxis: {
