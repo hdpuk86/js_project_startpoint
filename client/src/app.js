@@ -49,12 +49,15 @@ var onLoad = function() {
   distanceMeter = document.getElementById('distance-meter');
   rocketMan = document.getElementById('rocket_man');
   rocketMan.addEventListener('click', function(){
-    var popup = new Popup();
-    var youtube = '<div class="video"><iframe width="560" height="315" src="https://www.youtube.com/embed/DtVBCG6ThDk" frameborder="0" gesture="media" allow="encrypted-media" allowfullscreen></iframe></div>'
-    var videoDiv = document.createElement('div');
-    videoDiv.innerHTML = youtube;
-    popup.setContent(videoDiv);
-    popup.display();
+    console.log(this.src);
+    if(this.src == "http://localhost:3000/images/rocket_man.png"){
+      this.src = "../images/enterprise.png"
+      this.style.width = '10vw';
+    }else{
+      this.src = "../images/rocket_man.png"
+      this.style.width = '4vw';
+
+    }
   })
   startButton = document.getElementById('start_button');
   startButton.addEventListener('click', () => window.scrollTo(0, 0));
