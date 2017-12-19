@@ -15,8 +15,8 @@ function createName(planet){
   return p;
 }
 
-function nameView(planet){
+function NameView(planet){
   return createNameDiv(planet);
 };
 
-module.exports = nameView;
+module.exports = NameView;

@@ -1,5 +1,7 @@
 var Popup = require('./popupView');
 var Quiz = require('./quizView');
+var QuizResultChart = require('./quizResultChartView');
+
 
 // This is the paragraph where the result of the chosen answer is held
 var pResult = document.createElement('p');
@@ -52,14 +54,27 @@ function saveQuizScoreToStorage(planet, newQuizScore){
 };
 
 function getAllQuizScoresFromStorage(){
-  var jsonString = localStorage.getItem('AllQuizResults') || '[0,0,0,0,0,0,0,0,0,0,0]';
+  var jsonString = localStorage.getItem('AllQuizResults') ||
+  JSON.stringify([
+    {y:0, color:'#fde301'},
+    {y:0, color:'#ffcc00'},
+    {y:0, color:'#86ffca'},
+    {y:0, color:'#01fdfa'},
+    {y:0, color:'grey'},
+    {y:0, color:'#ff7443'},
+    {y:0, color:'#ffa043'},
+    {y:0, color:'#f9d293'},
+    {y:0, color:'#18E6FF'},
+    {y:0, color:'#45B9FF'},
+    {y:0, color:'#D9F5FF'},
+  ]);
   return JSON.parse(jsonString);
 };
 
 function saveFinalQuizResultToLocalStorage(planet){
   var finalScore = getQuizScoreFromStorage(planet);
   var allQuizResults = getAllQuizScoresFromStorage();
-  allQuizResults[planet.index] = finalScore;
+  allQuizResults[planet.index].y = finalScore;
   var jsonString = JSON.stringify(allQuizResults);
   localStorage.setItem('AllQuizResults', jsonString);
 };
@@ -142,7 +157,7 @@ function buildQuestionPage(planet, popup, questionNumber){
   return quizDiv;
 }
 
-function buildResultPage(planet, popup){
+function buildResultPage(planet, popup, results){
   var quizDiv = document.createElement('div');
   var pQuizName = document.createElement('p');
   pQuizName.innerText = `${planet.name} Quiz Result`;
@@ -159,6 +174,9 @@ function buildResultPage(planet, popup){
   pQuizScore.innerText = `${quizScore} out of ${planet.quiz.questions.length}`;
   quizDiv.appendChild(pQuizScore);
 
+  var barChart = new QuizResultChart(results);
+  quizDiv.appendChild(barChart);
+
   var button = document.createElement('button');
   button.innerText = "Retake Quiz"
   button.addEventListener('click', function(){
@@ -169,7 +187,6 @@ function buildResultPage(planet, popup){
     popup.setContent(div);
   })
   quizDiv.appendChild(button);
-
   return quizDiv;
 }
 
@@ -185,7 +202,8 @@ var Quiz = function(planet, popup, questionNumber){
     return div;
   }else{
     saveFinalQuizResultToLocalStorage(planet);
-    var div = buildResultPage(planet, popup);
+    var results = getAllQuizScoresFromStorage();
+    var div = buildResultPage(planet, popup, results);
     return div;
   }
 
