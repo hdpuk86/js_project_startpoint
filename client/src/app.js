@@ -35,6 +35,10 @@ var onScroll = function() {
   }
 };
 
+var onWheel = function(event) {
+  window.scrollBy(event.deltaY, 0);
+};
+
 var onLoad = function() {
   navbar = document.getElementById('space-nav');
   distanceMeter = document.getElementById('distance-meter');
@@ -53,4 +57,5 @@ var onLoad = function() {
 
 window.addEventListener('keypress', flatEarth)
 window.addEventListener('scroll', onScroll);
+window.addEventListener('wheel', onWheel);
 window.addEventListener('load', onLoad);
