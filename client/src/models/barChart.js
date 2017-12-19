@@ -15,3 +15,5 @@ var BarChart = function(container, title, categories, series){
     series: series
   });
 };
+
+module.exports = BarChart;
