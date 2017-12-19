@@ -5,16 +5,24 @@ var QuizResultChart = require('./quizResultChartView');
 // This is the paragraph where the result of the chosen answer is held
 var pResult = document.createElement('p');
 
+var correctResult = function() {
+  pResult.innerText = 'Correct'
+  pResult.style.color = 'green';
+}
+
+var incorrectResult = function() {
+  pResult.innerText = 'Incorrect'
+  pResult.style.color = 'red';
+}
+
 var checkRadioAnswer = function(element, correctAnswer, quizScore){
   disableRadioBtns();
   colourLabels(correctAnswer);
-  if(element.value == correctAnswer){
-    pResult.innerText = 'Correct'
-    pResult.style.color = 'green';
-    quizScore ++;
-  }else {
-    pResult.innerText = 'Incorrect'
-    pResult.style.color = 'red';
+  if (element.value == correctAnswer) {
+    correctResult();
+    quizScore++;
+  } else {
+    incorrectResult();
   }
   return quizScore;
 }
