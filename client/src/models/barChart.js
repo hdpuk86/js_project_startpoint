@@ -14,6 +14,7 @@ var BarChart = function(container, title, categories, series){
         "color": "#FFFFFF",
         "fontSize": "3em"
       }
+      text: title
     },
     xAxis: {
       categories: categories
