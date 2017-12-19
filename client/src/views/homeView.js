@@ -68,20 +68,20 @@ function createLowerPopupSection(planet){
 };
 
 function createPopupNav(planet){
-  var imgButton = createButton(planet);
+  var quizButton = createButton(planet, loadQuiz, "QUIZ");
   var nav = document.createElement('nav');
   nav.className = "popup-nav";
-  nav.appendChild(imgButton);
+  nav.appendChild(quizButton);
   return nav;
 };
 
-function createButton(planet){
+function createButton(planet, callback, buttonText){
   var button = document.createElement('p');
   button.className = "popup-nav-btn";
-  button.innerText = "QUIZ";
-  button.addEventListener('click', function() {
-    loadQuiz(planet, popup);
-  })
+  button.innerText = buttonText;
+  button.addEventListener('click', function(){
+    callback(planet);
+  });
   return button;
 };
 
