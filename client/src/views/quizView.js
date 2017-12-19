@@ -83,72 +83,67 @@ function resetLocalStorageIfTakenBefore(planet){
   }
 }
 
+var setRadioButton = function(input, answer, planet, question) {
+  input.setAttribute('type', 'radio');
+  input.setAttribute('name', planet.name);
+  input.setAttribute('value', answer);
+  input.class = 'radioAnswers';
+  input.addEventListener('click', function(){
+    var quizScore = getQuizScoreFromStorage(planet);
+    var newQuizScore =
+    checkRadioAnswer(input, question.correctAnswer, quizScore);
+    saveQuizScoreToStorage(planet, newQuizScore);
+  });
+};
+
+var populateUl = function(answer, ul, planet, question) {
+  var li = document.createElement('li');
+  var questionInput = document.createElement('input');
+  var label = document.createElement('label');
+  label.innerText = answer;
+
+  setRadioButton(questionInput, answer, planet, question);
+
+  label.appendChild(questionInput);
+  li.appendChild(label);
+  ul.appendChild(li);
+};
+
 function buildQuestionPage(planet, popup, questionNumber){
   var questions = planet.quiz.questions;
   var question = questions[questionNumber];
-  // Create quiz div
-  var quizDiv = document.createElement('div');
-  // Add Quiz name paragraph
+
   var pQuizName = document.createElement('p');
   pQuizName.innerText = `${planet.name} Quiz`;
-  quizDiv.appendChild(pQuizName);
-  // Add question text
+
   var pQuestion = document.createElement('p');
   pQuestion.innerText = question.question;
-  quizDiv.appendChild(pQuestion);
-  // Create fieldset to hold ul of radio buttons
-  var quizFieldSet = document.createElement('fieldset');
-  // create UL
+
   var ul = document.createElement('ul');
-  // Get all answers for the question
   var answers = question.allAnswers;
-  // Create li, radio input and label for each answer
-  answers.forEach(function(answer){
-    var li = document.createElement('li');
-    var questionInput = document.createElement('input');
-    var label = document.createElement('label');
-    label.innerText = answer;
-
-    questionInput.setAttribute('type', 'radio');
-    questionInput.setAttribute('name', planet.name);
-    questionInput.setAttribute('value', answer);
-    questionInput.class = 'radioAnswers';
-    questionInput.addEventListener('click', function(){
-      var quizScore = getQuizScoreFromStorage(planet);
-      var newQuizScore =
-      checkRadioAnswer(questionInput, question.correctAnswer, quizScore);
-      saveQuizScoreToStorage(planet, newQuizScore);
-    })
-
-    label.appendChild(questionInput);
-    li.appendChild(label);
-    ul.appendChild(li);
-    quizFieldSet.appendChild(ul);
-  })
-  quizDiv.appendChild(quizFieldSet);
-
-  //Appends the paragraph to display if answer is correct or not
+  answers.forEach((answer) => populateUl(answer, ul, planet, question));
+  var quizFieldSet = document.createElement('fieldset').appendChild(ul);  
+  
   pResult.innerText = '';
-  quizDiv.appendChild(pResult);
 
-  // Adds the next question button and the event listener
-  var imgButton = document.createElement('img');
-  imgButton.src = '../images/right_arrow.png';
-  imgButton.width = 25;
-  imgButton.addEventListener('click', function(){
-    // increases the number in the question array
-    questionNumber++
-    // Creates a new div based on the question
-    var div = new Quiz(planet, popup, questionNumber);
-    // repopulates the popuo with the new question
-    popup.setContent(div);
-  })
-  quizDiv.appendChild(imgButton);
+  var nextQuestion = document.createElement('img');
+  nextQuestion.src = '../images/right_arrow.png';
+  nextQuestion.width = 25;
+  nextQuestion.addEventListener('click', function(){
+    questionNumber++;
+    popup.setContent(new Quiz(planet, popup, questionNumber));
+  });
 
-  // Add question counter
   var pQCounter = document.createElement('p');
   pQCounter.innerText = ` ${questionNumber+1} of ${questions.length}`;
-  quizDiv.appendChild(pQCounter);
+
+  var quizDiv = document.createElement('div');
+  quizDiv.appendChild(pQuizName);
+  quizDiv.appendChild(pQuestion);
+  quizDiv.appendChild(quizFieldSet);
+  quizDiv.appendChild(pResult);
+  quizDiv.appendChild(nextQuestion);
+  quizDiv.appendChild(pQCounter);  
 
   return quizDiv;
 }
@@ -156,7 +151,7 @@ function buildQuestionPage(planet, popup, questionNumber){
 function buildResultPage(planet, popup, results){
   var pQuizName = document.createElement('p');
   pQuizName.innerText = `${planet.name} Quiz Result`;
-  
+
   var pYouScored = document.createElement('p')
   pYouScored.innerText = "You Scored...";
 
