@@ -50,7 +50,8 @@ var onLoad = function() {
     popup.setContent(newContent);
     popup.display();
   })
-  rulerStart = document.getElementById('planet_container').getBoundingClientRect().left - window.innerWidth/2;
+  startButton = document.getElementById('start_button');
+  startButton.addEventListener('click', () => window.scrollTo(0, 0));
   new Request('/planets', HomeView);
   new Request('/planets', AdventureView);
 };
