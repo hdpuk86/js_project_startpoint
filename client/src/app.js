@@ -50,15 +50,20 @@ var onLoad = function() {
   distanceMeter = document.getElementById('distance-meter');
   rocketMan = document.getElementById('rocket_man');
   rocketMan.addEventListener('click', function(){
+    var audio = document.getElementById('elton');
     if(this.src == "http://localhost:3000/images/rocket_man.png"){
       this.src = "../images/enterprise.png"
       this.style.width = '10vw';
+      audio.src = '../audio/startrek.mp3'
+      playMusic();
     }else if(this.src == "http://localhost:3000/images/enterprise.png"){
       this.src = "../images/deathstar.png"
       this.style.width = '10vw';
+      audio.src = '../audio/starwars.mp3'
     }else{
       this.src = "../images/rocketman.png"
       this.style.width = '4vw';
+      audio.src = '../audio/rocket_man.mp3'
     }
   })
   startButton = document.getElementById('start_button');

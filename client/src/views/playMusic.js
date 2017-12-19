@@ -1,6 +1,6 @@
 var isPlaying = false;
 
-var playMusic = function(event){
+var playMusic = function(event, src){
   var audio = document.getElementById('elton');
   if(!isPlaying && event.keyCode === 32){
     audio.play();
