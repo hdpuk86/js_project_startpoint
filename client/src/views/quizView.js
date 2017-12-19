@@ -54,14 +54,27 @@ function saveQuizScoreToStorage(planet, newQuizScore){
 };
 
 function getAllQuizScoresFromStorage(){
-  var jsonString = localStorage.getItem('AllQuizResults') || '[0,0,0,0,0,0,0,0,0,0,0]';
+  var jsonString = localStorage.getItem('AllQuizResults') ||
+  JSON.stringify([
+    {y:0, color:'#fde301'},
+    {y:0, color:'#ffcc00'},
+    {y:0, color:'#86ffca'},
+    {y:0, color:'#01fdfa'},
+    {y:0, color:'grey'},
+    {y:0, color:'#ff7443'},
+    {y:0, color:'#ffa043'},
+    {y:0, color:'#f9d293'},
+    {y:0, color:'#18E6FF'},
+    {y:0, color:'#45B9FF'},
+    {y:0, color:'#D9F5FF'},
+  ]);
   return JSON.parse(jsonString);
 };
 
 function saveFinalQuizResultToLocalStorage(planet){
   var finalScore = getQuizScoreFromStorage(planet);
   var allQuizResults = getAllQuizScoresFromStorage();
-  allQuizResults[planet.index] = finalScore;
+  allQuizResults[planet.index].y = finalScore;
   var jsonString = JSON.stringify(allQuizResults);
   localStorage.setItem('AllQuizResults', jsonString);
 };
