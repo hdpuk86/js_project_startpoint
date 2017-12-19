@@ -5,8 +5,6 @@ var PieCompView = require('./pieCompView');
 var questionNumber;
 var NameView = require('./nameView');
 
-
-
 function addAllListeners(planet){
   var circle = document.getElementById(`circle_${planet.name}`);
   addHoverListener(planet, circle);
@@ -33,16 +31,20 @@ function addHoverListener(planet, div){
 function addClickListener(planet, div){
   div.addEventListener('click', () => {
     popup = new Popup();
-    var container = document.createElement('div');
-    var upperSection = createUpperPopupSection(planet);
-    var lowerSection = createLowerPopupSection(planet);
-    var nav = createPopupNav(planet);
-    container.appendChild(upperSection);
-    container.appendChild(lowerSection);
-    container.appendChild(nav);
+    var container = createPopupInfoView(planet);
     popup.setContent(container);
     popup.display();
   });
+};
+
+function createPopupInfoView(planet){
+  var container = document.createElement('div');
+  var upperSection = createUpperPopupSection(planet);
+  var lowerSection = createLowerPopupSection(planet);
+  container.appendChild(upperSection);
+  container.appendChild(lowerSection);
+  setPopupNav(planet);
+  return container;
 };
 
 function createUpperPopupSection(planet){
@@ -69,28 +71,37 @@ function createLowerPopupSection(planet){
   return lowerSection;
 };
 
-function createPopupNav(planet){
-  var imgButton = createButton(planet);
-  var nav = document.createElement('nav');
-  nav.className = "popup-nav";
-  nav.appendChild(imgButton);
+function setPopupNav(planet){
+  var nav = document.getElementById('popup-nav');
+  nav.innerHTML = '';
+  var quizButton = createButton(planet, loadQuiz, "QUIZ");
+  var homeButton = createButton(planet, loadHome, planet.name.toUpperCase());
+  nav.appendChild(quizButton);
+  nav.appendChild(homeButton);
   return nav;
 };
 
-function createButton(planet){
-  var imgButton = document.createElement('img');
-  imgButton.src = '../images/right_arrow.png';
-  imgButton.width = 25;
-  imgButton.addEventListener('click', function() {
-    loadQuiz(planet, popup);
-  })
-  return imgButton;
+function createButton(planet, callback, buttonText){
+  var button = document.createElement('p');
+  button.className = "popup-nav-btn";
+  button.innerText = buttonText;
+  button.addEventListener('click', function(){
+    callback(planet);
+  });
+  return button;
 };
+
+function loadHome(planet){
+  var container = createPopupInfoView(planet);
+  popup.setContent(container);
+}
 
 function loadQuiz(planet){
   questionNumber = 0;
+  var container = document.createElement('div');
   var div = new Quiz(planet, popup, questionNumber);
-  popup.setContent(div);
+  container.appendChild(div);
+  popup.setContent(container);
 };
 
 var HomeView = function(planets) {
