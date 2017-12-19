@@ -1,5 +1,7 @@
 var Popup = require('./popupView');
 var Quiz = require('./quizView');
+var QuizResultChart = require('./quizResultChartView');
+
 
 // This is the paragraph where the result of the chosen answer is held
 var pResult = document.createElement('p');
@@ -142,7 +144,7 @@ function buildQuestionPage(planet, popup, questionNumber){
   return quizDiv;
 }
 
-function buildResultPage(planet, popup){
+function buildResultPage(planet, popup, results){
   var quizDiv = document.createElement('div');
   var pQuizName = document.createElement('p');
   pQuizName.innerText = `${planet.name} Quiz Result`;
@@ -159,6 +161,9 @@ function buildResultPage(planet, popup){
   pQuizScore.innerText = `${quizScore} out of ${planet.quiz.questions.length}`;
   quizDiv.appendChild(pQuizScore);
 
+  var barChart = new QuizResultChart(results);
+  quizDiv.appendChild(barChart);
+
   var button = document.createElement('button');
   button.innerText = "Retake Quiz"
   button.addEventListener('click', function(){
@@ -169,7 +174,6 @@ function buildResultPage(planet, popup){
     popup.setContent(div);
   })
   quizDiv.appendChild(button);
-
   return quizDiv;
 }
 
@@ -185,7 +189,8 @@ var Quiz = function(planet, popup, questionNumber){
     return div;
   }else{
     saveFinalQuizResultToLocalStorage(planet);
-    var div = buildResultPage(planet, popup);
+    var results = getAllQuizScoresFromStorage();
+    var div = buildResultPage(planet, popup, results);
     return div;
   }
 
