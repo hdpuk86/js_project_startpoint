@@ -184,6 +184,7 @@ var Quiz = function(planet, popup, questionNumber){
     var div = buildQuestionPage(planet, popup, questionNumber);
     return div;
   }else{
+    saveFinalQuizResultToLocalStorage(planet);
     var div = buildResultPage(planet, popup);
     return div;
   }
