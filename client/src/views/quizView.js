@@ -173,8 +173,8 @@ function buildResultPage(planet, popup, results){
 var Quiz = function(planet, popup, questionNumber){
   if (questionNumber === 0){
     resetLocalStorageIfTakenBefore(planet);
-  }
-  if (questionNumber < planet.quiz.questions.length) {
+    return buildQuestionPage(planet, popup, questionNumber);
+  } else if (questionNumber < planet.quiz.questions.length) {
     return buildQuestionPage(planet, popup, questionNumber);
   } else {
     saveFinalQuizResultToLocalStorage(planet);
