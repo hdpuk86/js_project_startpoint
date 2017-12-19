@@ -29,11 +29,17 @@ var onScroll = function() {
     rocketMan.style.visibility = 'visible';
     distanceUnitSelector.style.visibility = 'visible';
   } else {
-    navbar.style.visibility = 'hidden';
-    distanceMeter.style.visibility = 'hidden';
-    rocketMan.style.visibility = 'hidden';
-    distanceUnitSelector.style.visibility = 'hidden';
+    if (navbar && distanceMeter && rocketMan) {
+      navbar.style.visibility = 'hidden';
+      distanceMeter.style.visibility = 'hidden';
+      rocketMan.style.visibility = 'hidden';
+      distanceUnitSelector.style.visibility = 'hidden';
+    }
   }
+};
+
+var onWheel = function(event) {
+  window.scrollBy(event.deltaY, 0);
 };
 
 var onLoad = function() {
@@ -50,11 +56,13 @@ var onLoad = function() {
     popup.setContent(videoDiv);
     popup.display();
   })
-  rulerStart = document.getElementById('planet_container').getBoundingClientRect().left - window.innerWidth/2;
+  startButton = document.getElementById('start_button');
+  startButton.addEventListener('click', () => window.scrollTo(0, 0));
   new Request('/planets', HomeView);
   new Request('/planets', AdventureView);
 };
 
 window.addEventListener('keypress', flatEarth)
 window.addEventListener('scroll', onScroll);
+window.addEventListener('wheel', onWheel);
 window.addEventListener('load', onLoad);
