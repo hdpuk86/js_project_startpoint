@@ -40,8 +40,8 @@ function colourLabels(correctAnswer){
 }
 
 function getQuizScoreFromStorage(planet){
-  var jsonString = localStorage.getItem(`${planet.name}QuizResult`) || 0;
-  return JSON.parse(jsonString);
+  var jsonString = localStorage.getItem(`${planet.name}QuizResult`);
+  return jsonString ? JSON.parse(jsonString) : 0;
 };
 
 function saveQuizScoreToStorage(planet, newQuizScore){
