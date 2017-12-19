@@ -52,7 +52,7 @@ function saveQuizScoreToStorage(planet, newQuizScore){
 };
 
 function getAllQuizScoresFromStorage(){
-  var jsonString = localStorage.getItem('AllQuizResults') || [0,0,0,0,0,0,0,0,0,0,0];
+  var jsonString = localStorage.getItem('AllQuizResults') || '[0,0,0,0,0,0,0,0,0,0,0]';
   return JSON.parse(jsonString);
 };
 
