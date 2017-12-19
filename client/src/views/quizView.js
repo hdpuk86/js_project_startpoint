@@ -49,7 +49,20 @@ function getQuizScoreFromStorage(planet){
 function saveQuizScoreToStorage(planet, newQuizScore){
   var jsonString = JSON.stringify(newQuizScore);
   localStorage.setItem(`${planet.name}QuizResult`, jsonString);
-}
+};
+
+function getAllQuizScoresFromStorage(){
+  var jsonString = localStorage.getItem('AllQuizResults') || [0,0,0,0,0,0,0,0,0,0,0];
+  return JSON.parse(jsonString);
+};
+
+function saveFinalQuizResultToLocalStorage(planet){
+  var finalScore = getQuizScoreFromStorage(planet);
+  var allQuizResults = getAllQuizScoresFromStorage();
+  allQuizResults[planet.index] = finalScore;
+  var jsonString = JSON.stringify(allQuizResults);
+  localStorage.setItem('AllQuizResults', jsonString);
+};
 
 function resetLocalStorageIfTakenBefore(planet){
   var score = getQuizScoreFromStorage(planet);
