@@ -35,9 +35,18 @@ function disableRadioBtns(){
 
 function colourLabels(correctAnswer){
   [...document.getElementsByTagName('label')].forEach((label) => {
-    label.style.color = label.innerText == correctAnswer ? 'green':'grey';
+    var p = null;
+    for (var i = 0; i < label.childNodes.length; i++) {
+      if (label.childNodes[i].className == "answer-text") {
+        p = label.childNodes[i];
+        break;
+      }
+    }
+    p.style.color = p.innerText == correctAnswer ? 'green':'grey';
   });
 }
+
+
 
 function getQuizScoreFromStorage(planet){
   var jsonString = localStorage.getItem(`${planet.name}QuizResult`);
@@ -99,12 +108,17 @@ var setRadioButton = function(input, answer, planet, question) {
 var populateUl = function(answer, ul, planet, question) {
   var li = document.createElement('li');
   var questionInput = document.createElement('input');
+  questionInput.className = "quiz-radio-btn";
   var label = document.createElement('label');
-  label.innerText = answer;
+  label.className = "answer-labels";
+  var p = document.createElement('p');
+  p.className = "answer-text";
+  p.innerText = answer;
 
   setRadioButton(questionInput, answer, planet, question);
 
   label.appendChild(questionInput);
+  label.appendChild(p);
   li.appendChild(label);
   ul.appendChild(li);
 };
@@ -112,10 +126,10 @@ var populateUl = function(answer, ul, planet, question) {
 var shuffle = function(array) {
   var i, j, x;
   for (i = array.length - 1; i > 0; i--) {
-      j = Math.floor(Math.random() * (i + 1));
-      x = array[i];
-      array[i] = array[j];
-      array[j] = x;
+    j = Math.floor(Math.random() * (i + 1));
+    x = array[i];
+    array[i] = array[j];
+    array[j] = x;
   }
   return array;
 }
@@ -133,8 +147,8 @@ function buildQuestionPage(planet, popup, questionNumber){
   var ul = document.createElement('ul');
   var answers = shuffle(question.allAnswers);
   answers.forEach((answer) => populateUl(answer, ul, planet, question));
-  var quizFieldSet = document.createElement('fieldset').appendChild(ul);  
-  
+  var quizFieldSet = document.createElement('fieldset').appendChild(ul);
+
   pResult.innerText = '';
 
   var nextQuestion = document.createElement('img');
@@ -154,7 +168,7 @@ function buildQuestionPage(planet, popup, questionNumber){
   quizDiv.appendChild(quizFieldSet);
   quizDiv.appendChild(pResult);
   quizDiv.appendChild(nextQuestion);
-  quizDiv.appendChild(pQCounter);  
+  quizDiv.appendChild(pQCounter);
 
   return quizDiv;
 }
@@ -172,12 +186,12 @@ function buildResultPage(planet, popup, results){
 
   var barChart = new QuizResultChart(results);
 
-  var quizDiv = document.createElement('div');   
+  var quizDiv = document.createElement('div');
   quizDiv.appendChild(pQuizName);
-  quizDiv.appendChild(pYouScored);  
+  quizDiv.appendChild(pYouScored);
   quizDiv.appendChild(pQuizScore);
   quizDiv.appendChild(barChart);
-  
+
   return quizDiv;
 }
 

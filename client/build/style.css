@@ -289,3 +289,16 @@ p {
   margin-top: 10px;
   margin-left: 50px;
 }
+
+.answer-labels {
+  display: flex;
+  flex-direction: row;
+}
+
+.answer-text {
+  margin-left: 20px;
+}
+
+.quiz-radio-btn {
+  margin-top: 10px;
+}
