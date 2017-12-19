@@ -24,7 +24,7 @@ db.planets.insertMany([
       {name: "Sulfur", y: 0.04}
     ],
     distance: 0, // In pixels from the Sun.
-    distanceFromLast: 140.5, // In pixels from last object.
+    distanceFromLast: -30, // In pixels from last object.
     gravity: 27.94,// In g, Earth gravities.
     colour: '#fde301',
     homepageRadius: 150,
