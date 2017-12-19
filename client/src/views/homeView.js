@@ -5,55 +5,76 @@ var PieCompView = require('./pieCompView');
 var questionNumber;
 var NameView = require('./nameView');
 
-function addListeners(planet){
+
+
+function addAllListeners(planet){
   var circle = document.getElementById(`circle_${planet.name}`);
+  addHoverListener(planet, circle);
+  addClickListener(planet, circle);
+};
+
+function addHoverListener(planet, div){
   var hoverDiv = document.getElementById(`hover_${planet.name}_div`);
   var nameDiv = document.getElementById(`${planet.name}_name_div`);
-  var imgButton = createButton(planet);
-  var pieChart = new PieCompView(planet);
-  var name = new NameView(planet);
-  name.className = "popup-title";
   hoverDiv.style.opacity = 0;
   hoverDiv.style.transition = 'opacity 1.0s linear';
-  circle.addEventListener('mouseover', function(){
+  div.addEventListener('mouseover', function(){
     hoverDiv.style.opacity = 1;
     hoverDiv.style.visibility = "visible";
     nameDiv.style.visibility = "visible";
   });
-  circle.addEventListener('mouseleave', function(){
+  div.addEventListener('mouseleave', function(){
     hoverDiv.style.visibility = 'hidden';
     hoverDiv.style.opacity = 0;
     nameDiv.style.visibility = 'hidden';
   });
-  circle.addEventListener('click', () => {
+};
+
+function addClickListener(planet, div){
+  div.addEventListener('click', () => {
     popup = new Popup();
-    var div = document.createElement('div');
-    var upperSection = document.createElement('section');
-    upperSection.className = "popup-upper";
-    var videoDiv = document.createElement('div');
-    videoDiv.innerHTML = planet.youtubeEmbed;
-    upperSection.appendChild(name);
-    upperSection.appendChild(videoDiv);
-
-    var lowerSection = document.createElement('section');
-    lowerSection.className = "popup-lower";
-    var textDiv = document.createElement('div');
-    textDiv.className = "popup-text";
-    textDiv.innerHTML = planet.description;
-    lowerSection.appendChild(textDiv);
-    lowerSection.appendChild(pieChart);
-
-    var nav = document.createElement('nav');
-    nav.className = "popup-nav";
-    nav.appendChild(imgButton);
-
-    div.appendChild(upperSection);
-    div.appendChild(lowerSection);
-    div.appendChild(nav);
-
-    popup.setContent(div);
+    var container = document.createElement('div');
+    var upperSection = createUpperPopupSection(planet);
+    var lowerSection = createLowerPopupSection(planet);
+    var nav = createPopupNav(planet);
+    container.appendChild(upperSection);
+    container.appendChild(lowerSection);
+    container.appendChild(nav);
+    popup.setContent(container);
     popup.display();
   });
+};
+
+function createUpperPopupSection(planet){
+  var name = new NameView(planet);
+  name.className = "popup-title";
+  var upperSection = document.createElement('section');
+  upperSection.className = "popup-upper";
+  var videoDiv = document.createElement('div');
+  videoDiv.innerHTML = planet.youtubeEmbed;
+  upperSection.appendChild(name);
+  upperSection.appendChild(videoDiv);
+  return upperSection;
+};
+
+function createLowerPopupSection(planet){
+  var pieChart = new PieCompView(planet);
+  var lowerSection = document.createElement('section');
+  lowerSection.className = "popup-lower";
+  var textDiv = document.createElement('div');
+  textDiv.className = "popup-text";
+  textDiv.innerHTML = planet.description;
+  lowerSection.appendChild(textDiv);
+  lowerSection.appendChild(pieChart);
+  return lowerSection;
+};
+
+function createPopupNav(planet){
+  var imgButton = createButton(planet);
+  var nav = document.createElement('nav');
+  nav.className = "popup-nav";
+  nav.appendChild(imgButton);
+  return nav;
 };
 
 function createButton(planet){
@@ -77,7 +98,7 @@ var HomeView = function(planets) {
   planets.forEach((planet) => {
     var planetDiv = new PlanetView(planet);
     div.appendChild(planetDiv);
-    addListeners(planet);
+    addAllListeners(planet);
   });
 };
 
