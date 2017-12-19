@@ -5,8 +5,6 @@ var PieCompView = require('./pieCompView');
 var questionNumber;
 var NameView = require('./nameView');
 
-
-
 function addAllListeners(planet){
   var circle = document.getElementById(`circle_${planet.name}`);
   addHoverListener(planet, circle);
@@ -78,13 +76,13 @@ function createPopupNav(planet){
 };
 
 function createButton(planet){
-  var imgButton = document.createElement('img');
-  imgButton.src = '../images/right_arrow.png';
-  imgButton.width = 25;
-  imgButton.addEventListener('click', function() {
+  var button = document.createElement('p');
+  button.className = "popup-nav-btn";
+  button.innerText = "QUIZ";
+  button.addEventListener('click', function() {
     loadQuiz(planet, popup);
   })
-  return imgButton;
+  return button;
 };
 
 function loadQuiz(planet){

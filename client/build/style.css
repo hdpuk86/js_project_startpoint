@@ -248,3 +248,14 @@ p {
 .popup-title {
   font-size: 2em;
 }
+
+.popup-nav-btn {
+  font-family: 'Wire One';
+  font-size: 1em;
+  padding: 4px;
+  border-right: 1px solid #FFF;
+}
+
+.popup-nav-btn:hover {
+  cursor: pointer;
+}
