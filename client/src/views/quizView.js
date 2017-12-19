@@ -20,12 +20,9 @@ var checkRadioAnswer = function(element, correctAnswer, quizScore){
 }
 
 function disableRadioBtns(){
-  // Get all radio buttons
-  var radioBtns = document.getElementsByTagName('input');
-  // Loop over radio buttons and disable them
-  for( var i = 0; i < radioBtns.length; i++){
-    radioBtns[i].disabled = true;
-  };
+  [...document.getElementsByTagName('input')].forEach((button) => {
+    button.disabled = true;
+  });
 };
 
 function colourLabels(correctAnswer){
