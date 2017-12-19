@@ -154,35 +154,24 @@ function buildQuestionPage(planet, popup, questionNumber){
 }
 
 function buildResultPage(planet, popup, results){
-  var quizDiv = document.createElement('div');
   var pQuizName = document.createElement('p');
   pQuizName.innerText = `${planet.name} Quiz Result`;
-  quizDiv.appendChild(pQuizName);
-  // Add Result
-  var pYouScored = document.createElement('p');
-
+  
+  var pYouScored = document.createElement('p')
   pYouScored.innerText = "You Scored...";
-  quizDiv.appendChild(pYouScored);
 
   var quizScore = getQuizScoreFromStorage(planet);
   var pQuizScore = document.createElement('p');
-
   pQuizScore.innerText = `${quizScore} out of ${planet.quiz.questions.length}`;
-  quizDiv.appendChild(pQuizScore);
 
   var barChart = new QuizResultChart(results);
-  quizDiv.appendChild(barChart);
 
-  var button = document.createElement('button');
-  button.innerText = "Retake Quiz"
-  button.addEventListener('click', function(){
-    questionNumber = 0;
-    // Creates a new div based on the question
-    var div = new Quiz(planet, popup, questionNumber);
-    // repopulates the popup with the new question
-    popup.setContent(div);
-  })
-  quizDiv.appendChild(button);
+  var quizDiv = document.createElement('div');   
+  quizDiv.appendChild(pQuizName);
+  quizDiv.appendChild(pYouScored);  
+  quizDiv.appendChild(pQuizScore);
+  quizDiv.appendChild(barChart);
+  
   return quizDiv;
 }
 
