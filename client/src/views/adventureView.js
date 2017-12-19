@@ -32,46 +32,27 @@ function addHoverListener(planet, div){
 function addClickListener(planet, div){
   div.addEventListener('click', () => {
     popup = new Popup();
-    var container = createPopupInfoView(planet);
-    popup.setContent(container);
+    var div = document.createElement('div');
+    var upperSection = createUpperPopupSection(planet);
+    var lowerSection = createLowerPopupSection(planet);
+    var nav = createPopupNav(planet);
+    div.appendChild(upperSection);
+    div.appendChild(lowerSection);
+    div.appendChild(nav);
+    popup.setContent(div);
     popup.display();
   });
 };
 
-function createPopupInfoView(planet){
-  var container = document.createElement('div');
-  var upperSection = createUpperPopupSection(planet);
-  var lowerSection = createLowerPopupSection(planet);
-  container.appendChild(upperSection);
-  container.appendChild(lowerSection);
-  setPopupNav(planet);
-  return container;
+function createButton(planet){
+  var imgButton = document.createElement('img');
+  imgButton.src = '../images/right_arrow.png';
+  imgButton.width = 25;
+  imgButton.addEventListener('click', function() {
+    loadQuiz(planet, popup);
+  })
+  return imgButton;
 };
-
-function setPopupNav(planet){
-  var nav = document.getElementById('popup-nav');
-  nav.innerHTML = '';
-  var quizButton = createButton(planet, loadQuiz, "QUIZ");
-  var homeButton = createButton(planet, loadHome, planet.name.toUpperCase());
-  nav.appendChild(quizButton);
-  nav.appendChild(homeButton);
-  return nav;
-};
-
-function createButton(planet, callback, buttonText){
-  var button = document.createElement('p');
-  button.className = "popup-nav-btn";
-  button.innerText = buttonText;
-  button.addEventListener('click', function(){
-    callback(planet);
-  });
-  return button;
-};
-
-function loadHome(planet){
-  var container = createPopupInfoView(planet);
-  popup.setContent(container);
-}
 
 function createUpperPopupSection(planet){
   var name = new NameView(planet);
@@ -95,6 +76,14 @@ function createLowerPopupSection(planet){
   lowerSection.appendChild(textDiv);
   lowerSection.appendChild(pieChart);
   return lowerSection;
+};
+
+function createPopupNav(planet){
+  var imgButton = createButton(planet);
+  var nav = document.createElement('nav');
+  nav.className = "popup-nav";
+  nav.appendChild(imgButton);
+  return nav;
 };
 
 function loadQuiz(planet){
