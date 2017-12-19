@@ -190,19 +190,13 @@ var Quiz = function(planet, popup, questionNumber){
   if (questionNumber === 0){
     resetLocalStorageIfTakenBefore(planet);
   }
-  // Get the questions for the planet
-  var questions = planet.quiz.questions;
-  // Check if its the last question
-  if (questionNumber < questions.length){
-    var div = buildQuestionPage(planet, popup, questionNumber);
-    return div;
-  }else{
+  if (questionNumber < planet.quiz.questions.length) {
+    return buildQuestionPage(planet, popup, questionNumber);
+  } else {
     saveFinalQuizResultToLocalStorage(planet);
     var results = getAllQuizScoresFromStorage();
-    var div = buildResultPage(planet, popup, results);
-    return div;
+    return buildResultPage(planet, popup, results);
   }
-
 }
 
 module.exports = Quiz;
