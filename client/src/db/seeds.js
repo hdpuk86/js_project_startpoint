@@ -105,6 +105,11 @@ db.planets.insertMany([
           question:"Which gas makes up most of Mercury\'s atmosphere?",
           correctAnswer: "Oxygen",
           allAnswers: ["Methane", "Helium", "Hydrogen", "Oxygen"]
+        },
+        {
+          question:"How many Mercury days are there in a Mercury year?",
+          correctAnswer: "0.5",
+          allAnswers: ["417", "29", "203", "0.5"]
         }
       ]
     }
@@ -150,6 +155,11 @@ db.planets.insertMany([
           question:"Which position is Venus from the sun?",
           correctAnswer: "2nd",
           allAnswers: ["4th", "3rd", "1st", "2nd"]
+        },
+        {
+          question:"Who sent the first robotic space probe to Venus?",
+          correctAnswer: "The Russians",
+          allAnswers: ["The Americans", "The UK", "The Russians", "India"]
         }
       ]
     }
@@ -185,8 +195,8 @@ db.planets.insertMany([
         },
         {
           question:"What makes the Earth unique?",
-          correctAnswer: "It harbors life",
-          allAnswers: ["It\'s the biggest planet", "It has clouds", "It is blue", "It harbors life"]
+          correctAnswer: "It harbours life",
+          allAnswers: ["It\'s the biggest planet", "It has clouds", "It is blue", "It harbours life"]
         },
         {
           question:"Which gas makes up most of the atmsophere?",
@@ -197,6 +207,11 @@ db.planets.insertMany([
           question:"How many moons does the Earth have?",
           correctAnswer: 1,
           allAnswers: [11, 25, 4, 1]
+        },
+        {
+          question:"What shape is the Earth?",
+          correctAnswer: 'a Sphere',
+          allAnswers: ['a Disc', 'a Square', 'a Circle', 'a Sphere']
         }
       ]
     }
@@ -239,6 +254,11 @@ db.planets.insertMany([
           question:"Which is the only satellite denser than the moon?",
           correctAnswer: "Io",
           allAnswers: ["Phobos", "Europa", "Titan", "Io"]
+        },
+        {
+          question:"How far does the Moon move away from Earth every year?",
+          correctAnswer: "3.8cm",
+          allAnswers: ['3.8cm', '50cm', '2metres', '0.2mm']
         }
       ]
     }
@@ -287,6 +307,11 @@ db.planets.insertMany([
           question:"What compound gives Mars it\'s colour?",
           correctAnswer: "Iron oxide",
           allAnswers: ["Rainbow", "Paint", "Carbon dioxide", "Iron oxide"]
+        },
+        {
+          question:"How many moons does Mars have?",
+          correctAnswer: 2,
+          allAnswers: [0, 1, 2, 3]
         }
       ]
     }
@@ -319,7 +344,7 @@ db.planets.insertMany([
           allAnswers: ["It\'s made of chocolate", "It\'s the only planet in the solar system", "It\'s the lightest planet in the solar system", "It\'s the largest planet in the solar system"]
         },
         {
-          question:"Jupiter is know as....?",
+          question:"Jupiter is known as...?",
           correctAnswer: "A gas giant",
           allAnswers: ["An asteroid", "An ice giant", "A dwarf planet", "A gas giant"]
         },
@@ -332,6 +357,11 @@ db.planets.insertMany([
           question:"How long is a day on Jupiter in Earth hours?",
           correctAnswer: 10,
           allAnswers: [110, 24, 365, 10]
+        },
+        {
+          question:"How many moons does Jupiter have?",
+          correctAnswer: 69,
+          allAnswers: [12, 137, 69, 58]
         }
       ]
     }
@@ -378,6 +408,11 @@ db.planets.insertMany([
           question:"Which planet is bigger than Saturn?",
           correctAnswer: "Jupiter",
           allAnswers: ["Pluto", "Mars", "Earth", "Jupiter"]
+        },
+        {
+          question:"What shape is the cloud at the north pole of Saturn?",
+          correctAnswer: "Hexagon",
+          allAnswers: ["Circle", "Square", "Hexagon", "Ellipse"]
         }
       ]
     }
@@ -424,6 +459,11 @@ db.planets.insertMany([
           question:"How many moons does Uranus have?",
           correctAnswer: 27,
           allAnswers: [2, 120, 30, 27]
+        },
+        {
+          question:"Where does the word Uranus come from?",
+          correctAnswer: 'Greek',
+          allAnswers: ['Greek', 'Roman', 'Sanskrit', 'Sumerian']
         }
       ]
     }
@@ -470,6 +510,11 @@ db.planets.insertMany([
           question:"What is Neptune\'s symbol?",
           correctAnswer: "Trident",
           allAnswers: ["Fishing rod", "Hammer", "Sickle", "Trident"]
+        },
+        {
+          question:"How was Neptune discovered?",
+          correctAnswer: "Mathematical prediction",
+          allAnswers: ["Telescopic Observation", "Astrology", "Mathematical prediction", "Unaided Observation"]
         }
       ]
     }
@@ -515,6 +560,11 @@ db.planets.insertMany([
           question:"When did Pluto cease to be known as a planet?",
           correctAnswer: 2006,
           allAnswers: [1986, 1935, 2017, 2006]
+        },
+        {
+          question:"How much of Pluto is water?",
+          correctAnswer: 'a third',
+          allAnswers: ['half', 'a third', 'a quarter', 'none']
         }
       ]
     }
