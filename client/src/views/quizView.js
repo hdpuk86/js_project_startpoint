@@ -138,37 +138,53 @@ function buildQuestionPage(planet, popup, questionNumber){
   var questions = planet.quiz.questions;
   var question = questions[questionNumber];
 
+  var quizName = document.createElement('div');
+  quizName.className = "quiz-name";
   var pQuizName = document.createElement('p');
   pQuizName.innerText = `${planet.name} Quiz`;
+  quizName.appendChild(pQuizName);
 
   var pQuestion = document.createElement('p');
   pQuestion.innerText = question.question;
+
+  var topSection = document.createElement('section');
+  topSection.className = "quiz-top";
+  topSection.appendChild(quizName);
+  topSection.appendChild(pQuestion);
 
   var ul = document.createElement('ul');
   var answers = shuffle(question.allAnswers);
   answers.forEach((answer) => populateUl(answer, ul, planet, question));
   var quizFieldSet = document.createElement('fieldset').appendChild(ul);
-
-  pResult.innerText = '';
+  quizFieldSet.className = "quiz-fieldset";
 
   var nextQuestion = document.createElement('img');
+  nextQuestion.className = "next-Q-img";
   nextQuestion.src = '../images/right_arrow.png';
-  nextQuestion.width = 25;
+  nextQuestion.height = 25;
   nextQuestion.addEventListener('click', function(){
     questionNumber++;
     popup.setContent(new Quiz(planet, popup, questionNumber));
   });
+  var midSection = document.createElement('section');
 
+  midSection.className = "quiz-mid";
+  midSection.appendChild(quizFieldSet);
+  midSection.appendChild(nextQuestion);
+
+  pResult.innerText = '';
   var pQCounter = document.createElement('p');
   pQCounter.innerText = ` ${questionNumber+1} of ${questions.length}`;
+  var lowSection = document.createElement('section');
+
+  lowSection.className = "quiz-low";
+  lowSection.appendChild(pResult);
+  lowSection.appendChild(pQCounter);
 
   var quizDiv = document.createElement('div');
-  quizDiv.appendChild(pQuizName);
-  quizDiv.appendChild(pQuestion);
-  quizDiv.appendChild(quizFieldSet);
-  quizDiv.appendChild(pResult);
-  quizDiv.appendChild(nextQuestion);
-  quizDiv.appendChild(pQCounter);
+  quizDiv.appendChild(topSection);
+  quizDiv.appendChild(midSection);
+  quizDiv.appendChild(lowSection);
 
   return quizDiv;
 }
