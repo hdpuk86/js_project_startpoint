@@ -109,6 +109,17 @@ var populateUl = function(answer, ul, planet, question) {
   ul.appendChild(li);
 };
 
+var shuffle = function(array) {
+  var i, j, x;
+  for (i = array.length - 1; i > 0; i--) {
+      j = Math.floor(Math.random() * (i + 1));
+      x = array[i];
+      array[i] = array[j];
+      array[j] = x;
+  }
+  return array;
+}
+
 function buildQuestionPage(planet, popup, questionNumber){
   var questions = planet.quiz.questions;
   var question = questions[questionNumber];
@@ -120,7 +131,7 @@ function buildQuestionPage(planet, popup, questionNumber){
   pQuestion.innerText = question.question;
 
   var ul = document.createElement('ul');
-  var answers = question.allAnswers;
+  var answers = shuffle(question.allAnswers);
   answers.forEach((answer) => populateUl(answer, ul, planet, question));
   var quizFieldSet = document.createElement('fieldset').appendChild(ul);  
   
