@@ -29,10 +29,12 @@ var onScroll = function() {
     rocketMan.style.visibility = 'visible';
     distanceUnitSelector.style.visibility = 'visible';
   } else {
-    navbar.style.visibility = 'hidden';
-    distanceMeter.style.visibility = 'hidden';
-    rocketMan.style.visibility = 'hidden';
-    distanceUnitSelector.style.visibility = 'hidden';
+    if (navbar && distanceMeter && rocketMan) {
+      navbar.style.visibility = 'hidden';
+      distanceMeter.style.visibility = 'hidden';
+      rocketMan.style.visibility = 'hidden';
+      distanceUnitSelector.style.visibility = 'hidden';
+    }
   }
 };
 
