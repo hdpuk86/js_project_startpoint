@@ -78,10 +78,8 @@ function saveFinalQuizResultToLocalStorage(planet){
 };
 
 function resetLocalStorageIfTakenBefore(planet){
-  var score = getQuizScoreFromStorage(planet);
-  if(score !== 0){
-    score = 0;
-    saveQuizScoreToStorage(planet, score);
+  if (getQuizScoreFromStorage(planet) !== 0) {
+    saveQuizScoreToStorage(planet, 0);
   }
 }
 
