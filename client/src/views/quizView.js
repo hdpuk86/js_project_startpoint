@@ -46,8 +46,6 @@ function colourLabels(correctAnswer){
   });
 }
 
-
-
 function getQuizScoreFromStorage(planet){
   var jsonString = localStorage.getItem(`${planet.name}QuizResult`);
   return jsonString ? JSON.parse(jsonString) : 0;
@@ -134,10 +132,7 @@ var shuffle = function(array) {
   return array;
 }
 
-function buildQuestionPage(planet, popup, questionNumber){
-  var questions = planet.quiz.questions;
-  var question = questions[questionNumber];
-
+function questionPageTop(planet, question){
   var quizName = document.createElement('div');
   quizName.className = "quiz-name";
   var pQuizName = document.createElement('p');
@@ -152,7 +147,10 @@ function buildQuestionPage(planet, popup, questionNumber){
   topSection.className = "quiz-top";
   topSection.appendChild(quizName);
   topSection.appendChild(pQuestion);
+  return topSection;
+}
 
+function questionPageMid(planet, question, questionNumber){
   var ul = document.createElement('ul');
   var answers = shuffle(question.allAnswers);
   answers.forEach((answer) => populateUl(answer, ul, planet, question));
@@ -168,11 +166,13 @@ function buildQuestionPage(planet, popup, questionNumber){
     popup.setContent(new Quiz(planet, popup, questionNumber));
   });
   var midSection = document.createElement('section');
-
   midSection.className = "quiz-mid";
   midSection.appendChild(quizFieldSet);
   midSection.appendChild(nextQuestion);
+  return midSection;
+};
 
+function questionPageLow(planet, questions, questionNumber){
   pResult.innerText = '';
   var pQCounter = document.createElement('p');
   pQCounter.innerText = ` ${questionNumber+1} of ${questions.length}`;
@@ -181,6 +181,16 @@ function buildQuestionPage(planet, popup, questionNumber){
   lowSection.className = "quiz-low";
   lowSection.appendChild(pResult);
   lowSection.appendChild(pQCounter);
+  return lowSection;
+}
+
+function buildQuestionPage(planet, popup, questionNumber){
+  var questions = planet.quiz.questions;
+  var question = questions[questionNumber];
+
+  var topSection = questionPageTop(planet, question);
+  var midSection = questionPageMid(planet, question, questionNumber);
+  var lowSection = questionPageLow(planet, questions, questionNumber);
 
   var quizDiv = document.createElement('div');
   quizDiv.appendChild(topSection);
