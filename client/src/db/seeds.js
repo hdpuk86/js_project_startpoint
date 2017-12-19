@@ -4,6 +4,7 @@ db.dropDatabase();
 db.planets.insertMany([
   {
     name: 'Sun',
+    index: 0,
     radius: 401, // In pixels, 1 px = 3474.2 km.
     numMoons: 0,
     image: '\/images\/sun.png',
@@ -60,6 +61,7 @@ db.planets.insertMany([
   },
   {
     name: 'Mercury',
+    index: 1,
     radius: 1.5,
     numMoons: 0,
     image: '\/images\/mercury.png',
@@ -107,6 +109,7 @@ db.planets.insertMany([
   },
   {
     name: 'Venus',
+    index: 2,
     radius: 3.5,
     numMoons: 0,
     image: '\/images\/venus.png',
@@ -150,6 +153,7 @@ db.planets.insertMany([
   },
   {
     name: 'Earth',
+    index: 3,
     radius: 3.5,
     numMoons: 1,
     image: '\/images\/earth.png',
@@ -195,6 +199,7 @@ db.planets.insertMany([
   },
   {
     name: 'Moon',
+    index: 4,
     radius: 1,
     numMoons: 0,
     image: '\/images\/moon.png',
@@ -235,6 +240,7 @@ db.planets.insertMany([
   },
   {
     name: 'Mars',
+    index: 5,
     radius: 2,
     numMoons: 2,
     image: '\/images\/mars.png',
@@ -281,6 +287,7 @@ db.planets.insertMany([
   },
   {
     name: 'Jupiter',
+    index: 6,
     radius: 40,
     numMoons: 53,
     image: '\/images\/jupiter.png',
@@ -324,6 +331,7 @@ db.planets.insertMany([
   },
   {
     name: 'Saturn',
+    index: 7,
     radius: 33.5,
     numMoons: 53,
     image: '\/images\/saturn.png',
@@ -368,6 +376,7 @@ db.planets.insertMany([
   },
   {
     name: 'Uranus',
+    index: 8,
     radius: 14.5,
     numMoons: 27,
     image: '\/images\/uranus.png',
@@ -412,6 +421,7 @@ db.planets.insertMany([
   },
   {
     name: 'Neptune',
+    index: 9,
     radius: 14,
     numMoons: 13,
     image: '\/images\/neptune.png',
@@ -456,6 +466,7 @@ db.planets.insertMany([
   },
   {
     name: 'Pluto',
+    index: 10,
     radius: 0.5,
     numMoons: 5,
     image: '\/images\/pluto.png',
