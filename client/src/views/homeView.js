@@ -3,57 +3,105 @@ var Popup = require('./popupView');
 var Quiz = require('./quizView');
 var PieCompView = require('./pieCompView');
 var questionNumber;
+var NameView = require('./nameView');
 
-function addListeners(planet){
+function addAllListeners(planet){
   var circle = document.getElementById(`circle_${planet.name}`);
+  addHoverListener(planet, circle);
+  addClickListener(planet, circle);
+};
+
+function addHoverListener(planet, div){
   var hoverDiv = document.getElementById(`hover_${planet.name}_div`);
   var nameDiv = document.getElementById(`${planet.name}_name_div`);
-  var imgButton = createButton(planet);
-  var pieChart = new PieCompView(planet);
   hoverDiv.style.opacity = 0;
   hoverDiv.style.transition = 'opacity 1.0s linear';
-  circle.addEventListener('mouseover', function(){
+  div.addEventListener('mouseover', function(){
     hoverDiv.style.opacity = 1;
     hoverDiv.style.visibility = "visible";
     nameDiv.style.visibility = "visible";
-
-
   });
-  circle.addEventListener('mouseleave', function(){
+  div.addEventListener('mouseleave', function(){
     hoverDiv.style.visibility = 'hidden';
     hoverDiv.style.opacity = 0;
     nameDiv.style.visibility = 'hidden';
   });
-  circle.addEventListener('click', () => {
+};
+
+function addClickListener(planet, div){
+  div.addEventListener('click', () => {
     popup = new Popup();
-    var div = document.createElement('div');
-    var videoDiv = document.createElement('div');
-    var textDiv = document.createElement('div');
-    videoDiv.innerHTML = planet.youtubeEmbed;
-    textDiv.innerHTML = planet.description;
-    div.appendChild(videoDiv);
-    div.appendChild(textDiv);
-    div.appendChild(pieChart);
-    div.appendChild(imgButton);
-    popup.setContent(div);
+    var container = createPopupInfoView(planet);
+    popup.setContent(container);
     popup.display();
   });
 };
 
-function createButton(planet){
-  var imgButton = document.createElement('img');
-  imgButton.src = '../images/right_arrow.png';
-  imgButton.width = 25;
-  imgButton.addEventListener('click', function() {
-    loadQuiz(planet, popup);
-  })
-  return imgButton;
+function createPopupInfoView(planet){
+  var container = document.createElement('div');
+  var upperSection = createUpperPopupSection(planet);
+  var lowerSection = createLowerPopupSection(planet);
+  container.appendChild(upperSection);
+  container.appendChild(lowerSection);
+  setPopupNav(planet);
+  return container;
 };
+
+function createUpperPopupSection(planet){
+  var name = new NameView(planet);
+  name.className = "popup-title";
+  var upperSection = document.createElement('section');
+  upperSection.className = "popup-upper";
+  var videoDiv = document.createElement('div');
+  videoDiv.innerHTML = planet.youtubeEmbed;
+  upperSection.appendChild(name);
+  upperSection.appendChild(videoDiv);
+  return upperSection;
+};
+
+function createLowerPopupSection(planet){
+  var pieChart = new PieCompView(planet);
+  var lowerSection = document.createElement('section');
+  lowerSection.className = "popup-lower";
+  var textDiv = document.createElement('div');
+  textDiv.className = "popup-text";
+  textDiv.innerHTML = planet.description;
+  lowerSection.appendChild(textDiv);
+  lowerSection.appendChild(pieChart);
+  return lowerSection;
+};
+
+function setPopupNav(planet){
+  var nav = document.getElementById('popup-nav');
+  nav.innerHTML = '';
+  var quizButton = createButton(planet, loadQuiz, "QUIZ");
+  var homeButton = createButton(planet, loadHome, planet.name.toUpperCase());
+  nav.appendChild(quizButton);
+  nav.appendChild(homeButton);
+  return nav;
+};
+
+function createButton(planet, callback, buttonText){
+  var button = document.createElement('p');
+  button.className = "popup-nav-btn";
+  button.innerText = buttonText;
+  button.addEventListener('click', function(){
+    callback(planet);
+  });
+  return button;
+};
+
+function loadHome(planet){
+  var container = createPopupInfoView(planet);
+  popup.setContent(container);
+}
 
 function loadQuiz(planet){
   questionNumber = 0;
+  var container = document.createElement('div');
   var div = new Quiz(planet, popup, questionNumber);
-  popup.setContent(div);
+  container.appendChild(div);
+  popup.setContent(container);
 };
 
 var HomeView = function(planets) {
@@ -61,7 +109,7 @@ var HomeView = function(planets) {
   planets.forEach((planet) => {
     var planetDiv = new PlanetView(planet);
     div.appendChild(planetDiv);
-    addListeners(planet);
+    addAllListeners(planet);
   });
 };
 
