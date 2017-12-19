@@ -210,3 +210,19 @@ a {
 p {
   margin: 0;
 }
+
+#distance-unit {
+  visibility: hidden;
+  background-color: #000;
+  color: #FFF;
+  outline: none;
+  font-family: 'Wire One';
+  font-size: 0.7em;
+  -webkit-appearance: none;
+  box-shadow: none;
+  border: none;
+  margin: none;
+  margin-left: 10px;
+  margin-bottom: 16px;
+  padding: none;
+}
