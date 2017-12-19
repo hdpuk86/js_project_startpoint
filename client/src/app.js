@@ -4,6 +4,7 @@ var Popup = require('./views/popupView');
 var AdventureView = require('./views/adventureView');
 var PlanetView = require('./views/planetView');
 var flatEarth = require('./views/flatEarth');
+var playMusic = require('./views/playMusic');
 var distanceUnitSelector;
 var distanceMeter;
 var navbar;
@@ -62,7 +63,8 @@ var onLoad = function() {
   new Request('/planets', AdventureView);
 };
 
-window.addEventListener('keypress', flatEarth)
+window.addEventListener('keypress', playMusic);
+window.addEventListener('keypress', flatEarth);
 window.addEventListener('scroll', onScroll);
 window.addEventListener('wheel', onWheel);
 window.addEventListener('load', onLoad);
