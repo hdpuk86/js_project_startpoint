@@ -18,8 +18,14 @@ var flatEarth = function(event) {
         circle.style.width = circle.style.height;
       }
       circle.style.borderRadius = '50%';
+      circle.style.backgroundImage = "";
     }
-  }
+  } else if (event.keyCode === 115) {
+    var circles = document.getElementsByClassName('circle');
+    for (var circle of circles) {
+        circle.style.backgroundImage = `url(../images/${circle.id}.png)`;
+      }
+    }
 }
 
 module.exports = flatEarth;
