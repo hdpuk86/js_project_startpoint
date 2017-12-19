@@ -54,21 +54,24 @@ function saveQuizScoreToStorage(planet, newQuizScore){
 };
 
 function getAllQuizScoresFromStorage(){
-  var jsonString = localStorage.getItem('AllQuizResults') ||
-  JSON.stringify([
-    {y:0, color:'#fde301'},
-    {y:0, color:'#ffcc00'},
-    {y:0, color:'#86ffca'},
-    {y:0, color:'#01fdfa'},
-    {y:0, color:'grey'},
-    {y:0, color:'#ff7443'},
-    {y:0, color:'#ffa043'},
-    {y:0, color:'#f9d293'},
-    {y:0, color:'#18E6FF'},
-    {y:0, color:'#45B9FF'},
-    {y:0, color:'#D9F5FF'},
-  ]);
-  return JSON.parse(jsonString);
+  var jsonString = localStorage.getItem('AllQuizResults');
+  if (jsonString) {
+    return JSON.parse(jsonString);
+  } else {
+    return [
+      {y:0, color:'#fde301'},
+      {y:0, color:'#ffcc00'},
+      {y:0, color:'#86ffca'},
+      {y:0, color:'#01fdfa'},
+      {y:0, color:'grey'},
+      {y:0, color:'#ff7443'},
+      {y:0, color:'#ffa043'},
+      {y:0, color:'#f9d293'},
+      {y:0, color:'#18E6FF'},
+      {y:0, color:'#45B9FF'},
+      {y:0, color:'#D9F5FF'},
+    ];
+  }
 };
 
 function saveFinalQuizResultToLocalStorage(planet){
