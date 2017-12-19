@@ -240,8 +240,8 @@ p {
 
 .popup-text {
   width: 50%;
-  font-family: verdana;
-  font-size: 20px;
+  font-size: 28px;
+  font-weight: lighter;
   padding: 40px 20px;
 }
 
