@@ -74,8 +74,7 @@ function saveFinalQuizResultToLocalStorage(planet){
   var finalScore = getQuizScoreFromStorage(planet);
   var allQuizResults = getAllQuizScoresFromStorage();
   allQuizResults[planet.index].y = finalScore;
-  var jsonString = JSON.stringify(allQuizResults);
-  localStorage.setItem('AllQuizResults', jsonString);
+  localStorage.setItem('AllQuizResults', JSON.stringify(allQuizResults));
 };
 
 function resetLocalStorageIfTakenBefore(planet){
