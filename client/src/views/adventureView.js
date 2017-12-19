@@ -10,12 +10,10 @@ function addAllListeners(planet){
   var circle = document.getElementById(`adventure_${planet.name}_circle`);
   var nameDiv = document.getElementById(`${planet.name}_name_adventure`);
   var planetBtn = document.getElementById(`${planet.name}_button`);
-
   addHoverListener(planet, circle);
   addHoverListener(planet, nameDiv);
   addClickListener(planet, circle);
   addClickListener(planet, nameDiv);
-
   planetBtn.addEventListener('click', function(){
     smoothScroll(planet.distance+2500);
   })
@@ -32,36 +30,15 @@ function addHoverListener(planet, div){
 };
 
 function addClickListener(planet, div){
-  var imgButton = createButton(planet);
-  var pieChart = new PieCompView(planet);
-  var name = new NameView(planet);
-  name.className = "popup-title";
   div.addEventListener('click', () => {
     popup = new Popup();
     var div = document.createElement('div');
-    var upperSection = document.createElement('section');
-    upperSection.className = "popup-upper";
-    var videoDiv = document.createElement('div');
-    videoDiv.innerHTML = planet.youtubeEmbed;
-    upperSection.appendChild(name);
-    upperSection.appendChild(videoDiv);
-
-    var lowerSection = document.createElement('section');
-    lowerSection.className = "popup-lower";
-    var textDiv = document.createElement('div');
-    textDiv.className = "popup-text";
-    textDiv.innerHTML = planet.description;
-    lowerSection.appendChild(textDiv);
-    lowerSection.appendChild(pieChart);
-
-    var nav = document.createElement('nav');
-    nav.className = "popup-nav";
-    nav.appendChild(imgButton);
-
+    var upperSection = createUpperPopupSection(planet);
+    var lowerSection = createLowerPopupSection(planet);
+    var nav = createPopupNav(planet);
     div.appendChild(upperSection);
     div.appendChild(lowerSection);
     div.appendChild(nav);
-
     popup.setContent(div);
     popup.display();
   });
@@ -75,6 +52,38 @@ function createButton(planet){
     loadQuiz(planet, popup);
   })
   return imgButton;
+};
+
+function createUpperPopupSection(planet){
+  var name = new NameView(planet);
+  name.className = "popup-title";
+  var upperSection = document.createElement('section');
+  upperSection.className = "popup-upper";
+  var videoDiv = document.createElement('div');
+  videoDiv.innerHTML = planet.youtubeEmbed;
+  upperSection.appendChild(name);
+  upperSection.appendChild(videoDiv);
+  return upperSection;
+};
+
+function createLowerPopupSection(planet){
+  var pieChart = new PieCompView(planet);
+  var lowerSection = document.createElement('section');
+  lowerSection.className = "popup-lower";
+  var textDiv = document.createElement('div');
+  textDiv.className = "popup-text";
+  textDiv.innerHTML = planet.description;
+  lowerSection.appendChild(textDiv);
+  lowerSection.appendChild(pieChart);
+  return lowerSection;
+};
+
+function createPopupNav(planet){
+  var imgButton = createButton(planet);
+  var nav = document.createElement('nav');
+  nav.className = "popup-nav";
+  nav.appendChild(imgButton);
+  return nav;
 };
 
 function loadQuiz(planet){
