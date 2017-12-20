@@ -10,6 +10,7 @@ var distanceMeter;
 var navbar;
 var rulerStart;
 var rocketMan;
+var popup;
 
 var shakeRocketMan = function() {
   var currentTop = parseInt(window.getComputedStyle(rocketMan).getPropertyValue('top'));
@@ -40,10 +41,13 @@ var onScroll = function() {
 };
 
 var onWheel = function(event) {
-  window.scrollBy(event.deltaY, 0);
+  if (popup.style.display !== 'block') {
+    window.scrollBy(event.deltaY, 0);
+  }
 };
 
 var onLoad = function() {
+  popup = document.getElementById('testPopup');
   distanceUnitSelector = document.getElementById('distance-unit');
   distanceUnitSelector.addEventListener('change', onScroll);
   navbar = document.getElementById('space-nav');
