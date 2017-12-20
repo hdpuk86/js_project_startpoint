@@ -67,6 +67,10 @@ var onLoad = function() {
       this.src = "../images/deathstar.png"
       this.style.width = '10vw';
       audio.src = '../audio/starwars.mp3'
+    } else if (this.src == "http://localhost:3000/images/deathstar.png"){
+      this.src = "../images/superman.png"
+      this.style.width = '10vw';
+      audio.src = '../audio/superman.mp3'
     }else {
       this.src = "../images/rocket_man.png"
       this.style.width = '4vw';
