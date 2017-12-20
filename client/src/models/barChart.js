@@ -5,7 +5,8 @@ var BarChart = function(container, title, categories, series){
     chart: {
       backgroundColor: "black",
       type: "column",
-      renderTo: container
+      renderTo: container,
+
     },
     title: {
       text: title,
