@@ -29,10 +29,10 @@ function showDestoyButton(distance){
   else if (distance > 6.03 && distance < 6.13) {
     buttons[2].style.visibility = "visible";
   }
-  else if (distance > 8.33 && distance < 8.43) {
+  else if (distance > 8.30 && distance < 8.35) {
     buttons[3].style.visibility = "visible";
   }
-  else if (distance > 8.36 && distance < 8.46) {
+  else if (distance > 8.35 && distance < 8.40) {
     buttons[4].style.visibility = "visible";
   }
   else if (distance > 12.74 && distance < 12.84) {
