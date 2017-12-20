@@ -1,4 +1,4 @@
-# space_oddity
+# Space Oddity
 An educational interactive web app about the solar system, created using core Javascript. A group project built using agile working practices.
 
 # The Spec:
