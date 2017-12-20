@@ -16,3 +16,9 @@ Your task is to make an MVP to put forward to them - this may only be for a smal
 
 - Display some information about a particular topic in an interesting way
 - Have some user interactivity using event listeners, e.g to move through different sections of content
+
+## Screenshots
+
+![Space Homescreen](https://github.com/hdpuk86/space_oddity/blob/master/client/build/images/screenshots/space%20hover.png "Space Home View")
+
+[More Screenshots](https://github.com/hdpuk86/space_oddity/tree/master/client/build/images/screenshots)
