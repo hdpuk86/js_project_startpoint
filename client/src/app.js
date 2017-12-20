@@ -22,10 +22,43 @@ var shakeRocketMan = function() {
 };
 
 function showDestoyButton(distance){
-  if (distance > 3.15 && distance < 3.20){
-    var btn = document.getElementById('Mercury_destroy');
-    btn.style.visibility = 'visible';
+  var buttons = document.getElementsByClassName('destroy_planet');
+  if(distance > 3.21 && distance < 3.31){
+    buttons[1].style.visibility = "visible";
   }
+  else if (distance > 6.03 && distance < 6.13) {
+    buttons[2].style.visibility = "visible";
+  }
+  else if (distance > 8.33 && distance < 8.43) {
+    buttons[3].style.visibility = "visible";
+  }
+  else if (distance > 8.36 && distance < 8.46) {
+    buttons[4].style.visibility = "visible";
+  }
+  else if (distance > 12.74 && distance < 12.84) {
+    buttons[5].style.visibility = "visible";
+  }
+  else if (distance > 43.33 && distance < 43.44) {
+    buttons[6].style.visibility = "visible";
+  }
+  else if (distance > 79.86 && distance < 79.76) {
+    buttons[7].style.visibility = "visible";
+  }
+  else if (distance > 160.35 && distance < 160.45) {
+    buttons[8].style.visibility = "visible";
+  }
+  else if (distance > 251.25 && distance < 251.35) {
+    buttons[9].style.visibility = "visible";
+  }
+  else if (distance > 329.33 && distance < 329.43) {
+    buttons[10].style.visibility = "visible";
+  }
+  else {
+    [...document.getElementsByClassName('destroy_planet')].forEach((button) => {
+      button.style.visibility = 'hidden';
+    })
+  }
+
 }
 
 var onScroll = function() {
@@ -43,8 +76,6 @@ var onScroll = function() {
     distanceMeter.style.visibility = 'visible';
     rocketMan.style.visibility = 'visible';
     distanceUnitSelector.style.visibility = 'visible';
-
-
   } else {
     if (navbar && distanceMeter && rocketMan) {
       navbar.style.visibility = 'hidden';
