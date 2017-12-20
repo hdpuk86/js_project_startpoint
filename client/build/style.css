@@ -28,7 +28,7 @@ ul {
   z-index: 2;
   left: 0;
   top: 0;
-  width: 100%;
+  width: 100vw;
   height: 100%;
   overflow-y: scroll;
   background-color: rgba(0,0,0,0.4);
@@ -320,4 +320,20 @@ p {
   justify-content: center;
   font-size: 1.5em;
   padding: 10px;
+}
+
+.quiz-result {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.quiz-title {
+  font-size: 1.5em;
+  padding: 10px;
+}
+
+.quiz-results-bar-chart {
+  padding-top: 10px;
+  width: 80vw;
 }

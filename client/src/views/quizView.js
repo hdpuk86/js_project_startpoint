@@ -203,9 +203,12 @@ function buildQuestionPage(planet, popup, questionNumber){
 function buildResultPage(planet, popup, results){
   var pQuizName = document.createElement('p');
   pQuizName.innerText = `${planet.name} Quiz Result`;
+  pQuizName.style.color = planet.colour;
+  pQuizName.className = 'quiz-title';
 
   var pYouScored = document.createElement('p')
   pYouScored.innerText = "You Scored...";
+
 
   var quizScore = getQuizScoreFromStorage(planet);
   var pQuizScore = document.createElement('p');
@@ -214,6 +217,7 @@ function buildResultPage(planet, popup, results){
   var barChart = new QuizResultChart(results);
 
   var quizDiv = document.createElement('div');
+  quizDiv.className = 'quiz-result';
   quizDiv.appendChild(pQuizName);
   quizDiv.appendChild(pYouScored);
   quizDiv.appendChild(pQuizScore);
