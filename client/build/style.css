@@ -108,21 +108,21 @@ ul {
 .circle {
   border-radius: 50%;
   animation-name: rotate;
-    animation-duration: 50s;
-    animation-iteration-count: infinite;
-    animation-timing-function: linear;
-    -webkit-animation-name: rotate;
-    -webkit-animation-duration: 50s;
-    -webkit-animation-iteration-count: infinite;
-    -webkit-animation-timing-function: linear;
+  animation-duration: 50s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+  -webkit-animation-name: rotate;
+  -webkit-animation-duration: 50s;
+  -webkit-animation-iteration-count: infinite;
+  -webkit-animation-timing-function: linear;
 }
 @keyframes rotate {
-    from { background-position: 0px 0px; }
-    to { background-position: 500px 0px; }
+  from { background-position: 0px 0px; }
+  to { background-position: 500px 0px; }
 }
 @-webkit-keyframes rotate {
-    from { background-position: 0px 0px; }
-    to { background-position: 500px 0px; }
+  from { background-position: 0px 0px; }
+  to { background-position: 500px 0px; }
 }
 
 .circle:hover {
@@ -336,4 +336,14 @@ p {
 .quiz-results-bar-chart {
   padding-top: 10px;
   width: 80vw;
+}
+
+.destroy_planet {
+  background-color: black; /* Green */
+  color: red;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin-top: 10px;
 }

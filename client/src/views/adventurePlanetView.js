@@ -20,6 +20,13 @@ function createPlanetDiv(planet){
   circleDiv.id = `adventure_${planet.name}_circle`;
   div.appendChild(circleDiv);
 
+  var blowUpBtn = document.createElement('button');
+  blowUpBtn.innerText = 'DESTROY';
+  blowUpBtn.style.visibility = 'hidden';
+  blowUpBtn.id = `${planet.name}_destroy`;
+  blowUpBtn.className = "destroy_planet";
+  div.appendChild(blowUpBtn);
+
   var hoverDiv = new HoverView(planet);
   hoverDiv.id = `hover_${planet.name}_adventure`;
   hoverDiv.className = 'hover_planets_adventure';

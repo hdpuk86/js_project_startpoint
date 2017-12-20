@@ -10,6 +10,7 @@ function addAllListeners(planet){
   var circle = document.getElementById(`adventure_${planet.name}_circle`);
   var nameDiv = document.getElementById(`${planet.name}_name_adventure`);
   var planetBtn = document.getElementById(`${planet.name}_button`);
+  var destroyBtn = document.getElementById(`${planet.name}_destroy`);
   addHoverListener(planet, circle);
   addHoverListener(planet, nameDiv);
   addClickListener(planet, circle);
@@ -17,7 +18,26 @@ function addAllListeners(planet){
   planetBtn.addEventListener('click', function(){
     smoothScroll(planet.distance+2500);
   })
+  destroyBtn.addEventListener('click', function(){
+    destroyPlanet(planet);
+  })
 };
+
+function destroyPlanet(planet){
+  var circle = document.getElementById(`adventure_${planet.name}_circle`);
+  circle.style.backgroundColor = 'black';
+  circle.style.width = 'auto';
+  circle.style.height = 'auto';
+
+  var img = document.createElement('img');
+  img.src = '../images/blackhole.png';
+  img.width = 50;
+
+  circle.appendChild(img);
+
+  var destroyBtn = document.getElementById(`${planet.name}_destroy`);
+  destroyBtn.style.display = "none";
+}
 
 function addHoverListener(planet, div){
   var hoverDiv = document.getElementById(`hover_${planet.name}_adventure`);
