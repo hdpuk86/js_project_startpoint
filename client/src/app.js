@@ -23,7 +23,7 @@ var shakeRocketMan = function() {
 
 function showDestoyButton(distance){
   if (distance > 3.15 && distance < 3.20){
-    var btn = document.getElementById('Mercury-destroy');
+    var btn = document.getElementById('Mercury_destroy');
     btn.style.visibility = 'visible';
   }
 }
@@ -34,7 +34,9 @@ var onScroll = function() {
     shakeRocketMan();
     var pixels = -rulerStart;
     var distance = pixels * parseFloat(distanceUnitSelector.value);
-    showDestoyButton(distance);
+    if (rocketMan.src == "http://localhost:3000/images/deathstar.png"){
+      showDestoyButton(distance);
+    }
     var rounded = Math.round(distance * 100) / 100; // to 2 d.p.
     distanceMeter.innerText = rounded + ' ';
     navbar.style.visibility = 'visible';

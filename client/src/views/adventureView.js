@@ -10,6 +10,7 @@ function addAllListeners(planet){
   var circle = document.getElementById(`adventure_${planet.name}_circle`);
   var nameDiv = document.getElementById(`${planet.name}_name_adventure`);
   var planetBtn = document.getElementById(`${planet.name}_button`);
+  var destroyBtn = document.getElementById(`${planet.name}_destroy`);
   addHoverListener(planet, circle);
   addHoverListener(planet, nameDiv);
   addClickListener(planet, circle);
@@ -17,7 +18,18 @@ function addAllListeners(planet){
   planetBtn.addEventListener('click', function(){
     smoothScroll(planet.distance+2500);
   })
+  destroyBtn.addEventListener('click', function(){
+    destroyPlanet(planet);
+  })
 };
+
+function destroyPlanet(planet){
+  var circle = document.getElementById(`adventure_${planet.name}_circle`);
+  circle.style.visibility = 'hidden';
+  var nameTag = document.getElementById(`${planet.name}_name_adventure`);
+  nameTag.innerText = 'MERCURY WAZ ERE';
+  nameTag.style.color = planet.colour;
+}
 
 function addHoverListener(planet, div){
   var hoverDiv = document.getElementById(`hover_${planet.name}_adventure`);

@@ -23,7 +23,7 @@ function createPlanetDiv(planet){
   var blowUpBtn = document.createElement('button');
   blowUpBtn.innerText = 'DESTROY';
   blowUpBtn.style.visibility = 'hidden';
-  blowUpBtn.id = `${planet.name}-destroy`;
+  blowUpBtn.id = `${planet.name}_destroy`;
   div.appendChild(blowUpBtn);
 
   var hoverDiv = new HoverView(planet);
