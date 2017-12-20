@@ -14,7 +14,10 @@ var rocketMan;
 var shakeRocketMan = function() {
   var currentTop = parseInt(window.getComputedStyle(rocketMan).getPropertyValue('top'));
   var randomShift = Math.floor(Math.random() * 11 - 5);
-  rocketMan.style.top = (currentTop + randomShift) + 'px';
+  var newY = currentTop + randomShift;
+  if (newY > 100 && newY < window.innerHeight - 100) {
+    rocketMan.style.top = newY + 'px';
+  }
 };
 
 var onScroll = function() {
