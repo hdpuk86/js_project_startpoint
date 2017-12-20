@@ -21,18 +21,28 @@ var shakeRocketMan = function() {
   }
 };
 
+function showDestoyButton(distance){
+  if (distance > 3.15 && distance < 3.20){
+    var btn = document.getElementById('Mercury-destroy');
+    btn.style.visibility = 'visible';
+  }
+}
+
 var onScroll = function() {
   rulerStart = document.getElementById('planet_container').getBoundingClientRect().left - window.innerWidth / 2;
   if (rulerStart <= 0) {
     shakeRocketMan();
     var pixels = -rulerStart;
     var distance = pixels * parseFloat(distanceUnitSelector.value);
+    showDestoyButton(distance);
     var rounded = Math.round(distance * 100) / 100; // to 2 d.p.
     distanceMeter.innerText = rounded + ' ';
     navbar.style.visibility = 'visible';
     distanceMeter.style.visibility = 'visible';
     rocketMan.style.visibility = 'visible';
     distanceUnitSelector.style.visibility = 'visible';
+
+
   } else {
     if (navbar && distanceMeter && rocketMan) {
       navbar.style.visibility = 'hidden';
@@ -41,6 +51,8 @@ var onScroll = function() {
       distanceUnitSelector.style.visibility = 'hidden';
     }
   }
+
+
 };
 
 var onWheel = function(event) {
