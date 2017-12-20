@@ -28,14 +28,15 @@ function destroyPlanet(planet){
   circle.style.backgroundColor = 'black';
   circle.style.width = 'auto';
   circle.style.height = 'auto';
-  var nameTag = document.getElementById(`${planet.name}_name_adventure`);
-  var div = document.getElementById(`adventure_${planet.name}_div`);
+
   var img = document.createElement('img');
   img.src = '../images/blackhole.png';
   img.width = 50;
-  nameTag.innerText = 'MERCURY WAZ ERE';
-  nameTag.style.color = planet.colour;
+
   circle.appendChild(img);
+
+  var destroyBtn = document.getElementById(`${planet.name}_destroy`);
+  destroyBtn.style.display = "none";
 }
 
 function addHoverListener(planet, div){
