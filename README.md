@@ -19,9 +19,11 @@ Your task is to make an MVP to put forward to them - this may only be for a smal
 
 ## Approach
 
-We planned the project out using UX design techniques, creating user profiles and mapping user journeys. We used these profiles to draw up our acceptance criteria, wireframes and MOSCOW board. We then put together a class diagram and integration diagrams to work from.
+The project was planned out using some UX design techniques; creating user profiles and mapping user journeys. We used these profiles to draw up our acceptance criteria, wireframes and MOSCOW board and then put together a class diagram and integration diagrams to work from.
 
-We worked using agile methods such as daily stand-ups, a kanban board and sprints. We built our own API using MongoDB to store the information we needed. We used Mocha and Selenium for Test and Behavioural Driven Development.
+We worked using agile methods such as sprints, daily stand-ups and a kanban board. We worked really effectively as a team. We mob programmed on day 1 to get our initial server and database up and running using teletype in atom worked really well for this. There were also a few features that were pair-programmed later on. Our main working system for the project was to take the next ticket off the top of our kanban board but if there was something specific someone wanted to do we would agree during our morning stand up. Our stand ups normally discussed our goals for the day, adding new tickets to the board and clearing up any confusions. We also made good use of slack when working from home to keep informed and offer help with problems. 
+
+We built our own API using MongoDB to store the information we needed and we used Mocha and Selenium for our testing.
 
 ## Outcome
 
