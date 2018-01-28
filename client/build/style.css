@@ -180,6 +180,7 @@ a {
 .nav_icon {
   width: 25px;
   margin-left: 3px;
+  cursor: pointer;
 }
 
 #space-footer {
@@ -313,6 +314,7 @@ p {
 
 .next-Q-img {
   align-self: center;
+  cursor: pointer;
 }
 
 .quiz-name {
