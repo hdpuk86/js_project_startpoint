@@ -33,6 +33,9 @@ var PieChart = function(container, title, series){
         "color": "#FFFFFF",
         "fontFamily": "Wire One",
         "fontSize": "2em"
+      },
+      itemHoverStyle: {
+        "color": "#FFFFFF"
       }
     }
   });

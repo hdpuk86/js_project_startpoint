@@ -36,6 +36,7 @@ function destroyPlanet(planet){
   circle.appendChild(img);
 
   var destroyBtn = document.getElementById(`${planet.name}_destroy`);
+  destroyBtn.className = "destroy_planet";
   destroyBtn.style.display = "none";
 }
 
