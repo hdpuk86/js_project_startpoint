@@ -9,10 +9,10 @@ var distanceUnitSelector;
 var distanceMeter;
 var navbar;
 var rulerStart;
-var rocketMan;
 var popup;
 
 var shakeRocketMan = function() {
+  const rocketMan = document.getElementById('rocket_man');
   var currentTop = parseInt(window.getComputedStyle(rocketMan).getPropertyValue('top'));
   var randomShift = Math.floor(Math.random() * 11 - 5);
   var newY = currentTop + randomShift;
@@ -67,6 +67,8 @@ var onScroll = function() {
     shakeRocketMan();
     var pixels = -rulerStart;
     var distance = pixels * parseFloat(distanceUnitSelector.value);
+    const rocketMan = document.getElementById('rocket_man');
+
     if (rocketMan.src == "http://localhost:3000/images/deathstar.png"){
       showDestoyButton(distance);
     }
@@ -100,14 +102,15 @@ var onLoad = function() {
   distanceUnitSelector.addEventListener('change', onScroll);
   navbar = document.getElementById('space-nav');
   distanceMeter = document.getElementById('distance-meter');
-  rocketMan = document.getElementById('rocket_man');
-  rocketMan.addEventListener('click', function(){
+  const rocketMan = document.getElementById('rocket_man');
+
+  rocketMan.addEventListener('click', function(event){
     var audio = document.getElementById('elton');
     if(this.src == "http://localhost:3000/images/rocket_man.png"){
       this.src = "../images/enterprise.png"
       this.style.width = '10vw';
       audio.src = '../audio/startrek.mp3'
-      playMusic();
+      playMusic(event);
     }else if(this.src == "http://localhost:3000/images/enterprise.png"){
       this.src = "../images/deathstar.png"
       this.style.width = '10vw';
